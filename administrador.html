@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador-Produtos</title>
-    <link rel="stylesheet" href="./css/administrador-Produtos.css">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="./css/administrador.css">
 </head>
 
 <body>
@@ -26,35 +26,35 @@
                 <ul id="options">
 
                     <li id="seller"> <img src="./img/seller.png">
-                        <a href=""> Vendedores</a>
+                        <a onclick="document.getElementById('id01').style.display='block'" > Vendedores</a>
                     </li>
                     <hr>
                     <li id="cleint"> <img src="./img/cleint.png">
-                        <a href=""> Clientes</a>
+                        <a href="./listarClientes.html"> Fornecedores</a>
                     </li>
                     <hr>
                     <li id="represented"> <img src="./img/home.png">
-                        <a href=""> Representada</a>
+                        <a onclick="document.getElementById('id01').style.display='block'" > Representada</a>
                     </li>
                     <hr>
                     <li id="payment"> <img src="./img/payment-plans.png">
-                        <a href=""> Planos de Pagamento</a>
+                        <a onclick="document.getElementById('id01').style.display='block'" > Planos de Pagamento</a>
                     </li>
                     <hr>
                     <li id="price"> <img src="./img/price.png">
-                        <a href=""> Tabela de Preços</a>
+                        <a onclick="document.getElementById('id01').style.display='block'" > Tabela de Preços</a>
                     </li>
                     <hr>
                     <li id="product"> <img src="./img/product.png">
-                        <a href=""> Produtos</a>
+                        <a href="./listarProdutos.html"> Produtos</a>
                     </li>
                     <hr>
                     <li id="requests"> <img src="./img/cart.png">
-                        <a href="">Pedidos</a>
+                        <a onclick="document.getElementById('id01').style.display='block'" >Pedidos</a>
                     </li>
                     <hr>
                     <li id="report"> <img src="./img/report.png">
-                        <a href="">Relatórios</a>
+                        <a onclick="document.getElementById('id01').style.display='block'">Relatórios</a>
                     </li>
                     <hr>
 
@@ -69,24 +69,43 @@
         <div id="panel">
             <div id="header-options">
                 <ul>
-                    <li id="avatar"><img src="./img/businessman.png">
+                    <li id="avatar"><img src="./img/businessman.png"> José de Souza
                     </li>
                 </ul>
                 <ul id="panel-header">
-                    <li> <a href=""> Meu Plano</a> <img src="./img/calendar.png"></li>
-                    <li> <a href="">Perfil</a> <img src="./img/user.png" alt=""></li>
-                    <li> <a href="">Sair</a> <img src="./img/exit.png" alt=""></li>
+                    
+                    <li> <a href="">Perfil <img src="./img/user.png" alt=""></a> </li>
+                    <li> <a href="">Sair<img src="./img/exit.png" alt=""></a> </li>
                 </ul>
             </div>
             <hr>
             <div id="nav">
-                > Inicio/ Clientes
+                > Administrador
             </div>
-            <h2>Clientes</h2>
+            <h2>Bem Vindo!</h2>
+            <hr>
+            
 
 
         </div>
+        <div id="id01" class="modal">
+            <div class="modal-content animate-zoom card-4">
+                <header class="container teal">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                        class=" button display-topright">&times;</span>
+                    <h2>Atenção!</h2>
+                </header>
+                <div class="container">
+                    <h4>Esta funcionalidade não foi implementada nesse projeto!</h4>
+                    <br>
+                    
+                </div>
+    
+            </div>
+        </div>
+        
     </span>
+   
 </body>
 
 </html>

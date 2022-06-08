@@ -47,9 +47,10 @@ body, html{
 
 }
 
-#seller:hover, #cleint:hover, #represented:hover,
+/* #seller:hover, #cleint:hover, #represented:hover,
 #payment:hover, #price:hover, #product:hover,
-#requests:hover, #report:hover{
+#requests:hover, #report:hover{ */
+    #options > li:hover{
     background-color: darkgrey;
     font-size: 19px;
 }
@@ -68,6 +69,8 @@ body, html{
     background-color:whitesmoke;
     /* display: flex;
     justify-content: space-between; */
+    padding-left: 10px;
+    padding-right: 5px;
 }
 #panel >ul{
     
@@ -77,6 +80,7 @@ body, html{
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
+    padding-bottom: 0px;
     
 
 }
@@ -119,4 +123,97 @@ body, html{
    margin-top: 10px;
    margin-bottom: 10px;
 }
+#header1{
+    display: flex;
+    justify-content: space-between;
+   }
+   #return{
+    display: flex;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#return-li{
+    position: relative;
+    left:5px ;
+}
+#return-li > a:hover{
+    font-size: 18px;
+    color:rgb(50, 50, 168);
+}
+#return-li > a{
+    text-decoration: none;
+    color:black;
+}
 
+
+   th {
+  /* border: 1px solid black; */
+  background-color:rgb(231, 228,232);
+  height: 30px;
+  text-align: left;
+}
+table {
+    display: table;
+    border-collapse:collapse;
+    border-spacing: 2px;
+    border-color: gray;
+    width: 100%;
+    
+  }
+  tr:nth-child(even) {
+    background:rgb(239, 236,236)
+  }
+  tr{
+    border-bottom: 1px solid darkgray;
+    
+  }
+  td{
+    height: 30px;
+  }
+
+
+
+
+#product{
+    background-color: cadetblue;
+    
+}
+#product > a{
+    color: red;
+    font-size: 19px;
+}
+#frm {
+    border:1px solid darkgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    height: 300px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+      
+}
+
+.Product-input{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    
+}
+.btn{
+    position: relative;
+    top:20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .3s;
+    border-radius: 5px;
+    background-color:cadetblue;
+    width: 100px;
+    height: 30px;
+    
+    
+}
+.btn:hover{
+    background-color:darkgray;
+    color: aliceblue;
+}
