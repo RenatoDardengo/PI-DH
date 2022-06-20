@@ -49,8 +49,13 @@ body, html{
 #payment:hover, #price:hover, #product:hover,
 #requests:hover, #report:hover{ */
     #options > li:hover{
-    background-color: darkgrey;
-    font-size: 19px;
+    /* background-color: darkgrey;
+    font-size: 19px; */
+    cursor: not-allowed;
+}
+#options > li > a:hover{
+    
+    cursor: not-allowed;
 }
 #top{
     padding-top: 20px;
