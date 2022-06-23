@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Admin P.I</title>
+    <link rel="stylesheet" href='/PI-DH/css/loginAdmin.css'>
+</head>
+
+<body>
+    <main>
+        <section id="container-login">
+            <h2>Administrador</h2>
+            <form action="/login" method="GET">
+                <div class="container-input">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="E-mail"/>
+                </div>
+
+                <div class="container-input">
+                    <!-- <label for="password">Senha</label> -->
+                    <label>Senha</label>
+                    <input type="password" name="Senha" id='senha' placeholder="Senha" />
+                    <button type="button" onclick="mostrarSenha()">Mostrar Senha</button>
+                    <script>
+                        function mostrarSenha() {
+                            var tipo = document.getElementById("senha");
+                            if (tipo.type == "password") {
+                                tipo.type = "text";
+                            } else {
+                                tipo.type = "password";
+                            }
+                        }
+                    </script>
+                    <!-- <a onclick="document.getElementById('id0').style.display='block'" > Vendedores</a> -->
+                </div>
+
+
+                <BR></BR>
+                <a href="/PI-DH/administrador.html">ENTRAR </a>
+                <BR></BR>
+                <a href="">Esqueceu a senha ?</a>
+                <BR></BR>
+                <a role="button" class="" href="" rel="async">Criar nova conta</a>
+
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
