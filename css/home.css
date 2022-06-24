@@ -160,7 +160,7 @@ header .pesquisa{
     
 }
 .vitrine1{
-    width: 25%;
+    width: 20%;
     height: 50%;
     
     margin-top: 5px;
@@ -284,6 +284,7 @@ footer{
     height: 70px;
     border: solid 1px black;
     background-color: black;
+    display: block;
     
    
     
