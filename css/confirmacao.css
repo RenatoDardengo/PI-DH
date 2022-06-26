@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+}
+
+#header {
+
+
+    display: flex;
+    background-color: black;
+    height: 50px;
+    justify-content: space-between;
+
+}
+#btn-summary-total{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: background .3s;
+    border-radius: 5px;
+    background-color:yellow;
+    width: 110px;
+    height: 35px;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+#product-shipping{
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+
+#header a {
+    text-decoration: none;
+    color: aliceblue;
+    transition: 1s;
+    font-weight: bold;
+
+}
+
+#header-options {
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+#header-options>a {
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+#menu {
+
+    background-color: yellow;
+    height: 25px;
+}
+
+#menu>a {
+    margin-left: 50%;
+    font-weight: bold;
+    color: black;
+    margin-top: 5px;
+}
+
+#title-list {
+    display: flex;
+
+    text-align: center;
+
+    margin-top: 30px;
+    
+
+}
+
+#product-title-product {
+
+    margin-left: 1%;
+}
+
+#product-title-qtde {
+
+    margin-left: 15%;
+}
+
+#product-title-preco {
+
+    margin-left: 10%;
+}
+
+#product-title-entrega {
+
+    margin-left: 10%;
+}
+
+.product-information {
+    display: flex;
+}
+
+#product-description {
+    margin-right: 1%;
+    margin-top: 5px;
+    width: 100px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+#product-qtde input {
+    width: 30px;
+
+}
+
+#product-qtde {
+    margin-top: 5px;
+    margin-left: 8%;
+}
+
+#product-deliveryTime {
+
+    margin-left: 5%;
+    width: 200px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+#produtc-price {
+    margin-top: 5px;
+    margin-left: 4%;
+}
+
+#order-summary {
+    background-color: beige;
+    position: relative;
+    left: 75%;
+    padding-top: 5px;
+    padding-left: 5px;
+    bottom: 150px;
+    height: 250px;
+    width: 350px;
+    border-radius: 5px;
+    
+
+    border: 1px solid darkgray;
+}
+hr{
+    width: 70%;
+}
+
+#summary-information {
+    display: flex;
+    margin-top: 15px;
+}
+.summary-total{
+    
+    
+    margin-top: 15px;
+    
+}
+
+
+
+#summary-information-value {
+    margin-left: 10%;
+}
+#summary-total-value{
+    position: relative;
+    left: 50%;
+    top: -15px;
+}
+
+
+.footer-distributed {
+    background: black;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    font: bold 16px sans-serif;
+    text-align: center;
+    padding: 50px 60px 40px;
+    overflow: hidden;
+}
+
+.footer-distributed h3 {
+    color: #ffffff;
+    font: normal 36px sans-serif, cursive;
+    margin: 0 0 10px;
+}
+
+.footer-distributed h3 span {
+    color: yellow;
+}
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+@media (max-width:900px) {
+    #menu>a {
+        margin-left: 0%;
+    }
+
+    #header {
+
+        flex-direction: column;
+        height: 100px;
+        flex-wrap: wrap;
+        align-content: center;
+
+    }
+
+    #header-options>a {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    #order-summary {
+        left: 1%;
+        bottom: 0px;
+        margin-bottom: 10px;
+    }
+
+
+
+}
