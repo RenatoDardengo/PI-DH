@@ -4,6 +4,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 /* Header Victor Hugo */
@@ -302,6 +303,7 @@ main {
 }
 .ppButtom {
     margin-top: 2%;
+    color: white;
 }
 .ppObs {
     margin-top: 5px;
