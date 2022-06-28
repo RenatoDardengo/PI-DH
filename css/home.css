@@ -139,7 +139,7 @@ header .pesquisa{
 }
 #carrocel li{
     position: relative;
-    animation: slide 15s infinite linear;
+    animation: slide 40s infinite linear;
 }
 
 @keyframes slide {

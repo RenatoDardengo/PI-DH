@@ -317,6 +317,7 @@ main {
 .ppButtom {
     margin-top: 2%;
     text-decoration: none;
+    color: white;
 }
 #container-ppCompras:hover {
     cursor:pointer;
