@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos</title>
+    <title>Painel Administrador</title>
     <link rel="stylesheet" href="./css/listarProdutos.css">
 </head>
 
@@ -13,12 +13,8 @@
     <span id="conteudo">
         <div id="menu">
             <div id="top">
-                <ul id="header-left">
+                <ul>
                     <li><img src="./img/logo.png"></li>
-
-                </ul>
-                <ul id="header-rigth">
-                    <li> <a href="./administrador.html"><img src="./img/menu.png"></a></li>
                 </ul>
             </div>
 
@@ -68,16 +64,33 @@
 
         <div id="panel">
             <div id="header-options">
-                <ul>
-                    <li id="avatar"><img src="./img/businessman.png"> José de Souza</li>
-                </ul>
-                <ul id="panel-header">
+                <div id="img-Avatar">
+                    <div>
+                        <ul>
+                            <li id="avatar" > <img src="./img/businessman.png" > </li>
+                       </ul>
+
+                    </div>
+                    <div id="avatar-name">
+                        <ul>
+                            <li> Fulano de Tal</li>  
+                        </ul>
+
+                    </div>
+                  
+                </div>
+
+               
+                <div id="panel-header">
                     <div id="return">
-                        <li> <a href="./administrador.html"> <img src="./img/arrow.png"></a></li>
-                        <li id="return-li"> <a href="./administrador.html"> Retornar ao Menu</a></li>
+                        <img src="./img/arrow.png" alt="">
                     </div>
 
-                </ul>
+                    <div id="panel-header-option">
+                       <a id="return-a" href="./administrador.html"> Retornar </a>
+                    </div>
+
+                </div>
             </div>
             <hr>
             <div id="nav">
@@ -102,9 +115,8 @@
                             <a href=""><img src="./img/search.png"></a>
                         </div>
                         <div id="btn-img">
-                            <button id="btn"><a href="cadastrarProduto.html">Adicionar</a></button>
-                            <img id="plus" src="./img/plus.png">
-
+                            <button id="btn"><a href="./adm-cadastrarProduto.html">Adicionar</a></button>
+                          
                         </div>
 
                     </div>
@@ -131,7 +143,7 @@
                             <td>R$ 80,00</td>
                             <td>R$ 200,00</td>
                             <td>50</td>
-                            <td><a href="http://"><img src="./img/edit.png"></a> <a href="http://"><img
+                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href="http://"><img
                                         src="./img/cancel.png"></a></td>
                         </tr>
                         <tr>
@@ -142,7 +154,7 @@
                             <td>R$ 260,00</td>
                             <td>R$ 600,00</td>
                             <td>10</td>
-                            <td><a href="http://"><img src="./img/edit.png"></a> <a href=""><img
+                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href=""><img
                                         src="./img/cancel.png"></a></td>
                         </tr>
                         <tr>
@@ -153,7 +165,7 @@
                             <td>R$ 300,00</td>
                             <td>R$ 780,00</td>
                             <td>00</td>
-                            <td><a href="http://"><img src="./img/edit.png"></a> <a href="http://"><img
+                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href="http://"><img
                                         src="./img/cancel.png"></a></td>
                         </tr>
                         <tr>
@@ -164,7 +176,7 @@
                             <td>R$ 300,00</td>
                             <td>R$ 780,00</td>
                             <td>00</td>
-                            <td><a href="http://"><img src="./img/edit.png"></a> <a href="http://"><img
+                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href="http://"><img
                                         src="./img/cancel.png"></a></td>
                         </tr>
                         <tr>
@@ -175,7 +187,7 @@
                             <td>R$ 250,00</td>
                             <td>R$ 610,00</td>
                             <td>20</td>
-                            <td><a href="http://"><img src="./img/edit.png"></a> <a href="http://"><img
+                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href="http://"><img
                                         src="./img/cancel.png"></a></td>
                         </tr>
                     </div>
