@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Painel Administrador</title>
+    <link rel="stylesheet" href="./css/administrador.css">
+</head>
+
+<body>
+    <span id="conteudo">
+        <div id="menu">
+            <div id="top">
+                <ul>
+                    <li><img src="./img/logo.png"></li>
+                </ul>
+            </div>
+
+            <div id="menu-options">
+                <ul id="options">
+
+                    <li id="seller"> <img src="./img/seller.png">
+                        <a onclick="document.getElementById('id01').style.display='block'" > Vendedores</a>
+                    </li>
+                    <hr>
+                    <li id="cleint"> <img src="./img/cleint.png">
+                        <a onclick="document.getElementById('id01').style.display='block'"> Fornecedores</a>
+                    </li>
+                    <hr>
+                    <li id="represented"> <img src="./img/home.png">
+                        <a onclick="document.getElementById('id01').style.display='block'" > Representada</a>
+                    </li>
+                    <hr>
+                    <li id="payment"> <img src="./img/payment-plans.png">
+                        <a onclick="document.getElementById('id01').style.display='block'" > Planos de Pagamento</a>
+                    </li>
+                    <hr>
+                    <li id="price"> <img src="./img/price.png">
+                        <a onclick="document.getElementById('id01').style.display='block'" > Tabela de Preços</a>
+                    </li>
+                    <hr>
+                    <li id="product"> <img src="./img/product.png">
+                        <a href="./adm-listarProdutos.html"> Produtos</a>
+                    </li>
+                    <hr>
+                    <li id="requests"> <img src="./img/cart.png">
+                        <a onclick="document.getElementById('id01').style.display='block'" >Pedidos</a>
+                    </li>
+                    <hr>
+                    <li id="report"> <img src="./img/report.png">
+                        <a onclick="document.getElementById('id01').style.display='block'">Relatórios</a>
+                    </li>
+                    <hr>
+
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div id="panel">
+            <div id="header-options">
+                <div id="img-Avatar">
+                    <div>
+                        <ul>
+                            <li id="avatar" > <img src="./img/businessman.png" > </li>
+                       </ul>
+
+                    </div>
+                    <div id="avatar-name">
+                        <ul>
+                            <li> Fulano de Tal</li>  
+                        </ul>
+
+                    </div>
+                    
+
+                </div>
+               
+                <div id="panel-header">
+                    <div id="panel-header-img">
+                        <img src="./img/exit.png" alt="">
+                    </div>
+
+                    <div id="panel-header-option">
+                       <a href=""> Sair </a>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+
+
+
+            <hr>
+            <div id="nav">
+                > Administrador
+            </div>
+            <h2>Bem Vindo!</h2>
+            <hr>
+            
+
+
+        </div>
+        <div id="id01" class="modal">
+            <div class="modal-content animate-zoom card-4">
+                <header class="container teal">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                        class=" button display-topright">&times;</span>
+                    <h2>Atenção!</h2>
+                </header>
+                <div class="container">
+                    <h4>Esta funcionalidade não foi implementada nesse projeto!</h4>
+                    <br>
+                    
+                </div>
+    
+            </div>
+        </div>
+        
+    </span>
+   
+</body>
+
+</html>

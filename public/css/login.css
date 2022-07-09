@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gotham;
+
+}
+
+body {
+    background: branco;
+    height: 100%;
+    width: 100%;
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+main.container {
+    background: white;
+    min-width: 320px;
+    min-height: 40vh;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px;
+    border-radius: 5px;
+
+}
+
+main h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+
+
+.footer span {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.footer .social-field {
+    padding: 0.4rem;
+    font-size: 0.90rem;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 0px;
+}
+
+.footer .social-field a i {
+    margin: 0 0.5rem;
+    width: 15px;
+
+}
+
+.footer .social-field a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.footer .receber_codigo {
+    background: rgb(196, 193, 193);
+    padding: 0.4rem;
+    font-size: 0.85rem;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 0px;
+
+}
+
+.footer .social-field.google {
+    background: linear-gradient(to right, #56a7f2, #468aca);
+}
+
+.footer .social-field.facebook {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+}
+
+.footer .email {
+    background: rgb(233, 229, 229);
+    padding: 0.4rem;
+    font-size: 0.85rem;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 0px;
+}

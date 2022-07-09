@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+  
+  main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:white;
+    /* background-image: url(./Imagen/Tech.jpg) */
+  }
+  
+  #container-login {
+    width: 350px;
+    height: 600px;
+    background-color: #2d3643;
+    border-radius: 50px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  #container-login h2,
+  #container-signup h2 {
+    font-size: 2rem;
+    color: #ded2d2;
+   }
+  
+  #container-login form,
+  #container-signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+  
+  .container-input {
+    width: 100%;
+  }
+  
+  #container-login form input,
+  #container-signup form input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    margin: 10px 0;
+  }
+  
+  label {
+    color:white;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(48, 151, 46);
+  }
+  
+  #container-signup {
+    width: 450px;
+    min-height: 500px;
+    background-color: #477fc0;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  #container-signup form select {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    margin: 10px 0;
+  }
+  
+  .container-radio {
+    display: flex;
+  }
+  
+  #container-signup .container-radio label {
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+  
+  #container-signup .container-radio input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
