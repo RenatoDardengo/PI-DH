@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Administrador</title>
-    <link rel="stylesheet" href="./css/listarProdutos.css">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/listarProdutos.css">
 </head>
 
 <body>
@@ -14,42 +14,42 @@
         <div id="menu">
             <div id="top">
                 <ul>
-                    <li><img src="./img/logo.png"></li>
+                    <li><img src="/img/logo.png"></li>
                 </ul>
             </div>
 
             <div id="menu-options">
                 <ul id="options">
 
-                    <li id="seller"> <img src="./img/seller.png">
+                    <li id="seller"> <img src="/img/seller.png">
                         <a href=""> Vendedores</a>
                     </li>
                     <hr>
-                    <li id="cleint"> <img src="./img/cleint.png">
+                    <li id="cleint"> <img src="/img/cleint.png">
                         <a href=""> Fornecedores</a>
                     </li>
                     <hr>
-                    <li id="represented"> <img src="./img/home.png">
+                    <li id="represented"> <img src="/img/home.png">
                         <a href=""> Representada</a>
                     </li>
                     <hr>
-                    <li id="payment"> <img src="./img/payment-plans.png">
+                    <li id="payment"> <img src="/img/payment-plans.png">
                         <a href=""> Planos de Pagamento</a>
                     </li>
                     <hr>
-                    <li id="price"> <img src="./img/price.png">
+                    <li id="price"> <img src="/img/price.png">
                         <a href=""> Tabela de Preços</a>
                     </li>
                     <hr>
-                    <li id="product"> <img src="./img/product.png">
+                    <li id="product"> <img src="/img/product.png">
                         <a href="""> Produtos</a>
                     </li>
                     <hr>
-                    <li id=" requests"> <img src="./img/cart.png">
+                    <li id=" requests"> <img src="/img/cart.png">
                             <a href="">Pedidos</a>
                     </li>
                     <hr>
-                    <li id="report"> <img src="./img/report.png">
+                    <li id="report"> <img src="/img/report.png">
                         <a href="">Relatórios</a>
                     </li>
                     <hr>
@@ -67,7 +67,7 @@
                 <div id="img-Avatar">
                     <div>
                         <ul>
-                            <li id="avatar" > <img src="./img/businessman.png" > </li>
+                            <li id="avatar" > <img src="/img/businessman.png" > </li>
                        </ul>
 
                     </div>
@@ -83,11 +83,11 @@
                
                 <div id="panel-header">
                     <div id="return">
-                        <img src="./img/arrow.png" alt="">
+                        <img src="/img/arrow.png" alt="">
                     </div>
 
                     <div id="panel-header-option">
-                       <a id="return-a" href="./administrador.html"> Retornar </a>
+                       <a id="return-a" href="/administrator"> Retornar </a>
                     </div>
 
                 </div>
@@ -112,10 +112,10 @@
                         <div id="search">
                             <label for="search-id">Pesquisar:</label>
                             <input type="text" id="search-id">
-                            <a href=""><img src="./img/search.png"></a>
+                            <a href=""><img src="/img/search.png"></a>
                         </div>
                         <div id="btn-img">
-                            <button id="btn"><a href="./adm-cadastrarProduto.html">Adicionar</a></button>
+                            <button id="btn"><a href="/administrator/product/create">Adicionar</a></button>
                           
                         </div>
 
@@ -143,8 +143,8 @@
                             <td>R$ 80,00</td>
                             <td>R$ 200,00</td>
                             <td>50</td>
-                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href="http://"><img
-                                        src="./img/cancel.png"></a></td>
+                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
+                                        src="/img/cancel.png"></a></td>
                         </tr>
                         <tr>
                             <td>2</td>
@@ -154,8 +154,8 @@
                             <td>R$ 260,00</td>
                             <td>R$ 600,00</td>
                             <td>10</td>
-                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href=""><img
-                                        src="./img/cancel.png"></a></td>
+                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
+                                        src="/img/cancel.png"></a></td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -165,8 +165,8 @@
                             <td>R$ 300,00</td>
                             <td>R$ 780,00</td>
                             <td>00</td>
-                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href="http://"><img
-                                        src="./img/cancel.png"></a></td>
+                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
+                                        src="/img/cancel.png"></a></td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -176,8 +176,8 @@
                             <td>R$ 300,00</td>
                             <td>R$ 780,00</td>
                             <td>00</td>
-                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href="http://"><img
-                                        src="./img/cancel.png"></a></td>
+                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
+                                        src="/img/cancel.png"></a></td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -187,8 +187,8 @@
                             <td>R$ 250,00</td>
                             <td>R$ 610,00</td>
                             <td>20</td>
-                            <td><a href="./adm-editarProduto.html"><img src="./img/edit.png"></a> <a href="http://"><img
-                                        src="./img/cancel.png"></a></td>
+                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
+                                        src="/img/cancel.png"></a></td>
                         </tr>
                     </div>
                 </table>
