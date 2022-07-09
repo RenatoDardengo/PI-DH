@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    
     text-decoration: none;
 }
 
@@ -13,93 +11,57 @@ body {
 }
 
 #header {
-
-
-    display: flex;
+     display: flex; 
     background-color: black;
     height: 50px;
     justify-content: space-between;
 
 }
-#btn-summary-total{
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-    transition: background .3s;
-    border-radius: 5px;
-    background-color:yellow;
-    width: 110px;
-    height: 35px;
-    position: relative;
-    margin-left: 100px;
-    margin-top: 50px;
-}
-#product-shipping{
-    padding-top: 20px;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
 
-
-#header a {
-    text-decoration: none;
-    color: aliceblue;
-    transition: 1s;
-    font-weight: bold;
-
-}
-
-#header-options {
-    margin-top: 15px;
-    margin-right: 15px;
-}
-
-#header-options>a {
-    margin-left: 10px;
-    margin-right: 15px;
-}
-
-#menu {
-
-    background-color: yellow;
-    height: 25px;
-}
-
-#menu>a {
-    margin-left: 50%;
-    font-weight: bold;
-    color: black;
-    margin-top: 5px;
-}
-
-#title-list {
+#product-list{
     display: flex;
+    
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 15px;
 
+}
+
+#product-list-information{
+    
+    width: 70%;
+}
+
+
+ #title-list {
+    display:flex;
     text-align:start;
-
     margin-top: 30px;
     
+    
 
-}
-
-#product-title-product {
-
-    width: 25%;
-    margin-left: 2px;
-}
+} 
 
 #product-title-qtde {
-    width: 15%;
+    width: 20%;
     margin-left: 2px;
+} 
+ 
+#product-title-product {
+
+    width: 35%;
+    margin-left: 5px;
 }
+
+
 
 #product-title-price {
-    width: 25%;
-    margin-left: 2px;
+    width: 30%;
+    margin-left: 30px;
 }
 
-#product-title-entrega {
-    width: 20%;
+#product-title-delivery {
+    width: 15%;
     margin-left: 4px;
 
 }
@@ -109,8 +71,8 @@ body {
 }
 #product-img{
     display: flex;
-    width: 25%;
-    margin-left: 2px;
+    width: 35%;
+    margin-left: 5px;
 }
 
 #product-description {
@@ -123,19 +85,19 @@ body {
 }
 
 #product-qtde input {
-    width: 30px;
+    width: 40px;
 
 }
 
 #product-qtde {
-    width: 15%;
+    width: 20%;
     margin-left: 2px;
     margin-top: 10px;
 }
 
 #product-deliveryTime {
 
-    width: 20%;
+    width: 15%;
     margin-left: 2px;
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -144,62 +106,141 @@ body {
 }
 
 #product-price {
-    width: 25%;
-    margin-left: 4px;
+    width: 30%;
+    margin-left: 10px;
     margin-top: 10px;
+}
+#product-shipping{
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+#product-shipping input{
+    height: 25px;
+    border-radius: 5px;
+    width: 150px;
+}
+#phrase-cep{
+    /* text-decoration:none; */
+    color: #8f9296;
+}
+
+#product-shipping a:hover{
+    text-decoration: underline black;
+    font-size: 18px;
 }
 
 #order-summary {
-    background-color: beige;
-    position: relative;
-    left: 75%;
+    background-color: yellow;
     padding-top: 5px;
-    padding-left: 5px;
-    bottom: 150px;
-    height: 250px;
-    width: 350px;
+    margin-right: 10px;
     border-radius: 5px;
-    
-
-    border: 1px solid darkgray;
+    width: 25%;
+    height: 230px;
+    /* border: 1px solid darkgray; */
 }
-hr{
-    width: 70%;
+#order-summary-title{
+    width: 100%;
+    text-align: center;
+}
+#btn-summary-total{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:black;
+    width: 130px;
+    height: 35px;
+     margin-top: 40px;
+    
+    
+}
+#btn-product-shipping{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:black;
+    width: 40px;
+    height: 35px;
+     
+}
+.div-btn{
+    width: 100%;
+    text-align: center;
+    
+}
+#div-btn-a{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+#div-btn-a a{
+    color: #8f9296;
+
+}
+#div-btn-a :hover{
+    text-decoration: underline black;
+    font-size: 18px;
+}
+#header a {
+    text-decoration: none;
+    color: aliceblue;
+    transition: 1s;
+    font-weight: bold;
+
+}
+#header-options {
+    margin-top: 15px;
+    margin-right: 15px;
+}
+#header-options>a {
+    margin-left: 10px;
+    margin-right: 15px;
+}
+#menu {
+
+    background-color: yellow;
+    height: 25px;
+}
+#menu>a {
+    margin-left: 50%;
+    font-weight: bold;
+    color: black;
+    margin-top: 5px;
 }
 #summary-shipping{
     display: flex;
     margin-top: 10px;
+    justify-content: space-between;
+    
 }
 #summary-shipping a{
     color: green;
 }
 #summary-shipping-value{
-    position: relative;
-    left: 35%;
+   margin-right: 20px;
     
 }
-
 #summary-information {
     display: flex;
     margin-top: 15px;
+    justify-content: space-between;
 }
-.summary-total{
-    
-    
+#summary-total{
     margin-top: 15px;
-    
+    display: flex;
+    justify-content: space-between;
+     
+ }
+ #summary-information-value {
+    margin-right: 20px;
 }
 
-
-
-#summary-information-value {
-    margin-left: 10%;
-}
 #summary-total-value{
-    position: relative;
-    left: 50%;
-    top: -15px;
-}
+    margin-right: 20px;
+} 
 
 
 .footer-distributed {
@@ -211,6 +252,9 @@ hr{
     text-align: center;
     padding: 50px 60px 40px;
     overflow: hidden;
+    bottom: 0;
+    
+    
 }
 
 .footer-distributed h3 {
@@ -262,15 +306,20 @@ hr{
     margin-bottom: 5px;
 }
 
-@media (max-width:900px) {
+@media (max-width:600px) {
     #menu>a {
         margin-left: 0%;
+    }
+    #product-list{
+        display:block;
+       
+    
     }
 
     #header {
 
         flex-direction: column;
-        height: 100px;
+        height: 85px;
         flex-wrap: wrap;
         align-content: center;
 
@@ -290,10 +339,16 @@ hr{
         margin-left: 2px;
         margin-right: 2px;
     }
+    #product-list-information{
+        margin-left: 10px;
+        width: 95%;
+    }
     #order-summary {
-        left: 1%;
-        bottom: 0px;
-        margin-bottom: 10px;
+        margin-left: 10px;
+        width: 95%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
     }
 
 
