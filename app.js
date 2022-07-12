@@ -6,6 +6,8 @@ const admRoute = require("./src/routes/admRoute")
 const checkoutRoute = require("./src/routes/checkoutRoute")
 const userRouter = require("./src/routes/userRouter");
 const clienteRoute = require("./src/routes/clienteRoute");
+const paginaDeProdutoRoute = require("./src/routes/paginaDeProdutoRoute")
+const confirmacaoRoute = require("./src/routes/confirmacaoRoute")
 
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
@@ -17,6 +19,8 @@ app.use("/administrator", admRoute)
 app.use("/checkout", checkoutRoute)
 app.use("/", userRouter);
 app.use("/painelCliente", clienteRoute);
+app.use("/paginaDeProduto", paginaDeProdutoRoute)
+app.use("/confirmacao", confirmacaoRoute)
 
 
 

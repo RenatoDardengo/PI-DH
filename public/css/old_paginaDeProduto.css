@@ -8,7 +8,7 @@
 
 /* Header Victor Hugo */
 
-/* header{
+header{
     
     height: 80px;
     background-color: black;
@@ -131,14 +131,13 @@ header .pesquisa{
     
     width: 1450px;
     height: 400px ;
-} */
+}
 
 /* Final Header Victor Hugo */
 
 /* Corpo Pagina de produtos Marcel de Sousa*/
 
 main {
-    padding:10px;
     width:100%;
     background-color: rgb(250, 245, 245);
     display:flex;
@@ -204,28 +203,26 @@ main {
 #container-ppZoom {
     padding: 15px;
     margin-left: 5.3vw;
-    /* margin-bottom: 70px; */
+    margin-bottom: 70px;
     display: flex;
-    width: 45.3vw;
-    height: 25rem;
+    width: 45%;
+    height: 370px;
     position: absolute;
     background-color: white;
     border-radius: 15px;
     border: rgb(240, 240, 252) solid 2px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
 }
 .ppZoom1 {
-    padding: 0px 100px 50px 100px;
-    width: 40vw;
-    /* height: 400px; */
+    padding: 0px 100px 0px 100px;
+    width: 100%;
+    height: 100%;
 }
 #container-ppDescription {
-    margin-top: 47vh;
+    margin-top: 30%;
+    margin-left: 4px;
     padding-bottom: 10px;
     border-radius: 15px;
-    width: 50.5vw;
+    width: 50%;
     max-height: 1800px;
     display: flex;
     background-color: rgb(250, 245, 245);
@@ -280,7 +277,7 @@ main {
     font-size: 25px;
 }
 .ppMedida {
-    /* margin-top: 20px; */
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
 }
@@ -308,21 +305,19 @@ main {
 #container-ppCompras {
     margin-top: 20px;
     width: 100%;
-    height: 5%;
+    height: 5vh;
     text-align: center;
     display: flex;
     justify-content: center;
     background-color: black;
-    border-radius: 10px;
+    color: white;
     box-shadow: 4px 4px 4px gray;
-    /* text-decoration: none; */
+    text-decoration: none;
 }
 .ppButtom {
+    margin-top: 2%;
     text-decoration: none;
-    font-size: 30px;
     color: white;
-    display: flex;
-    align-items: center;
 }
 #container-ppCompras:hover {
     cursor:pointer;
@@ -413,7 +408,7 @@ main {
 
 /* footer Victor Hugo */
 
-/* footer{
+footer{
     width: 100%;
     height: 70px;
     border: solid 1px black;
@@ -422,64 +417,6 @@ main {
 }
 .textofooter{
     color: aliceblue;
-} */
+}
 
 /* Final footer Victor Hugo */
-
-@media only screen and (max-width: 720px) {
-    main {
-        width: 100%;
-    }
-    .ppMedida {
-        display: flex;
-        flex-direction: column;
-    }
-    #container-ppZoom {
-        width: auto;
-        height: auto;
-    }
-    .ppZoom1 {
-        padding-top: 55px;
-        width: 40vw;
-        height: 25vh;
-    }
-    #container-ppDescription {
-        margin-top: 300px;
-    }
-  }
-@media only screen and (max-width: 1000px) {
-    .ppMedida {
-        display: flex;
-        flex-direction: column;
-    }
-    #container-ppCompras {
-        padding: 20px;
-    }
-    #container-ppZoom {
-        width: 45vw;
-        height: auto;
-    }
-    .ppZoom1 {
-        /* padding-top: 55px; */
-        width: 80vw;
-        height: 25vh;
-    }
-    #container-ppDescription {
-        margin-top: 300px;
-    }
-  }
-  /* A partir daqui table grande ou computador ou maior */
-  /* @media (min-width: 768px) {
-    div {
-      background-color: green;
-      width: 50%;
-      height: 400px
-    }
-  } */
-  /* A partir daqui computador ou maior */
-  /* @media (min-width: 1280px) {
-    div {
-      background-color: black;
-      width: 20%;
-    }
-  } */
