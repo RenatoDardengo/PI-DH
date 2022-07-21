@@ -2,14 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: Gotham; */
-  color: #323232;
+  font-family: Gotham;
+  /* color: #323232; */
+  color: white;
+ 
   border: none;
 }
 
 textarea:focus,
 input:focus {
   outline: none;
+  
 }
 
 
@@ -18,11 +21,12 @@ a {
 }
 
 a:hover {
-  color: #08558B;
+  color: #bdd9ec;
 }
 
 #login-container {
-  background-color:#FFF;
+  /* background-color:#FFF; */
+  background-color:#2d3643;
   margin-left: auto;
   margin-right: auto;
   width: 400px;
@@ -64,6 +68,8 @@ input {
   padding: 10px;
   font-size: 1rem;
   margin-bottom: 20px;
+  color: black;
+  border-radius: 7px;
   
 }
 
@@ -85,8 +91,10 @@ input:focus {
   border-radius: 10px;
   margin-top: 30px;
   cursor: pointer;
-  color: #FFF;
-  background-color: black;
+  /* color: #FFF;
+  background-color: black; */
+  color: black;
+  background-color:rgb(241, 236, 236);
   font-weight: bold;
 }
 

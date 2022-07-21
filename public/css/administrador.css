@@ -106,11 +106,6 @@ html {
     height: 30px;
 
  }
- #panel-header a {
-   text-decoration: none;
-   color: black;
-
- }
 
 #avatar img {
     border: 1px solid black;
@@ -126,7 +121,6 @@ html {
 
 #panel-header :hover {
     cursor: pointer;
-    font-size: 19px;
     
 
 }
@@ -148,6 +142,7 @@ html {
     padding: 0.01em 20px;
     padding-top: 15px;
     padding-left: 50px;
+    
 }
 
 .container:after,
@@ -185,7 +180,7 @@ html {
 
 .button:hover {
     color: #000 !important;
-    background-color: #ccc !important;
+    background-color: rgb(231, 28, 28) !important;
 }
 
 .button:disabled {
@@ -249,7 +244,9 @@ html {
 
 @media (min-width:993px) {
     .modal-content {
-        width: 900px
+        width: 600px;
+        height: 200px;
+        
     }
 }
 
@@ -276,7 +273,7 @@ html {
 .teal {
     color: #fff !important;
     /* background-color:#009688!important; */
-    background-color: #2d3643 !important;
+    background-color:  #657080 !important;
 }
 
 .display-topright {

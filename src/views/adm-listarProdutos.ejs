@@ -187,7 +187,7 @@
                             <td>R$ 250,00</td>
                             <td>R$ 610,00</td>
                             <td>20</td>
-                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
+                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a onclick="document.getElementById('id01').style.display='block'"><img
                                         src="/img/cancel.png"></a></td>
                         </tr>
                     </div>
@@ -197,7 +197,37 @@
             
 
         </div>
+
+       
     </span>
+    <div id="id01" class="modal">
+        <div class="modal-content animate-zoom card-4">
+            <header class="container teal">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class=" button display-topright">&times;</span>
+                <h2>Confirmar exclusão!</h2>
+            </header>
+            <div class="container">
+                <h4>Deseja excluir o item selecionado?</h4>
+                
+                <form action="">
+                <label for="id"> Id:</label>
+                <input type="text" name="id"    disabled>
+                <label for="Descricao"> Descrição:</label>
+                <input type="text" name="Descricao"disabled>
+                
+                <button id="btn"> Confirmar</button>
+                </form>
+                
+                <br>
+             
+            </div>
+           
+                
+            
+
+        </div>
+    </div>
    
 
 </body>
