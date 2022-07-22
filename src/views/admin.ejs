@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/admin.css">
+  </head>
+<body>
+  <div id="login-container">
+    <h1>Administrador</h1>
+    <form action="/administrator" method="get">
+      <label for="usuario">Usuário</label>
+      <input type="text" name="usuario" id="usuario" placeholder="Digite seu usuário" autocomplete="off" required>
+      <label for="password">Senha</label>
+      <div id="passwor-img">
+        <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
+         <a href="javaScript:mostrarSenha()"> <img src="/img/view2.png" alt="" id="img-password"></a>
+        <script>
+          function mostrarSenha() {
+              var tipo = document.getElementById("password");
+              
+              if (tipo.type == "password") {
+                  tipo.type = "text";
+                  document.getElementById("img-password").src="/img/hidden2.png"
+              } else {
+                  tipo.type = "password";
+                  document.getElementById("img-password").src="/img/view2.png"
+              }
+          }
+      </script>
+
+      </div>
+      
+      <a href="/administrator" id="forgot-pass">Esqueceu a senha?</a>
+      <button type="submit" id="btn">Login</button>
+      
+    </form>
+        <div id="cadastrar-container">
+      
+      <a href="/">voltar para home</a>
+    </div>
+  </div>
+</body>
+</html>
