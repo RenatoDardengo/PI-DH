@@ -8,130 +8,1138 @@
 
 /* Header Victor Hugo */
 
-/* header{
-    
-    height: 80px;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (min-width: 0px) and (max-width: 99px)
+{
+   *{
+       display: none;
+
+
+   }
+
+
+}
+@media (min-width: 100px) and (max-width: 459px){
+   .abremenu{
+       margin-left: 2%;
+       margin-top: 4%;
+       cursor: pointer;
+       width: 50px;
+      
+       
+   }
+   
+   .abremenu div{
+       border-bottom: solid 2px white;
+       width: 80%;
+       height: 10px;
+      
+
+
+   }
+
+
+ 
+   
+   .headermobile{
+       width: 100vw;
+       height: 80px;
+       border: solid 1px black;
+       position: fixed;
+       background-color: black;
+       margin-top: -20px;
+       
+       
+   }
+   
+   .headermobile img{
+       margin-left: 45%;
+       position: fixed;
+       top: 5px;
+       margin-top: 10px;
+
+
+   }
+   .header{
+       border: solid 1px black;
+       height: 100vh;
+       width: 80%;
+       position: fixed;
+       background-color: black;
+       left: -80%;
+       margin-top: 60px;
+      
+
+   }
+   .header.mostra{
+       left: 0;
+   }
+   .img {
+       display: flex;
+       align-items: flex-start;
+       justify-content: center;
+       height: 100%;
+       
+       width: 50%;
+
+       
+
+
+   }
+   
+   #imgTablet img {
+       width: 200px;
+       margin-bottom: 20px;
+       
+   }
+   #img img {
+       
+       display: none;
+       
+   }
+
+
+
+  #img2{ 
+       width: 25px;
+       height: 25px;
+       margin-top: 50px;
+       display: none;
+   }
+
+   #linkvalor{
+       color: black;
+       text-decoration: none;
+       font-size: 30px;
+   
+   }
+ 
+   a{
+       text-decoration: none;
+       color: white;
+       font-size: 40px;
+   }
+   a:hover{
+       color: yellow;
+       transition: 5ms;
+
+   }
+
+   .menu{
+       position: absolute;
+       
+       margin-top: 50px;
+     
+   }
+
+   .feminino,.masculino,.inverno,.promo{
+       margin-top: 25px;
+       
+       width: 170%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: flex-start;
+       height: 70px;
+   }
+
+
+
+   .pesquisa{
+       position: absolute;
+       margin-top: 60%;
+       left: 8%;
+       
+   }
+   .pesquisa input{
+       width: 100%;
+       height: 50px;
+       display: none;
+
+   }
+   .redes{
+       position: fixed;
+       margin-top: 120%;
+       
+       display: flex;
+       flex-direction: column;
+       
+       justify-content: flex-end;
+        align-items: flex-start;
+
+   }
+
+   .cadastro,.login{
+       margin-left: 5%;
+       
+       
+       
+       margin-top: 40px;
+
+   }
+
+
+
+   #carrocel{
+  
+       width: 100%;
+       height: 350px;
+       border: solid 1px black;
+       display: flex;
+       overflow: hidden;
+       outline: 3px solid black;
+       box-shadow: 10px 10px 15px;
+       position: absolute;
+       top: 75px;
+       display: none;
+       
+   }
+   
+   .imgcarrocel{
+      
+       width:900px ;
+       height: 350px;
+       display: none;
+   }
+
+   .imgcarrocel1{
+
+       width: 900px;
+       height: 350px;
+       display: none;
+   }
+   .imgcarrocel2{
+       
+       width: 900px;
+       height: 350px ;
+       display: none;
+   }
+   
+
+   
+   
+   #carrocel ul{
+       display: flex;
+       list-style: none;
+       width: 900px;
+       height: 150px;
+       display: none;
+   }
+   #carrocel li{
+       position: relative;
+       animation: slide 15s infinite linear;
+   }
+   
+   @keyframes slide {
+       0% {left: 0}
+       33% {left: 900px}
+       66%{left: 1200px}
+       100% {left: 0}
+   }
+
+   #vitrine{
+   width: 100%;
+   height: 750px;
+   
+   margin-top: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
    
 }
-#img{
-    position: absolute;
-    left: 25px;
-    
+.vitrine1{
+   width: 40%;
+   height: 50%;
    
+   margin-top: 50px;
+   margin-left: 5px;
+   margin-right: 5px;
+   
+}
+
+.imagempd{
+   width: 100%;
+   height: 75%;
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+
+}
+.texto{
+   width: 100%;
+   height: 15%;
+   color: black;
+   margin-top: -25px;
+   
+   display: flex;
+   justify-content: center;
+}
+
+.texto h4{
+   color: black;
+
+
+}
+.valor{
+   width: 100%;
+   height: 10%;
+   margin-top: -25px;
+  
+   display: flex;
+   justify-content: center;
+
+}
+#blablabla{
+   width: 100%;
+   height: 75%;
+
+}
+
+
+
+   
+#marcas{
+  
+   width: 100%;
+   height: 70px;
+   margin-top: 150%;
+   
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: black;
+
+
+}
+
+#marcas h1 {
+   color: white;
+
+
+}
+
+
+
+.novidades{
+  
+   width: 100%;
+   height: 750px;
+   margin-top: -50px;
+   
+   margin-bottom: 5px;
+   display: flex;
+   flex-wrap: wrap;
+  justify-content: space-around;
+   
+
+
+}
+
+footer{
+   width: 100vw;
+   height: 25vh;
+   border:solid 1px white;
+   background-color: black;
+   margin-top: 70px;
+   display: flex;
+   display: flex;
+   justify-content: center;
+  
+   flex-direction: column;
+
+
+
+}
+
+footer .linkfooter{
+   font-size: 20px;
+   display: flex;
+
+
+
+}
+
+
+   
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 460px) and (max-width: 970px){
+   .abremenu{
+       margin-left: 2%;
+       margin-top: 4%;
+       cursor: pointer;
+       width: 50px;
+      
+       
+   }
+   
+   .abremenu div{
+       border-bottom: solid 2px white;
+       width: 80%;
+       height: 10px;
+      
+
+
+   }
+
+
+ 
+   
+   .headermobile{
+       width: 100vw;
+       height: 80px;
+       border: solid 1px black;
+       position: fixed;
+       background-color: black;
+       margin-top: -20px;
+       
+       
+   }
+   
+   .headermobile img{
+       margin-left: 45%;
+       position: fixed;
+       top: 5px;
+       margin-top: 10px;
+
+
+   }
+   .header{
+       border: solid 1px black;
+       height: 100vh;
+       width: 50%;
+       position: fixed;
+       background-color: black;
+       left: -50%;
+       margin-top: 60px;
+      
+
+   }
+   .header.mostra{
+       left: 0;
+   }
+   .img {
+       display: flex;
+       align-items: flex-start;
+       justify-content: center;
+       height: 100%;
+       
+       width: 50%;
+
+       
+
+
+   }
+   
+   #imgTablet img {
+       width: 200px;
+       margin-bottom: 20px;
+       
+   }
+   #img img {
+       
+       display: none;
+       
+   }
+
+
+
+  #img2{ 
+       width: 25px;
+       height: 25px;
+       margin-top: 50px;
+       display: none;
+   }
+
+   #linkvalor{
+       color: black;
+       text-decoration: none;
+       font-size: 30px;
+   
+   }
+ 
+   a{
+       text-decoration: none;
+       color: white;
+       font-size: 40px;
+   }
+   a:hover{
+       color: yellow;
+       transition: 5ms;
+
+   }
+
+   .menu{
+       position: absolute;
+       
+       margin-top: 50px;
+     
+   }
+
+   .feminino,.masculino,.inverno,.promo{
+       margin-top: 25px;
+       
+       width: 170%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: flex-start;
+       height: 70px;
+   }
+
+
+
+   .pesquisa{
+       position: absolute;
+       margin-top: 60%;
+       left: 8%;
+       
+   }
+   .pesquisa input{
+       width: 100%;
+       height: 50px;
+       display: none;
+
+   }
+   .redes{
+       position: fixed;
+       margin-top: 120%;
+       
+       display: flex;
+       flex-direction: column;
+       
+       justify-content: flex-end;
+        align-items: flex-start;
+
+   }
+
+   .cadastro,.login{
+       margin-left: 5%;
+       
+       
+       
+       margin-top: 40px;
+
+   }
+
+
+
+   #carrocel{
+  
+       width: 100%;
+       height: 350px;
+       border: solid 1px black;
+       display: flex;
+       overflow: hidden;
+       outline: 3px solid black;
+       box-shadow: 10px 10px 15px;
+       position: absolute;
+       top: 75px;
+       display: none;
+       
+   }
+   
+   .imgcarrocel{
+      
+       width:900px ;
+       height: 350px;
+       display: none;
+   }
+
+   .imgcarrocel1{
+
+       width: 900px;
+       height: 350px;
+       display: none;
+   }
+   .imgcarrocel2{
+       
+       width: 900px;
+       height: 350px ;
+       display: none;
+   }
+   
+
+   
+   
+   #carrocel ul{
+       display: flex;
+       list-style: none;
+       width: 900px;
+       height: 150px;
+       display: none;
+   }
+   #carrocel li{
+       position: relative;
+       animation: slide 15s infinite linear;
+   }
+   
+   @keyframes slide {
+       0% {left: 0}
+       33% {left: 900px}
+       66%{left: 1200px}
+       100% {left: 0}
+   }
+
+   #vitrine{
+   width: 100%;
+   height: 750px;
+   
+   margin-top: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   
+}
+.vitrine1{
+   width: 30%;
+   height: 50%;
+   
+   margin-top: 50px;
+   margin-left: 5px;
+   margin-right: 5px;
+   
+}
+
+.imagempd{
+   width: 100%;
+   height: 75%;
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+
+}
+.texto{
+   width: 100%;
+   height: 15%;
+   color: black;
+   margin-top: -25px;
+   
+   display: flex;
+   justify-content: center;
+}
+
+.texto h4{
+   color: black;
+
+
+}
+.valor{
+   width: 100%;
+   height: 10%;
+   margin-top: -25px;
+  
+   display: flex;
+   justify-content: center;
+
+}
+#blablabla{
+   width: 100%;
+   height: 75%;
+
+}
+
+
+
+   
+#marcas{
+  
+   width: 100%;
+   height: 70px;
+   margin-top: 30%;
+   
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: black;
+
+
+}
+
+#marcas h1 {
+   color: white;
+
+
+}
+
+
+
+.novidades{
+  
+   width: 100%;
+   height: 750px;
+   margin-top: -50px;
+   
+   margin-bottom: 5px;
+   display: flex;
+   flex-wrap: wrap;
+  justify-content: space-around;
+   
+
+
+}
+
+footer{
+   width: 100vw;
+   height: 25vh;
+   border:solid 1px white;
+   background-color: black;
+   margin-top: 150px;
+   display: flex;
+   justify-content: center;
+ 
+
+
+
+}
+footer .linkfooter{
+   font-size: 20px;
+   display: flex;
+
+
+}
+
+   
+ 
+
+
+}
+
+
+
+
+@media (min-width: 971px){
+   
+header{
+   
+   height: 10vh;
+   background-color: black;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   top:-50px
+  
+}
+#img{
+   position: absolute;
+   left: 25px;
+   
+  
 }
 
 header .menu{
-    color: white;
-    display: flex;
-    
-    align-items: center;
-    width: 50%;
-    height: 100%;
-    position: relative;
-    right: -60px;
+   color: white;
+   display: flex;
+   
+   align-items: center;
+   width: 50%;
+   height: 100%;
+   position: relative;
+   right: -60px;
 }
 
 .feminino, .masculino, .inverno, .promo {
-    margin-right: 7px;
-    margin-left: 30px;
+   margin-right: -5%;
+   margin-left: 10%;
 }
 .links{
-    color: white;
-    text-decoration:none;
-    font-size: inherit;
+   color: white;
+   text-decoration:none;
+   font-size: inherit;
 }
 
 .links:hover{
-    border-bottom: solid 1px yellow;
-    transition: 2s linear;
+   border-bottom: solid 1px yellow;
+   transition: 2s linear;
 }
 header label{
-    color: aliceblue;
+   color: aliceblue;
 }
 
 header .pesquisa{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: solid 1px white;
-    width: 250px;
-    height: 30px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-bottom: solid 1px white;
+   width: 15%;
+   height: 34%;
 }
 
 #pesquisa1{
-    border: none;
-    background: none;
-    outline:none ;
-    color: aliceblue;
-    margin-left: 10px;
-    
+   border: none;
+   background: none;
+   outline:none ;
+   color: aliceblue;
+   margin-left: 4%;
+   
 }
 .redes{
-    
-    width: 10%;
-    height: 30px;
-    position: relative;
-    right: -70px;
-    display:flex ;
-
+   
+   width: 10%;
+   height: 30%;
+   position: relative;
+   right: -5%;
+   display:flex ;
+   justify-content: center;
+   align-items: center;
 }
 .login{
-    
-    width: 50%;
-    height: 30px;
-    color: aliceblue;
-    display: flex;
-    align-items:center ;
+   
+   width: 50%;
+   height: 30px;
+   color: aliceblue;
+   display: flex;
+   align-items:center ;
 
 }
 .cadastro{
-    display: flex;
-    align-items: center;
+   display: flex;
+   align-items: center;
 
 }
 
 
 #img2{
-    width: 30px;
-    height: 30px;
+   width: 30px;
+   height: 30px;
 
 }
 #linkvalor{
-    color: black;
-    text-decoration: none;
+   color: black;
+   text-decoration: none;
 
 }
 
 #carrocel{
-   
-    width: 100%;
-    height: 400px;
-    border: solid 1px black;
-    display: flex;
-    overflow: hidden;
-    outline: 3px solid black;
-    box-shadow: 10px 10px 15px;
+  
+   width: 100%;
+   height: 400px;
+   border: solid 1px black;
+   display: flex;
+   overflow: hidden;
+   outline: 3px solid black;
+   box-shadow: 10px 10px 15px;
+   margin-top: -47px
 }
 
 .imgcarrocel{
-   
-    width: 1450px;
-    height: 400px;
+  
+   width: 1450px;
+   height: 400px;
 }
 .imgcarrocel1{
 
-    width: 1450px;
-    height: 400px;
+   width: 1450px;
+   height: 400px;
 }
 .imgcarrocel2{
-    
-    width: 1450px;
-    height: 400px ;
-} */
+   
+   width: 1450px;
+   height: 400px ;
+}
+
+
+#carrocel ul{
+   display: flex;
+   list-style: none;
+   width: 1300px;
+   height: 400px;
+}
+#carrocel li{
+   position: relative;
+   animation: slide 15s infinite linear;
+}
+
+@keyframes slide {
+   0% {left: 0px}
+   33% {left: -1450px}
+   66%{left: -2900px}
+   100% {left: 0px}
+}
+
+#vitrine{
+   width: 100%;
+   height: 750px;
+   
+   margin-top: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   
+}
+.vitrine1{
+   width: 20%;
+   height: 50%;
+   
+   margin-top: 5px;
+   margin-left: 5px;
+   margin-right: 5px;
+   
+}
+
+.imagempd{
+   width: 100%;
+   height: 75%;
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+
+}
+.texto{
+   width: 100%;
+   height: 15%;
+   margin-top: -25px;
+   
+   display: flex;
+   justify-content: center;
+}
+.valor{
+   width: 100%;
+   height: 10%;
+   margin-top: -25px;
+  
+   display: flex;
+   justify-content: center;
+
+}
+#blablabla{
+   width: 100%;
+   height: 75%;
+
+}
+#marcas{
+  
+   width: 100%;
+   height: 70px;
+   
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: black;
+
+
+}
+
+#marcas h1 {
+   color: white;
+
+
+}
+
+
+
+
+.novidades{
+ 
+   width: 100%;
+   height: 700px;
+   margin-bottom: 5px;
+   display: flex;
+   flex-wrap: wrap;
+  justify-content: space-around;
+   
+
+
+}
+#carrocel2{
+  
+   width: 100%;
+   height: 400px;
+   border: solid 1px black;
+   display: flex;
+   justify-content: space-around;
+  
+  
+  
+}
+
+#carrocel2 .img1{
+ 
+   height: 100%;
+   display: flex;
+   align-items: center;
+
+
+}
+#carrocel2 .img2{
+   
+   height: 100%;
+   display: flex;
+   align-items: center;
+
+
+}
+#carrocel2 .img3{
+   
+   height: 100%;
+   display: flex;
+   align-items: center;
+
+
+}
+
+#carrocel2 .img1 img{
+width: 350px;
+
+}
+#carrocel2 .img2 img{
+   width: 350px;
+   
+}
+#carrocel2 .img3 img{
+   width: 350px;
+   
+}
+
+
+
+
+
+.footer-distributed {
+   background: black;
+   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+   box-sizing: border-box;
+   width: 100%;
+   font: bold 16px sans-serif;
+   text-align: center;
+   padding: 50px 60px 40px;
+   overflow: hidden;
+}
+
+.footer-distributed h3 {
+   color: #ffffff;
+   font: normal 36px sans-serif, cursive;
+   margin: 0 0 10px;
+}
+
+.footer-distributed h3 span {
+   color: yellow;
+}
+
+.footer-distributed .footer-links {
+   color: #ffffff;
+   margin: 0 0 10px;
+   padding: 0;
+}
+
+.footer-distributed .footer-links a {
+   display: inline-block;
+   line-height: 1.8;
+   text-decoration: none;
+   color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+   color: #8f9296;
+   font-size: 14px;
+   font-weight: normal;
+   margin: 0;
+}
+
+.footer-distributed .footer-icons {
+   margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a {
+   display: inline-block;
+   width: 35px;
+   height: 35px;
+   cursor: pointer;
+   background-color: #33383b;
+   border-radius: 2px;
+   font-size: 20px;
+   color: #ffffff;
+   text-align: center;
+   line-height: 35px;
+   margin-right: 3px;
+   margin-bottom: 5px;
+}
+
+
+.footer-distributed {
+   background: black;
+   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+   box-sizing: border-box;
+   width: 100%;
+   font: bold 16px sans-serif;
+   text-align: center;
+   padding: 50px 60px 40px;
+   overflow: hidden;
+}
+
+.footer-distributed h3 {
+   color: #ffffff;
+   font: normal 36px sans-serif, cursive;
+   margin: 0 0 10px;
+}
+
+.footer-distributed h3 span {
+   color: yellow;
+}
+
+.footer-distributed .footer-links {
+   color: #ffffff;
+   margin: 0 0 10px;
+   padding: 0;
+}
+
+.footer-distributed .footer-links a {
+   display: inline-block;
+   line-height: 1.8;
+   text-decoration: none;
+   color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+   color: #8f9296;
+   font-size: 14px;
+   font-weight: normal;
+   margin: 0;
+}
+
+.footer-distributed .footer-icons {
+   margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a {
+   display: inline-block;
+   width: 35px;
+   height: 35px;
+   cursor: pointer;
+   background-color: #33383b;
+   border-radius: 2px;
+   font-size: 20px;
+   color: #ffffff;
+   text-align: center;
+   line-height: 35px;
+   margin-right: 3px;
+   margin-bottom: 5px;
+}
+
+}
 
 /* Final Header Victor Hugo */
 
@@ -140,7 +1148,7 @@ header .pesquisa{
 main {
     padding:10px;
     width:100%;
-    background-color: rgb(250, 245, 245);
+    background-color: black;
     display:flex;
     flex-wrap: wrap;
     position: relative;
@@ -149,7 +1157,7 @@ main {
     padding: 10px 0px 10px 0px;
     width: 30%;
     height: 4.1%;
-    background-color: rgb(250, 245, 245);
+    background-color: black;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -166,7 +1174,7 @@ main {
     justify-content: space-evenly;
     text-decoration: none;
     font-size: 25px;
-    color: black;
+    color: white;
 }
 .ppTmm:hover {
     color: orange;
@@ -218,7 +1226,7 @@ main {
 }
 .ppZoom1 {
     padding: 0px 100px 50px 100px;
-    width: 40vw;
+    width: 45vw;
     /* height: 400px; */
 }
 #container-ppDescription {
@@ -468,6 +1476,68 @@ main {
         margin-top: 300px;
     }
   }
+  @media only screen and (min-width: 1281px) {
+	main {
+		padding:0px 328px 0 328px;
+		width:100%;
+		position: absolute;
+		background-color: black;
+	}
+	#container-ppDescription {
+		margin-top: 403px;
+		padding-bottom: 10px;
+		border-radius: 15px;
+		width: 800px;
+		position: absolute;
+	}
+	#container-ppInfProduct {
+		padding: 15px;
+		margin-left: 805px;
+		width: 430px;
+		height: 1170px;
+	}
+	#container-ppVerticalCatalog {
+		padding: 5px;
+		width: 100%;
+		height: 1180px;
+	}
+	.ppZoom1 {
+		padding: 0px 100px 50px 100px;
+		width: 550px;
+	}
+	#container-ppZoom {
+		padding: 15px;
+		margin-left: 5.3vw;
+		display: flex;
+		width: 699px;
+		height: 25rem;
+		position: absolute;
+		background-color: white;
+		border-radius: 15px;
+		border: rgb(240, 240, 252) solid 2px;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+    #container-ppCompras {
+        margin-top: 20px;
+        width: 410px;
+        height: 70px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px gray;
+        /* text-decoration: none; */
+    }
+    #container-ppSubPage {
+        background-color: black;
+    }
+    .ppTmm {
+        color: white;
+    }
+}
   /* A partir daqui table grande ou computador ou maior */
   /* @media (min-width: 768px) {
     div {
@@ -483,3 +1553,4 @@ main {
       width: 20%;
     }
   } */
+  

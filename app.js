@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3006;
 const methodOverride = require("method-override");
 const admRoute = require("./src/routes/admRoute")
 const checkoutRoute = require("./src/routes/checkoutRoute")
