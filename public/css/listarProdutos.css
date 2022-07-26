@@ -26,6 +26,9 @@ html {
 #menu-options>ul>li>a {
     color: azure;
 }
+#product-list tbody tr:hover {
+    background-color: #7abee0ee;}
+
 
 #img-Avatar {
     display: flex;
@@ -137,6 +140,7 @@ html {
     background-color: darkgray;
     margin-top: 10px;
     margin-bottom: 10px;
+    height: 25px;
 }
 
 #header1 {
@@ -205,33 +209,7 @@ td:first-child {
     width: 10%
 }
 
-td:first-child+td {
-    width: 20%
-}
 
-td:first-child+td+td {
-    width: 20%
-}
-
-td:first-child+td+td+td {
-    width: 10%
-}
-
-td:first-child+td+td+td+td+td {
-    width: 10%
-}
-
-td:first-child+td+td+td+td+td+td {
-    width: 10%
-}
-
-td:first-child+td+td+td+td+td+td+td {
-    width: 10%
-}
-
-td:first-child+td+td+td+td+td+td+td+td {
-    width: 10%
-}
 
 #div-table {
 

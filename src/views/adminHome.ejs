@@ -20,11 +20,15 @@
 
             <div id="menu-options">
                 <ul id="options">
+                    <% if(userPermission==="master") {%>
+                        <li id="seller"> <img src="/img/seller.png">
+                            <a onclick="document.getElementById('id01').style.display='block'" > usuários</a>
+                        </li>
+                        <hr>
 
-                    <li id="seller"> <img src="/img/seller.png">
-                        <a onclick="document.getElementById('id01').style.display='block'" > Vendedores</a>
-                    </li>
-                    <hr>
+                   <% }%>
+
+                   
                     <li id="cleint"> <img src="/img/cleint.png">
                         <a onclick="document.getElementById('id01').style.display='block'"> Fornecedores</a>
                     </li>
@@ -71,7 +75,7 @@
                     </div>
                     <div id="avatar-name">
                         <ul>
-                            <li> Fulano de Tal</li>  
+                            <li> <%= user %> </li>  
                         </ul>
 
                     </div>
@@ -83,10 +87,11 @@
                     <div id="panel-header-img">
                         <img src="/img/exit.png" alt="">
                     </div>
-
+                    <form action="/admin/logout" method="post">
                     <div id="panel-header-option">
-                       <a href="/admin"> Sair </a>
+                       <a href="javascript:document.querySelector('form').submit();"> Sair </a>
                     </div>
+                </form>
 
                     
 

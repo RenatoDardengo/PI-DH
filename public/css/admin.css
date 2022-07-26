@@ -81,6 +81,10 @@ input:focus {
   display: block;
   text-align: right;
 }
+.error-alert {
+  font-size: 1.2rem;
+  color: red;
+}
 
 #btn {
   width: 100%;

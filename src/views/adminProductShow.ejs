@@ -73,7 +73,7 @@
                     </div>
                     <div id="avatar-name">
                         <ul>
-                            <li> Fulano de Tal</li>  
+                            <li> <%= user %></li>  
                         </ul>
 
                     </div>
@@ -122,76 +122,58 @@
                     </div>
                 </div>
 
+                <section id="product-list">
+                    <% if(products.length > 0){ %>
+                        <form action="">
+                        <div class="table-container">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Id</th>
+                                <th>Gênero</th>
+                                <th>Marca</th>
+                                <th>Estilo</th>
+                                <th>Numero</th>
+                                <th>Descrição</th>
+                                <th>Custo</th>
+                                <th>Venda</th>
+                                <th>Qtde</th>
+                                <th>Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% for(let product of products) { %>
+                              <tr>
+                                <td><%= product.id %></td>
+                                <td><%= product.genre %></td>
+                                <td><%= product.mark %></td>
+                                <td><%= product.style %></td>
+                                <td><%= product.number %></td>
+                                <td><%= product.description %></td>
+                                <td><%= product.costValue %></td>
+                                <td><%= product.saleValue %></td>
+                                <td><%= product.quantity %></td>
+                                
+                                <td class="table-actions">
+                                    <a href="/administrator/product/edit/<%= product.id%>"><img src="/img/edit.png"></a>
+                                    <a href="/administrator/product/delete/<%= product.id%>"><img src="/img/cancel.png"></a>
+                                    
+                                    <!-- <a onclick="document.getElementById('id01').style.display='block'"><img src="/img/cancel.png"></a> -->
+                                  
+                                </td>
+                              </tr>
+                              <% } %>
+                            </tbody>
+                          </table>
+                        </div>
+                    </form>
+                      <% } else { %>
+                        <h2 class="error-alert">Nenhum usuário encontrado</h2>
+                      <%} %>
 
-                <table>
-                    <div>
-                        <tr>
-                            <th>ID</th>
-                            <th>Gênero</th>
-                            <th>Marca</th>
-                            <th>Estilo</th>
-                            <th>Valor Custo</th>
-                            <th>Valor Venda</th>
-                            <th>Quantidade</th>
-                            <th>Ações</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Masculino</td>
-                            <td>Adidas</td>
-                            <td>Sport</td>
-                            <td>R$ 80,00</td>
-                            <td>R$ 200,00</td>
-                            <td>50</td>
-                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
-                                        src="/img/cancel.png"></a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Masculino</td>
-                            <td>Nike</td>
-                            <td>Sport</td>
-                            <td>R$ 260,00</td>
-                            <td>R$ 600,00</td>
-                            <td>10</td>
-                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
-                                        src="/img/cancel.png"></a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Feminino</td>
-                            <td>Nike</td>
-                            <td>Sport</td>
-                            <td>R$ 300,00</td>
-                            <td>R$ 780,00</td>
-                            <td>00</td>
-                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
-                                        src="/img/cancel.png"></a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Feminino</td>
-                            <td>Nike</td>
-                            <td>Sport</td>
-                            <td>R$ 300,00</td>
-                            <td>R$ 780,00</td>
-                            <td>00</td>
-                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a href="/administrator/product/delete"><img
-                                        src="/img/cancel.png"></a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Feminino</td>
-                            <td>Mizuno</td>
-                            <td>Sport</td>
-                            <td>R$ 250,00</td>
-                            <td>R$ 610,00</td>
-                            <td>20</td>
-                            <td><a href="/administrator/product/edit"><img src="/img/edit.png"></a> <a onclick="document.getElementById('id01').style.display='block'"><img
-                                        src="/img/cancel.png"></a></td>
-                        </tr>
-                    </div>
-                </table>
+                </section>
+                
+                  
 
             </div>
             
@@ -212,7 +194,7 @@
                 
                 <form action="">
                 <label for="id"> Id:</label>
-                <input type="text" name="id"    disabled>
+                <input value = "<%= products.id %>" type="text" name="id"    disabled>
                 <label for="Descricao"> Descrição:</label>
                 <input type="text" name="Descricao"disabled>
                 
