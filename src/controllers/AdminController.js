@@ -81,7 +81,7 @@ const adminController = {
       })
 
     }
-    return res.render("adminProductEdit", { title: "Editar Produto", product: productResult })
+    return res.render("adminProductEdit", { title: "Editar Produto",user: req.session.name, product: productResult })
   },
   delete: (req, res) => {
     const { id } = req.params;
@@ -94,7 +94,7 @@ const adminController = {
 
     }
 
-    return res.render("adminProductDelete", { title: "Deletar Produto" ,product: productResult})
+    return res.render("adminProductDelete", { title: "Deletar Produto" ,user: req.session.name, product: productResult})
   },
 
   destroy:(req, res)=>{
