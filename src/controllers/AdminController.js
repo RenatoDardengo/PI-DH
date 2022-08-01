@@ -98,6 +98,7 @@ const adminController = {
   },
 
   destroy:(req, res)=>{
+    console.log(req.params)
     const{id}=req.params;
     const result = products.findIndex((product)=> product.id ===parseInt(id));
 
