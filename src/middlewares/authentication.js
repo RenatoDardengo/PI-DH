@@ -1,5 +1,5 @@
 const authenticationMiddleware = (req, res,next)=>{
-  const isAuthentication = req.cookies.name;
+  const isAuthentication = req.sesssion.name;
 
   if(isAuthentication){
     next();

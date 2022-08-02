@@ -6,15 +6,15 @@ const Authenticated = require("../middlewares/authentication");
 const { authentication } = require("../controllers/AuthenticationAdminController");
 
 
-router.get("/", adminController.index)
+router.get("/", isAuthenticated, adminController.index)
 
 //rotas produtos
-router.get("/product", adminController.show)
-router.get("/product/create", adminController.create)
-router.post("/product/create", adminController.store)
-router.get("/product/edit/:id", adminController.edit)
-router.get("/product/delete/:id", adminController.delete)
-router.delete("/product/delete/:id", adminController.destroy)
+router.get("/product", isAuthenticated, adminController.show)
+router.get("/product/create", isAuthenticated, adminController.create)
+router.post("/product/create", isAuthenticated, adminController.store)
+router.get("/product/edit/:id",isAuthenticated, adminController.edit)
+router.get("/product/delete/:id", isAuthenticated, adminController.delete)
+router.delete("/product/delete/:id",isAuthenticated, adminController.destroy)
 
 
 module.exports=router;
