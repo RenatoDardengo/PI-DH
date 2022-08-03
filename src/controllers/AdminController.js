@@ -32,10 +32,11 @@ const adminController = {
 
     const { genre, mark, style, number, costValue, saleValue, quantity, description } = req.body;
     let filename = "shoes-defaut.png";
+    
     if(req.file){
-      filename=req.file.filenamecd 
+      filename=req.file.filename
     }
-   
+    
 
       if (!genre || !mark || !style || !number || !costValue || !saleValue || !quantity || !description) {
         
@@ -86,6 +87,7 @@ const adminController = {
       })
 
     }
+    
     return res.render("adminProductEdit", { title: "Editar Produto",user: req.session.name, product: productResult })
   },
   delete: (req, res) => {
