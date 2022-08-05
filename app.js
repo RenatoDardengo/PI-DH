@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const port = process.env.PORT;
+const port = 3000;
 const session = require ("express-session");
 const cookieParser = require ("cookie-parser")
 const methodOverride = require("method-override");
@@ -14,6 +14,7 @@ const paginaDeProdutoRoute = require("./src/routes/paginaDeProdutoRoute")
 const confirmationRoute = require("./src/routes/confirmationRoute")
 const authenticationAdminRoute = require ("./src/routes/authenticationAdminRoute")
 
+app.use(session({ secret: 'somevalue' }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/src/views");
@@ -33,5 +34,5 @@ app.use("/admin", authenticationAdminRoute);
 
 
 app.listen(port, () => {
-    console.log(`Servidor rodando no endereço http://localhost:${port}`)
+    console.log("Servidor rodando na porta"+ port)
 })

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista dos Produtos</title>
+    <link rel="stylesheet" href="/css/produtos.css">
+</head>
+<body>
+    <header class="header">
+        <div id="img">
+        <img src="img/logo.png" alt="img"/>
+        </div>
+            <div class="menu">
+                <div class="feminino"> <a class="links" href="./"> Home </a> </div>  
+                <div class="masculino"> <a class="links" href=""> Categoria </a> </div>
+                <div class="inverno"> <a class="links" href="/produtos"> Produtos </a> </div>
+                 <div class="promo"> <a class="links" href=""> Promoções </a> </div> 
+            </div>
+            
+            <div class="pesquisa">
+                <label for="pesquisa"> </label>
+                
+                <input type="text" id="pesquisa1" name="pesquisa" placeholder="Pesquisar"/>
+            </div>
+            <div class="redes">
+                <div class="login">
+                    <a class="links" href="/login"> Login </a>
+                </div>
+                <div class="cadastro">
+                    <a class="links" href="/painelCliente"> Cadastro </a>
+                </div>
+            </div>
+    </header>
+
+
+
+
+
+    <section> 
+       
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>Genero</th>
+                    <th>Marca</th>
+                     <th>Estilo</th>
+                     <th>Numero</th>
+                     <th>Descricão</th>
+                     <th>Valor </th>
+                     <th>Quantidade </th>
+                     
+                  </tr>
+            <% for(prod of products) { %> 
+                <tr>
+                    <td>  <%= prod.id  %>    </td>
+                    <td><h4>  <%= prod.genre  %> </td>
+                    <td><h4>  <%= prod.mark  %> </td>
+                    <td><h4>  <%= prod.style  %> </td>
+                    <td><h4>  <%= prod.number  %> </td>
+                    <td><h4>  <%= prod.description  %> </td>
+                    <td><h4>  <%= prod.saleValue  %> </td>
+                    <td><h4>  <%= prod.quantity  %> </td>
+                    <td> <h4> <a class="linkVisualizar" href="/produtos/<%= prod.id%>"> Visualizar</a> </h4></td>
+                </tr>
+            <% } %> 
+
+
+
+
+            </table>
+       
+
+
+    </section>
+    
+    
+</body>
+</html>

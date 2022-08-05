@@ -37,9 +37,9 @@
         <img src="img/logo.png" alt="img"/>
         </div>
             <div class="menu">
-                <div class="feminino"> <a class="links" href=""> Feminino </a> </div>  
-                <div class="masculino"> <a class="links" href=""> Maculino </a> </div>
-                <div class="inverno"> <a class="links" href=""> Inverno </a> </div>
+                <div class="feminino"> <a class="links" href="./"> Home </a> </div>  
+                <div class="masculino"> <a class="links" href=""> Categoria </a> </div>
+                <div class="inverno"> <a class="links" href="/produtos"> Produtos </a> </div>
                  <div class="promo"> <a class="links" href=""> Promoções </a> </div> 
             </div>
             
@@ -67,78 +67,24 @@
             </ul>
         </div>
 
+         
         <section id="vitrine">
+            <% for(var prodc of products){ %>
             <div class="vitrine1">
                 <div class="imagempd">
                     <img id="blablabla" src="./img/tenis1.png" alt="tenis">
                  </div>
                  <div class="texto">
-                     <h4>NIKE</h4>
+                     <h4><%= prodc.description %> </h4>
                 </div>
                 <div class="valor">
-                    <a id="linkvalor" href="/paginaDeProduto"> R$ 450,00 </a>
+                    <a id="linkvalor" href="/paginaDeProduto"> <%= prodc.saleValue %>  </a>
 
                 </div>
-
             </div>
-            <div class="vitrine1">
-                <div class="imagempd">
-                    <img id="blablabla" src="./img/tenis1.png" alt="tenis">
-                </div>
-                <div class="texto">
-                     <h4>NIKE</h4>
-                </div>
-                <div class="valor">
-                    <a id="linkvalor" href="www.google.com"> R$ 450,00 </a>
-                </div>
-            </div>
-            <div class="vitrine1">
-                <div class="imagempd">
-                    <img id="blablabla" src="./img/tenis1.png" alt="tenis">
-                </div>
-                <div class="texto">
-                     <h4>NIKE</h4>
-                </div>
-                <div class="valor">
-                    <a id="linkvalor" href="www.google.com"> aqui vai o valor </a>
-                </div>
-            </div>
-            <div class="vitrine1">
-                <div class="imagempd">
-                    <img id="blablabla" src="./img/tenis1.png" alt="tenis">
-                </div>
-                <div class="texto">
-                     <h4>NIKE</h4>
-                </div>
-                <div class="valor">
-                    <a id="linkvalor" href="www.google.com"> R$ 450,00 </a>
-                </div>
-            </div>
-            <div class="vitrine1">
-                <div class="imagempd">
-                    <img id="blablabla" src="./img/tenis1.png" alt="tenis">
-                </div>
-                <div class="texto">
-                     <h4>NIKE</h4>
-                </div>
-                <div class="valor">
-                    <a id="linkvalor" href="www.google.com"> R$ 450,00 </a>
-                </div>
-            </div>
-            <div class="vitrine1">
-                <div class="imagempd">
-                    <img id="blablabla" src="./img/tenis1.png" alt="tenis">
-                </div>
-                <div class="texto">
-                     <h4>NIKE</h4>
-                </div>
-                <div class="valor">
-                    <a id="linkvalor" href="www.google.com"> R$ 450,00 </a>
-                </div>
-            </div>
-            
-            
-        </section>
+            <% } %> 
+         </section>
+         
         
         <section id="marcas">
             <h1> MARCAS</h1>

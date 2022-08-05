@@ -1,0 +1,108 @@
+header{
+   
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top:-10px
+   
+ }
+ #img{
+    position: absolute;
+    left: 25px;
+    
+   
+ }
+ 
+ .menu{
+    color: white;
+    display: flex;
+    
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    right: -60px;
+ }
+ .feminino, .masculino, .inverno, .promo {
+    margin-right: -5%;
+    margin-left: 10%;
+ }
+ .links{
+    color: white;
+    text-decoration:none;
+    font-size: inherit;
+ }
+ 
+ .links:hover{
+    border-bottom: solid 1px yellow;
+    transition: 2s linear;
+ }
+ header label{
+    color: aliceblue;
+ }
+ 
+ header .pesquisa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px white;
+    width: 15%;
+    height: 34%;
+ }
+ 
+ #pesquisa1{
+    border: none;
+    background: none;
+    outline:none ;
+    color: aliceblue;
+    margin-left: 4%;
+    
+ }
+ .redes{
+    
+    width: 10%;
+    height: 30%;
+    position: relative;
+    right: -5%;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+ }
+ .login{
+    
+    width: 50%;
+    height: 30px;
+    color: aliceblue;
+    display: flex;
+    align-items:center ;
+ 
+ }
+ .cadastro{
+    display: flex;
+    align-items: center;
+ 
+ }
+ 
+ 
+ #img2{
+    width: 30px;
+    height: 30px;
+ 
+ }
+
+
+ 
+table,td,th,tr{
+    border: solid black 1px;
+    
+
+}
+.linkVisualizar{
+    text-decoration: none;
+    color: black;
+
+
+}
