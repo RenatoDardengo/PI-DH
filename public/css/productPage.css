@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* Header Victor Hugo */
+
+/* Final Header Victor Hugo */
+
+/* Corpo Pagina de produtos Marcel de Sousa*/
+
+main {
+    padding:10px;
+    width:100%;
+    background-color: black;
+    display:flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+#container-ppSubPage {
+    padding: 10px 0px 10px 0px;
+    width: 30%;
+    height: 4.1%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    font-family: 'Ropa Sans';
+    position: relative;
+}
+.ppInformation {
+    color: black;
+}
+.ppTmm {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+.ppTmm:hover {
+    color: orange;
+}
+
+/* Conteúdo */
+
+#container-ppVerticalCatalog {
+    padding: 5px;
+    width: 100%;
+    height: 160vh;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: rgb(255, 255, 255);
+    border: rgb(206, 201, 201) solid 2px;
+    position: relative;
+}
+.ppVTs {
+    width: 5%;
+    height: 100px;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    position: absolute;
+    /* background-color: brown; */
+    /* border: orange solid 2px */
+}
+.ppVT {
+    padding: 5px;
+    width: 100%;
+    height: 60%;
+}
+#container-ppZoom {
+    padding: 15px;
+    margin-left: 5.3vw;
+    /* margin-bottom: 70px; */
+    display: flex;
+    width: 45.3vw;
+    height: 25rem;
+    position: absolute;
+    background-color: white;
+    border-radius: 15px;
+    border: rgb(240, 240, 252) solid 2px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.ppZoom1 {
+    padding: 0px 100px 50px 100px;
+    width: 45vw;
+    /* height: 400px; */
+}
+#container-ppDescription {
+    margin-top: 47vh;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    width: 50.5vw;
+    max-height: 1800px;
+    display: flex;
+    background-color: rgb(250, 245, 245);
+    position: absolute;
+}
+.ppDescription {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: Ropa Sans;
+}
+.ppDescInf {
+    margin-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+#container-ppInfProduct {
+    padding: 15px;
+    margin-left: 51vw;
+    width: 48.4%;
+    height: 100%;
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    /* border: black solid 2px; */
+    color: black;
+    font-size: 20px;
+    font-family: 'Ropa Sans';
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border: rgb(240, 240, 252) solid 2px;
+}
+#container-ppin {
+    margin-top: 30px;
+    font-size: 25px;
+}
+.ppPer {
+    margin-top: 40px;
+    display: flex;
+    font-size: 25px;
+}
+.ppOr {
+    display: flex;
+}
+#container-ppColor {
+    margin-top: 40px;
+}
+#container-ppSize {
+    margin-top: 40px;
+    font-size: 25px;
+}
+.ppSize {
+    /* margin-top: 20px; */
+    display: flex;
+    flex-direction: row;
+}
+.ppSizes {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    color: white;
+    border: gray 4px;
+    border-style: solid double;
+    background-color: black;
+}
+.ppSizes:active {
+    box-shadow: 0 0 0 0 gray, inset 4px 4px 4px black;
+    transform: translate(4px);
+    background-color: olivedrab;
+}
+.ppSizes:hover {
+    cursor:pointer;
+    color: black;
+    background-color: orange;
+}
+#container-ppPurchases {
+    margin-top: 20px;
+    width: 100%;
+    height: 5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px gray;
+    /* text-decoration: none; */
+}
+.ppButtom {
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+#container-ppCompras:hover {
+    cursor:pointer;
+    text-shadow: 3px 3px 3px black;
+    box-shadow: 4px 4px 4px gray;
+}
+#container-ppCompras:active {
+    box-shadow: 0 0 0 0 gray, inset 4px 4px 4px black;
+    transform: translate(4px);
+    background-color: olivedrab;
+}
+.ppObs {
+    margin-top: 5px;
+    font-size: 15px;
+    color: black;
+}
+#container-ppColors {
+    margin-top: 35px;
+}
+.ppOtherCor {
+    width: 10%;
+    height: 15%;
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    position: absolute;
+    /* background-color: brown; */
+    /* border: orange solid 2px */
+}
+.ppOther {
+    width: 100%;
+    height: 60%;
+}
+.ppOther:hover {
+    cursor: pointer;
+}
+#container-ppDelivery {
+    padding: 15px;
+    margin-top: 35%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+.ppDelivery {
+    margin-top: 15px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+.ppShipping {
+    margin-top: 5%;
+}
+.ppZcode {
+    margin-top: 5%;
+}
+#pppZcode {
+    font-size: 20px;
+}
+#container-ppBuyWhats {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+}
+.ppBuy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+    padding: 20px;
+    border: black 4px;
+    border-style: solid double;
+}
+.ppShare {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20%;
+    width: 40%;
+    padding: 20px;
+    border: black 4px;
+    border-style: solid double;
+}
+
+/* Final Main Marcel de Sousa */
+
+/* footer Victor Hugo */
+
+/* footer{
+    width: 100%;
+    height: 70px;
+    border: solid 1px black;
+    background-color: black;
+    display: block;
+}
+.textofooter{
+    color: aliceblue;
+} */
+
+/* Final footer Victor Hugo */
+
+@media only screen and (max-width: 1601px) {
+    main {
+		padding:0px 328px 0 328px;
+		width:100%;
+		position: absolute;
+		background-color: black;
+	}
+	#container-ppDescription {
+		margin-top: 403px;
+		padding-bottom: 10px;
+		border-radius: 15px;
+		width: 650px;
+		position: absolute;
+	}
+	#container-ppInfProduct {
+		padding: 15px;
+		margin-left: 655px;
+		width: 590px;
+		height: 1170px;
+	}
+	#container-ppVerticalCatalog {
+		padding: 5px;
+		width: 100%;
+		height: 1180px;
+	}
+	.ppZoom1 {
+		padding: 0px 100px 50px 100px;
+		width: 550px;
+	}
+	#container-ppZoom {
+		padding: 15px;
+		margin-left: 5.3vw;
+		display: flex;
+		width: 548px;
+		height: 25rem;
+		position: absolute;
+		background-color: white;
+		border-radius: 15px;
+		border: rgb(240, 240, 252) solid 2px;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+    #container-ppPurchases {
+        margin-top: 20px;
+        width: 535px;
+        /* height: 150px; */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px gray;
+        /* text-decoration: none; */
+    }
+    #container-ppSubPage {
+        background-color: black;
+    }
+    .ppTmm {
+        color: white;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .ppMedida {
+        display: flex;
+        flex-direction: column;
+    }
+    #container-ppCompras {
+        padding: 20px;
+    }
+    #container-ppZoom {
+        width: 45vw;
+        height: auto;
+    }
+    .ppZoom1 {
+        /* padding-top: 55px; */
+        width: 80vw;
+        height: 25vh;
+    }
+    #container-ppDescription {
+        margin-top: 300px;
+    }
+  }
+  @media only screen and (min-width: 1281px) {
+	main {
+		padding:0px 328px 0 328px;
+		width:100%;
+		position: absolute;
+		background-color: black;
+	}
+	#container-ppDescription {
+		margin-top: 403px;
+		padding-bottom: 10px;
+		border-radius: 15px;
+		width: 650px;
+		position: absolute;
+	}
+	#container-ppInfProduct {
+		padding: 15px;
+		margin-left: 655px;
+		width: 590px;
+		height: 1170px;
+	}
+	#container-ppVerticalCatalog {
+		padding: 5px;
+		width: 100%;
+		height: 1180px;
+	}
+	.ppZoom1 {
+		padding: 0px 100px 50px 100px;
+		width: 550px;
+	}
+	#container-ppZoom {
+		padding: 15px;
+		margin-left: 5.3vw;
+		display: flex;
+		width: 548px;
+		height: 25rem;
+		position: absolute;
+		background-color: white;
+		border-radius: 15px;
+		border: rgb(240, 240, 252) solid 2px;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+    #container-ppPurchases {
+        margin-top: 20px;
+        width: 535px;
+        /* height: 150px; */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px gray;
+        /* text-decoration: none; */
+    }
+    #container-ppSubPage {
+        background-color: black;
+    }
+    .ppTmm {
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 1601px) {
+    main {
+		padding:0px 165px 0 165px;
+		width:100%;
+		position: absolute;
+		background-color: black;
+	}
+	#container-ppDescription {
+		margin-top: 403px;
+		padding-bottom: 10px;
+		border-radius: 15px;
+		width: 650px;
+		position: absolute;
+	}
+	#container-ppInfProduct {
+		padding: 15px;
+		margin-left: 655px;
+		width: 590px;
+		height: 1170px;
+	}
+	#container-ppVerticalCatalog {
+		padding: 5px;
+		width: 100%;
+		height: 1290px;
+	}
+	.ppZoom1 {
+		padding: 0px 100px 50px 100px;
+		width: 550px;
+	}
+	#container-ppZoom {
+		padding: 15px;
+		margin-left: 5.3vw;
+		display: flex;
+		width: 565px;
+		height: 25rem;
+		position: absolute;
+		background-color: white;
+		border-radius: 15px;
+		border: rgb(240, 240, 252) solid 2px;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+    #container-ppPurchases {
+        margin-top: 20px;
+        width: 535px;
+        /* height: 150px; */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px gray;
+        /* text-decoration: none; */
+    }
+    #container-ppSubPage {
+        background-color: black;
+    }
+    .ppTmm {
+        color: white;
+    }
+}
+  /* A partir daqui table grande ou computador ou maior */
+  /* @media (min-width: 768px) {
+    div {
+      background-color: green;
+      width: 50%;
+      height: 400px
+    }
+  } */
+  /* A partir daqui computador ou maior */
+  /* @media (min-width: 1280px) {
+    div {
+      background-color: black;
+      width: 20%;
+    }
+  } */
+  

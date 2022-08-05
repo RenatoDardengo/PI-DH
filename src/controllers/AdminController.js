@@ -24,20 +24,25 @@ const adminController = {
 
   create: (req, res) => {
     console.log (req.session.name)
-    return res.render("adminProductCreate", { title: "Cadastrar Produto", user: req.session.name });
+    return res.render("adminProductCreate", { title: "Cadastrar Produto", user: req.session.name, genre:null});
   },
 
 
   store: (req, res) => {
 
     const { genre, mark, style, number, costValue, saleValue, quantity, description } = req.body;
-   
+    let filename = "shoes-defaut.png";
+    
+    if(req.file){
+      filename=req.file.filename
+    }
+    
 
       if (!genre || !mark || !style || !number || !costValue || !saleValue || !quantity || !description) {
         
 
           return res.render("adminProductCreate", {
-          title: "Cadastrar Produto", user: req.session.name,
+          title: "Cadastrar Produto", user: req.session.name, genre,
           error: {message: "Atenção!Todos os campos devem ser preenchidos!"}})
       }
 
@@ -53,7 +58,8 @@ const adminController = {
         costValue,
         saleValue,
         quantity,
-        description
+        description,
+        img:filename
 
       }
       products.push(newProduct)
@@ -81,6 +87,7 @@ const adminController = {
       })
 
     }
+    
     return res.render("adminProductEdit", { title: "Editar Produto",user: req.session.name, product: productResult })
   },
   delete: (req, res) => {
@@ -98,6 +105,7 @@ const adminController = {
   },
 
   destroy:(req, res)=>{
+    console.log(req.params)
     const{id}=req.params;
     const result = products.findIndex((product)=> product.id ===parseInt(id));
 

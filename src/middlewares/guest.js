@@ -1,5 +1,5 @@
 const guestMiddleware = (req, res,next)=>{
-  const isAuthentication = req.cookies.name;
+  const isAuthentication = req.session.name;
 
   if(!isAuthentication){
     res.redirect("/admin");

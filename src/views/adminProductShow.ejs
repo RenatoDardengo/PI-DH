@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/adminProductShow.css">
+    
 </head>
 
 <body>
@@ -126,7 +127,7 @@
                     <% if(products.length > 0){ %>
                         <form action="">
                         <div class="table-container">
-                          <table>
+                          <table id="tbl-01">
                             <thead>
                               <tr>
                                 <th>Id</th>
@@ -156,10 +157,10 @@
                                 
                                 <td class="table-actions">
                                     <a href="/administrator/product/edit/<%= product.id%>"><img src="/img/edit.png"></a>
-                                    <a href="/administrator/product/delete/<%= product.id%>"><img src="/img/cancel.png"></a>
-                                    
-                                    <!-- <a onclick="document.getElementById('id01').style.display='block'"><img src="/img/cancel.png"></a> -->
-                                  
+                                    <a onclick="javaScript:showModal('Confirmar Exclusão!','<%= product.id %>','<%= product.genre %>',
+                                   '<%= product.mark %>', '<%= product.style %>','<%= product.number %>','<%= product.description %>',
+                                   '<%= product.costValue %>', '<%= product.saleValue %>','<%= product.quantity %>')"><img src="/img/cancel.png"></a>
+
                                 </td>
                               </tr>
                               <% } %>
@@ -173,44 +174,97 @@
 
                 </section>
                 
-                  
-
             </div>
             
 
         </div>
+        <div id="id01" class="modal">
+            <div class="modal-content animate-zoom card-4">
+                <header class="container teal">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                        class=" button display-topright">&times;</span>
+                        <h2 id="title-modal">Confirmar Exclusão</h2>
+                </header>
+                <div class="container">
+                    <section id="frm">
+                        <form action="/administrator/product/delete/?_method=delete" method="post" id="frm2">
+                            <div class="container-input">
+                                <div class="Product-input">
+                                    <label for="input-id-modal">Id:</label>
+                                    <input type="text" name="id" id="input-id-modal" disabled />
+                                </div>
+            
+                                <div class="Product-input">
+                                    <label for="input-genre-modal">Gênero:</label>
+                                    <input name="genre" id="input-genre-modal" disabled>
+                                </div>
 
+                                <div class="Product-input">
+                                    <label for="input-mark-modal">Marca:</label>
+                                    <input type="text" name="mark" id="input-mark-modal" disabled/>
+                                </div>
+
+                                
+        
+                            </div>
+                            <div class="container-input">
+                                <div class="Product-input">
+                                    <label for="input-style-modal">Estilo:</label>
+                                    <input type="text" name="style" id="input-style-modal" disabled/>
+                                    
+                                </div>
+                                <div class="Product-input">
+                                    <label for="input-number-modal">Numero:</label>
+                                    <input type="text" name="number" id="input-number-modal" disabled />
+                                </div>
+
+                                <div class="Product-input">
+                                    <label for="input-costValue-modal">Custo:</label>
+                                    <input  type="text" name="cost" id="input-costValue-modal" disabled />
+                                </div>
+
+                            </div>
+        
+                            <div class="container-input">
+                                
+                                <div class="Product-input">
+                                    <label for="input-saleValue-modal">Venda:</label>
+                                    <input  type="text" name="sale" id="input-saleValue-modal" disabled/>
+                                </div>
+                               
+                                <div class="Product-input">
+                                    <label for="input-quantity-modal">Quantidade:</label>
+                                    <input  type="text" name="quantity" id="input-quantity-modal" disabled/>
+                                </div>
+        
+        
+                            </div>
+                            <div class="container-input">
+                                <div class="Product-input">
+                                    <label for="input-description-modal">Descrição:</label>
+                                    <textarea  name="description" id="input-description-modal" disabled> </textarea>
+                                </div>
+        
+                            </div>
+        
+                            
+                            <div id="btn-options">
+                                <input type="submit" value="Excluir"  class="btn">
+                               
+                            </div>
+                            
+                        </form>
+                    </section>
+                    
+                </div>
+    
+            </div>
+        </div>
        
     </span>
-    <div id="id01" class="modal">
-        <div class="modal-content animate-zoom card-4">
-            <header class="container teal">
-                <span onclick="document.getElementById('id01').style.display='none'"
-                    class=" button display-topright">&times;</span>
-                <h2>Confirmar exclusão!</h2>
-            </header>
-            <div class="container">
-                <h4>Deseja excluir o item selecionado?</h4>
-                
-                <form action="">
-                <label for="id"> Id:</label>
-                <input value = "<%= products.id %>" type="text" name="id"    disabled>
-                <label for="Descricao"> Descrição:</label>
-                <input type="text" name="Descricao"disabled>
-                
-                <button id="btn"> Confirmar</button>
-                </form>
-                
-                <br>
-             
-            </div>
-           
-                
-            
+    
+ <script src="/js/adminProduct.js"></script>
 
-        </div>
-    </div>
-   
 
 </body>
 
