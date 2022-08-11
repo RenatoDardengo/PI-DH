@@ -1,5 +1,6 @@
+
 const upload = {
-  path: __dirname + "/../../uploads/"
+  path: __dirname + "/../../upload/"
 }
 
 

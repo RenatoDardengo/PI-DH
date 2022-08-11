@@ -33,46 +33,28 @@
                 </div>
             </div>
     </header>
-
-
-
-
-
     <section> 
-       
-            <table>
-                <tr>
-                    <th>id</th>
-                    <th>Genero</th>
-                    <th>Marca</th>
-                     <th>Estilo</th>
-                     <th>Numero</th>
-                     <th>Descricão</th>
-                     <th>Valor </th>
-                     <th>Quantidade </th>
+             <% for(prod of products) { %> 
+                <div class = "products">
+                    <div class="imgVitrine">
+                        <%= prod.img %>
+                       
+                    </div>
+                    <div class = precoVitrine> 
+                        <h3> R$ <%= prod.saleValue  %>  </h3> 
+                    </div>
+                    <div class="'descricaoVitrine">
+                        <%= prod.description  %> 
+                        <h4> Quantidade restante: <%= prod.quantity  %> </h4>
+
+                    </div>
+                    
+                  
+                      
                      
-                  </tr>
-            <% for(prod of products) { %> 
-                <tr>
-                    <td>  <%= prod.id  %>    </td>
-                    <td><h4>  <%= prod.genre  %> </td>
-                    <td><h4>  <%= prod.mark  %> </td>
-                    <td><h4>  <%= prod.style  %> </td>
-                    <td><h4>  <%= prod.number  %> </td>
-                    <td><h4>  <%= prod.description  %> </td>
-                    <td><h4>  <%= prod.saleValue  %> </td>
-                    <td><h4>  <%= prod.quantity  %> </td>
-                    <td> <h4> <a class="linkVisualizar" href="/produtos/<%= prod.id%>"> Visualizar</a> </h4></td>
-                </tr>
+                    <a class="linkVisualizar" href="/produtos/<%= prod.id%>"> Visualizar</a> </h4></td>
+                </div>
             <% } %> 
-
-
-
-
-            </table>
-       
-
-
     </section>
     
     <a></a>
