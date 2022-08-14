@@ -32,7 +32,7 @@ const userController = {
         {
             res.render({Title:"Error", Message: "Produto não encontrado"});
         }
-        res.render("product", {produto});
+        res.render("productPage", {title: 'Bem Vindo a Pagina do Produto', produto});
 
     }
 
