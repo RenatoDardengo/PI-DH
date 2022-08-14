@@ -21,10 +21,13 @@
             <div id="menu-options">
                 <ul id="options">
 
-                    <li id="seller"> <img src="/img/seller.png">
-                        <a href=""> Vendedores</a>
-                    </li>
-                    <hr>
+                    <% if(userPermission===2) {%>
+                        <li id="seller"> <img src="/img/add-user.png">
+                            <a> Usuários</a>
+                        </li>
+                        <hr>
+
+                   <% }%>
                     <li id="cleint"> <img src="/img/cleint.png">
                         <a href=""> Fornecedores</a>
                     </li>

@@ -23,10 +23,13 @@
             <div id="menu-options">
                 <ul id="options">
 
-                    <li id="seller"> <img src="/img/seller.png">
-                        <a href=""> Vendedores</a>
-                    </li>
-                    <hr>
+                    <% if(userPermission===2) {%>
+                        <li id="seller"> <img src="/img/add-user.png">
+                            <a> Usuários</a>
+                        </li>
+                        <hr>
+
+                   <% }%>
                     <li id="cleint"> <img src="/img/cleint.png">
                         <a href=""> Fornecedores</a>
                     </li>
@@ -106,8 +109,8 @@
                         <div class="Product-input">
                             <label for="genre-id">Gênero:</label>
                             <select name="genre" id="genre-id">
-                                <option value="<%= genre %>" selected>Selecione</option>
-                                <option value="Masculino">Marculino</option>
+                            <option value="" selected>Selecione</option>
+                                <option value="Masculino">Masculino</option>
                                 <option value="Feminino">Feminino</option>
                             </select>
                         </div>

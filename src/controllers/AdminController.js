@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const products = require("../data/products.json");
+const sequelize = require("../config/sequelize");
+const db = require("../config/sequelize")
+const Product = require("../models/Product");
+const { Op } = require("sequelize");
 const adminController = {
   index: (req, res) => {
 
@@ -8,27 +11,29 @@ const adminController = {
 
   },
 
-  logout: (req, res) => {
-    req.session.destroy();
-    res.clearCookie("user");
-    res.clearCookie("permission");
-    res.redirect("/admin");
+  
+
+  showAll: async (req, res) => {
+    var products = await Product.findAll()
+
+
+    return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products, user: req.session.name,userPermission: req.session.permission })
+  },
+  show: async (req, res) => {
+    const {search, collun} = req.body;
+    var products = await Product.findAll()
+
+
+    return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products, user: req.session.name,userPermission: req.session.permission })
   },
 
-  show: (req, res) => {
+  create:  (req, res) => {
     
-
-
-    return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products, user: req.session.name })
-  },
-
-  create: (req, res) => {
-    console.log (req.session.name)
-    return res.render("adminProductCreate", { title: "Cadastrar Produto", user: req.session.name, genre:null});
+    return res.render("adminProductCreate", { title: "Cadastrar Produto", user: req.session.name,userPermission: req.session.permission, genre:null});
   },
 
 
-  store: (req, res) => {
+  store:async (req, res) => {
 
     const { genre, mark, style, number, costValue, saleValue, quantity, description } = req.body;
     let filename = "shoes-defaut.png";
@@ -46,40 +51,42 @@ const adminController = {
           error: {message: "Atenção!Todos os campos devem ser preenchidos!"}})
       }
 
-      const ids = products.map(product => product.id)
-      const lastId = ids.length - 1
-      
-      const newProduct ={
-        id:ids[lastId] + 1,
-        genre,
-        mark,
-        style,
-        number,
-        costValue,
-        saleValue,
-        quantity,
-        description,
-        img:filename
-
+      try {
+        const result = await sequelize.transaction(async(t)=>{
+          const product = await Product.create({
+            genre:genre,
+            mark:mark,
+            style:style,
+            number:parseInt (number),
+            costValue: parseFloat(costValue),
+            saleValue: parseFloat (saleValue),
+            quantity:parseInt (quantity),
+            description:description,
+            img:filename
+          })
+        })
+        
+      } catch (error) {
+        return res.render("adminProductCreate", {
+          title: "Cadastrar Produto", user: req.session.name, genre,
+          error: {message: `Erro ao cadastrar o produto: ${error}`}})
       }
-      products.push(newProduct)
-
-      fs.writeFileSync(
-        // Caminho e nome do arquivo que será criado/atualizado
-        path.join(__dirname,"..", "data", "products.json"),
-        // Conteúdo que será salvo no arquivo
-        JSON.stringify(products)
-      );
-      console.log(req.session.name)
-      res.redirect("/administrator/product")
 
       
+      res.redirect("/administrator/product")
+     
 
  },
 
-    edit: (req, res) => {
-      const { id } = req.params;
-    const productResult = products.find((product) => product.id === parseInt(id));
+    edit: async (req, res) => {
+    const { id } = req.params;
+
+    const productResult = await Product.findOne({
+      where:{
+        id:id
+      }
+    });
+
     if (!productResult) {
       return res.render("error", {
         title: "Erro de Servidor",
@@ -88,40 +95,67 @@ const adminController = {
 
     }
     
-    return res.render("adminProductEdit", { title: "Editar Produto",user: req.session.name, product: productResult })
+    return res.render("adminProductEdit", { title: "Editar Produto",user: req.session.name, product: productResult, userPermission: req.session.permission})
+  },
+
+  update: async (req,res)=>{
+    const { id } = req.params;
+    try {
+      const result = await sequelize.transaction(async(t)=>{
+        const product = await Product.update({
+            genre:genre,
+            mark:mark,
+            style:style,
+            number:parseInt (number),
+            costValue: parseFloat(costValue),
+            saleValue: parseFloat (saleValue),
+            quantity:parseInt (quantity),
+            description:description,
+            img:filename
+
+        }, 
+        {
+          where:{id:id}
+        })
+      })
+      return res.render("adminProductEdit", { title: "Editar Produto",user: req.session.name, product: null, userPermission: req.session.permission})
+
+      
+    } catch (error) {
+      return res.render("adminProductEdit", {
+        title: "Editar Produto", user: req.session.name,
+        error: {message: `Não foi possível alterar o produto: ${error}`}})
+      
+    }
+
   },
   delete: (req, res) => {
-    const { id } = req.params;
-    const productResult = products.find((product) => product.id === parseInt(id));
-    if (!productResult) {
-      return res.render("error", {
-        title: "Erro de Servidor",
-        message: "Nenhum produto encontrado"
-      })
-
-    }
-
-    return res.render("adminProductDelete", { title: "Deletar Produto" ,user: req.session.name, product: productResult})
+    
   },
 
-  destroy:(req, res)=>{
-    console.log(req.params)
+  destroy:async (req, res)=>{
     const{id}=req.params;
-    const result = products.findIndex((product)=> product.id ===parseInt(id));
+    console.log (id)
 
-    if(result===-1) {
-      // return res.render("error", {
-      //   title: "Ops!",
-      //   message: "Nenhum usuário encontrado",})
-    }
-    console.log(products[result].id)
-   
-    const upload = {
-      path: __dirname + "/../data/"
-    }
+    try {
+      const result = await sequelize.transaction(async(t)=>{
+        const product = await Product.destroy({
+          where:{id}
+        })
 
-    fs.unlinkSync(upload.path+ products[result].id);
-    products.splice(result, 1);
+      });
+      res.redirect("/administrator/product")
+
+      
+    } catch (error) {
+      return res.render("adminProductShow", {
+        title: "Cadastro de Produtos", products: products, user: req.session.name,userPermission: req.session.permission,
+        error: {message: `Não foi possível deletar o produto: ${error}`}})
+      
+    }
+    
+
+    
    
   }
 }

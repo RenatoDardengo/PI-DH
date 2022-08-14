@@ -20,9 +20,9 @@
 
             <div id="menu-options">
                 <ul id="options">
-                    <% if(userPermission==="master") {%>
-                        <li id="seller"> <img src="/img/seller.png">
-                            <a onclick="document.getElementById('id01').style.display='block'" > usuários</a>
+                    <% if(userPermission===2) {%>
+                        <li id="seller"> <img src="/img/add-user.png">
+                            <a onclick="document.getElementById('id01').style.display='block'" > Usuários</a>
                         </li>
                         <hr>
 

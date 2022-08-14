@@ -1,13 +1,13 @@
-const fs = require('fs')
-const path = require("path");
-const productsJson = fs.readFileSync(
-    // Caminho do arquivo
-    path.join(__dirname, "..", "data", "products.json"),
-    // Formato de leitura
-    "utf-8"
-  );
+// const fs = require('fs')
+// const path = require("path");
+// const productsJson = fs.readFileSync(
+//     // Caminho do arquivo
+//     path.join(__dirname, "..", "data", "products.json"),
+//     // Formato de leitura
+//     "utf-8"
+//   );
 
-  const products = JSON.parse(productsJson);
+//   const products = JSON.parse(productsJson);
 
   
 
