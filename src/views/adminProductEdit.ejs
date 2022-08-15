@@ -102,8 +102,8 @@
                     <h3 class="error-alert"> <%= error.message %></h3>
 
                 <%}%>
-                <form action="#" method="post" enctype="multipart/form-data">
-                    <!-- <form action="/administrator/product/edit:id" method="post" enctype="multipart/form-data"> -->
+                
+                    <form action="/administrator/product/edit/:<%= product.id %>" method="post" enctype="multipart/form-data"> 
                     <div class="container-input">
                         <div class="Product-input">
                             <label for="id">Id:</label>
@@ -112,8 +112,9 @@
     
                         <div class="Product-input">
                             <label for="genre-id">Gênero:</label>
+                            
                             <select name="genre" id="genre-id">
-                                <option value="" selected><%= product.genre %></option>
+                                <option value="" selected><%= product.genre %> </option>
                                 <option value="mas">Marculino</option>
                                 <option value="fem">Feminino</option>
                             </select>

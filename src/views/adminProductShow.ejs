@@ -165,10 +165,10 @@
                                 
                                 <td class="table-actions">
                                     <a href="/administrator/product/edit/<%= product.id%>"><img src="/img/edit.png"></a>
-                                    <a onclick="javaScript:showModal('Confirmar Exclusão!','<%= product.id %>','<%= product.genre %>',
+                                    <!-- <a onclick="javaScript:showModal('Confirmar Exclusão!','<%= product.id %>','<%= product.genre %>',
                                    '<%= product.mark %>', '<%= product.style %>','<%= product.number %>','<%= product.description %>',
-                                   '<%= product.costValue %>', '<%= product.saleValue %>','<%= product.quantity %>')"><img src="/img/cancel.png"></a>
-
+                                   '<%= product.costValue %>', '<%= product.saleValue %>','<%= product.quantity %>')"><img src="/img/cancel.png"></a> -->
+                                   <a href="/administrator/product/delete/<%= product.id%>"><img src="/img/cancel.png"></a>
                                 </td>
                               </tr>
                               <% } %>
@@ -195,7 +195,7 @@
                 </header>
                 <div class="container">
                     <section id="frm2">
-                        <form action="/administrator/product/delete/?_method=delete" method="post" id="frm2">
+                        <form action="/administrator/product/delete" method="post" enctype="multipart/form-data">
                             <div class="container-input">
                                 <div class="Product-input">
                                     <label for="input-id-modal">Id:</label>
@@ -256,16 +256,12 @@
                             </div>
         
                             
+                           
                             <div id="btn-options">
                                 <input type="submit" value="Excluir"  class="btn">
                                
                             </div>
-                            <script>
-                                function Id() {
-                                  var id = document.getElementById("input-id-modal").value;
-                                  return id
-                                }
-                            </script>
+                           
                             
                         </form>
                     </section>

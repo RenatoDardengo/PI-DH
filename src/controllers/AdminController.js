@@ -100,6 +100,7 @@ const adminController = {
 
   update: async (req,res)=>{
     const { id } = req.params;
+    
     try {
       const result = await sequelize.transaction(async(t)=>{
         const product = await Product.update({
@@ -118,24 +119,40 @@ const adminController = {
           where:{id:id}
         })
       })
-      return res.render("adminProductEdit", { title: "Editar Produto",user: req.session.name, product: null, userPermission: req.session.permission})
-
+      res.redirect("/administrator/product")
       
     } catch (error) {
       return res.render("adminProductEdit", {
-        title: "Editar Produto", user: req.session.name,
+        title: "Editar Produto", user: req.session.name, userPermission: req.session.permission,
         error: {message: `Não foi possível alterar o produto: ${error}`}})
       
     }
 
   },
-  delete: (req, res) => {
+  delete: async (req, res) => {
+    const { id } = req.params;
+
+    const productResult = await Product.findOne({
+      where:{
+        id:id
+      }
+    });
+
+    if (!productResult) {
+      return res.render("error", {
+        title: "Erro de Servidor",
+        message: "Nenhum usuário encontrado"
+      })
+
+    }
+    
+    return res.render("adminProductDelete", { title: "Deletar Produto",user: req.session.name, product: productResult, userPermission: req.session.permission})
     
   },
 
-  destroy:async (req, res)=>{
+  destroy: async (req, res)=>{
     const{id}=req.params;
-    console.log (id)
+   
 
     try {
       const result = await sequelize.transaction(async(t)=>{
