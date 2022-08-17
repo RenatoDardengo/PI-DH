@@ -1,6 +1,6 @@
-
+const path = require('path')
 const upload = {
-  path: __dirname + "/../../upload/"
+  path.join: __dirname + "/../../upload/"
 }
 
 

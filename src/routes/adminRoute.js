@@ -34,4 +34,4 @@ router.get("/product/delete/:id", isAuthenticated, adminController.delete)
 router.delete("/product/delete/:id",isAuthenticated, adminController.destroy)
 
 
-module.exports=router;
+module.exports = router;
