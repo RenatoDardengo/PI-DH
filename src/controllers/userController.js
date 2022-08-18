@@ -1,6 +1,9 @@
 const fs = require('fs')
 const path = require("path");
-const products = require('../models/Product');
+const sequelize = require("../config/sequelize");
+const db = require("../config/sequelize")
+const Admin = require('../models/Admin')
+const Products = require('../models/Product');
 
 //const productsJson = fs.readFileSync(
     // Caminho do arquivo
@@ -15,16 +18,17 @@ const products = require('../models/Product');
 
 
 const userController = {
-    home: async (req, res) => {
+    index: async (req, res) => {
         //var productsPartial = products.slice(products.length - 8, products.length);
         //return res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:productsPartial});
         try {
-            const product = products.findAll();
-            console.log(product)
-            return res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:product});
+           const product = await Products.findAll();
+           console.log(product)
+            res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:product});
             
         } catch (error) {
-             return res.send('Pagina não encontrada!');
+            console.log(error);
+            res.render("error", {title:"OPS!", message:"ALGO DEU ERRADO!"})
         }
 
     },
