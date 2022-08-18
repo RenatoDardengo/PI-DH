@@ -98,20 +98,21 @@
             </div>
             <hr>
             <div id="nav">
-                > Administrador/ Produtos
+                > Administrador/ Usuários
             </div>
-            <h2>Produtos</h2>
+            <h2>Usuários</h2>
             <div id="div-table">
                 <div>
                     <div class="Product-input">
-                        <label for="criterion-id">Critério</label>
-                        <select name="criterion" id="criterion-id">
-                            <option value="" selected>Selecione</option>
-                            <option value="genre">Gênero</option>
-                            <option value="mark">Marca</option>
-                            <option value="style">Estilo</option>
-                        </select>
+                        <label for="adminName">Nome</label>
+                        <input type="text" id="adminName" name="adminName">
+                        
                     </div>
+                    <div class="Product-input">
+                      <label for="adminName">Nome</label>
+                      <input type="text" id="adminName" name="adminName">
+                      
+                  </div>
                     <div id="btn-txt">
                         <div id="search">
                             <label for="search-id">Pesquisar:</label>
@@ -127,11 +128,6 @@
                 </div>
 
                 <section id="product-list">
-                    <% if(locals.error){%>
-                    
-                        <h3 class="error-alert2" ><%= error.message %></h3>
-    
-                    <%}%>
                     <% if(products.length > 0){ %>
                         <form action="">
                         <div class="table-container">
@@ -165,10 +161,10 @@
                                 
                                 <td class="table-actions">
                                     <a href="/administrator/product/edit/<%= product.id%>"><img src="/img/edit.png"></a>
-                                    <!-- <a onclick="javaScript:showModal('Confirmar Exclusão!','<%= product.id %>','<%= product.genre %>',
+                                    <a onclick="javaScript:showModal('Confirmar Exclusão!','<%= product.id %>','<%= product.genre %>',
                                    '<%= product.mark %>', '<%= product.style %>','<%= product.number %>','<%= product.description %>',
-                                   '<%= product.costValue %>', '<%= product.saleValue %>','<%= product.quantity %>')"><img src="/img/cancel.png"></a> -->
-                                   <a href="/administrator/product/delete/<%= product.id%>"><img src="/img/cancel.png"></a>
+                                   '<%= product.costValue %>', '<%= product.saleValue %>','<%= product.quantity %>')"><img src="/img/cancel.png"></a>
+
                                 </td>
                               </tr>
                               <% } %>
@@ -177,7 +173,7 @@
                         </div>
                     </form>
                       <% } else { %>
-                        <h2 class="error-alert">Nenhum Produto foi encontrado!</h2>
+                        <h2 class="error-alert">Nenhum usuário encontrado</h2>
                       <%} %>
 
                 </section>
@@ -194,8 +190,8 @@
                         <h2 id="title-modal">Confirmar Exclusão</h2>
                 </header>
                 <div class="container">
-                    <section id="frm2">
-                        <form action="/administrator/product/delete" method="post" enctype="multipart/form-data">
+                    <section id="frm">
+                        <form action="/administrator/product/delete/?_method=delete" method="post" id="frm2">
                             <div class="container-input">
                                 <div class="Product-input">
                                     <label for="input-id-modal">Id:</label>
@@ -256,12 +252,10 @@
                             </div>
         
                             
-                           
                             <div id="btn-options">
                                 <input type="submit" value="Excluir"  class="btn">
                                
                             </div>
-                           
                             
                         </form>
                     </section>

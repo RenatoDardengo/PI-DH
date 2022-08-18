@@ -21,10 +21,13 @@
             <div id="menu-options">
                 <ul id="options">
 
-                    <li id="seller"> <img src="/img/seller.png">
-                        <a href=""> Vendedores</a>
-                    </li>
-                    <hr>
+                    <% if(userPermission===2) {%>
+                        <li id="seller"> <img src="/img/add-user.png">
+                            <a> Usuários</a>
+                        </li>
+                        <hr>
+
+                   <% }%>
                     <li id="cleint"> <img src="/img/cleint.png">
                         <a href=""> Fornecedores</a>
                     </li>
@@ -99,7 +102,8 @@
                     <h3 class="error-alert"> <%= error.message %></h3>
 
                 <%}%>
-                <form action="/cadastrarProduto" method="post" id="frm2">
+                
+                    <form action="/administrator/product/edit/:<%= product.id %>" method="post" enctype="multipart/form-data"> 
                     <div class="container-input">
                         <div class="Product-input">
                             <label for="id">Id:</label>
@@ -108,8 +112,9 @@
     
                         <div class="Product-input">
                             <label for="genre-id">Gênero:</label>
+                            
                             <select name="genre" id="genre-id">
-                                <option value="" selected><%= product.genre %></option>
+                                <option value="" selected><%= product.genre %> </option>
                                 <option value="mas">Marculino</option>
                                 <option value="fem">Feminino</option>
                             </select>
@@ -167,18 +172,14 @@
                     </div>
                     <div class="Product-input">
                         <label class="picture" for="picture-input" tabIndex="0">
-                            <input type="file" accept="image/png" name="picture-input" id="picture-input" src="<%= product.img %>"/>
-                            <span class="picture-image"  ></span>
+                            <input type="file" accept="image/png" name="picture-input" id="picture-input" />
+                            <span class="picture-image"  > <img src="../../uploads/<%= product.img %>"> </span>
+                            
                           </label>
                         
                          
                     </div>
 
-
-
-                    
-
-                   
                     
                     <div id="btn-options">
                         <input type="submit" value="Gravar" / class="btn">
@@ -186,6 +187,11 @@
                     </div>
                     
                 </form>
+                <% if(locals.error){%>
+                    
+                    <h3 class="error-alert2" ><%= error.message %></h3>
+
+                <%}%>
             </section>
 
 

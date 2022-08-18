@@ -1,23 +1,31 @@
 const fs = require('fs')
 const path = require("path");
-const productsJson = fs.readFileSync(
-    // Caminho do arquivo
-    path.join(__dirname, "..", "data", "products.json"),
-    // Formato de leitura
-    "utf-8"
-  );
+const products = require('../models/Product');
 
-  const products = JSON.parse(productsJson);
+//const productsJson = fs.readFileSync(
+    // Caminho do arquivo
+   // path.join(__dirname, "..", "data", "products.json"),
+    // Formato de leitura
+    //"utf-8"
+  //);
+
+//const products = JSON.parse(productsJson);
 
   
 
 
 const userController = {
-    home:(req, res) => {
-        var productsPartial = products.slice(products.length - 8, products.length);
-        
-        return res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:productsPartial});
-
+    home: async (req, res) => {
+        //var productsPartial = products.slice(products.length - 8, products.length);
+        //return res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:productsPartial});
+        try {
+            const product = products.findAll();
+            console.log(product)
+            return res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:product});
+            
+        } catch (error) {
+             return res.send('Pagina não encontrada!');
+        }
 
     },
     produts:(req,res) =>{
