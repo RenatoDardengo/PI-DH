@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+    <link rel="stylesheet" href="/css/userLogin.css">
+</head>
+
+<body>
+  <div id="login-container">
+    <h1>Criar Cadastro</h1>
+    
+    <form action="/admin" method="post">
+      <label for="userName">*Nome Completo</label>
+      <input type="text" name="userName" id="user" placeholder="Digite seu usuário" autocomplete="off" required>
+      
+      <label for="genre">Gênero</label>
+      <div id="genre">    
+       <input type="radio" value="Masculino"><span>Masculino</span>
+
+      </div>
+
+      <a href="#" id="forgot-pass">Esqueceu a senha?</a>
+      <% if(locals.error){ %>
+        <h3 class="error-alert"><%= error.message %></h3>
+       <% } %>
+      <button type="submit" id="btn">Login</button>
+
+    </form>
+   
+    <div id="cadastrar-container">
+      <p>Não é cadastrado?</p>
+      <a href="/">Clique aqui</a>
+    </div>
+  </div>
+</body>
+
+</html>

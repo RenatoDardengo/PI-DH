@@ -10,9 +10,6 @@ const adminController = {
     return res.render("adminHome", { title: "Painel Administrador", user: req.session.name, userPermission: req.session.permission })
 
   },
-
-  
-
   showAll: async (req, res) => {
     var products = await Product.findAll()
 
@@ -34,9 +31,10 @@ const adminController = {
 
 
   store:async (req, res) => {
-
+    
     const { genre, mark, style, number, costValue, saleValue, quantity, description } = req.body;
     let filename = "shoes-defaut.png";
+    
     
     if(req.file){
       filename=req.file.filename
@@ -98,10 +96,24 @@ const adminController = {
     return res.render("adminProductEdit", { title: "Editar Produto",user: req.session.name, product: productResult, userPermission: req.session.permission})
   },
 
-  update: async (req,res)=>{
+  update: async (req, res)=>{
+    const { genre, mark, style, number, costValue, saleValue, quantity, description } = req.body;
     const { id } = req.params;
     
+    
+    let filename = "shoes-defaut.png";
+    
+    
+    if(req.file){
+      filename=req.file.filename
+    }
+    
     try {
+      if (!genre || !mark || !style || !number || !costValue || !saleValue || !quantity || !description) {
+        throw Error("Todos os campos devem ser preenchidos!");
+
+        
+    }
       const result = await sequelize.transaction(async(t)=>{
         const product = await Product.update({
             genre:genre,
@@ -122,8 +134,13 @@ const adminController = {
       res.redirect("/administrator/product")
       
     } catch (error) {
+      const productResult = await Product.findOne({
+        where:{
+          id:id
+        }
+      });
       return res.render("adminProductEdit", {
-        title: "Editar Produto", user: req.session.name, userPermission: req.session.permission,
+        title: "Editar Produto", user: req.session.name, userPermission: req.session.permission, product:productResult,
         error: {message: `Não foi possível alterar o produto: ${error}`}})
       
     }
