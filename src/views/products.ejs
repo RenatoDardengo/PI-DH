@@ -41,7 +41,7 @@
                        
                     </div>
                     <div class = precoVitrine> 
-                        <h3> R$ <%= prod.saleValue  %>  </h3> 
+                        <a class="linkVisualizar" href="/produtos/<%= prod.id%>"> R$ <%= prod.saleValue  %> </a> 
                     </div>
                     <div class="'descricaoVitrine">
                         <%= prod.description  %> 
@@ -52,11 +52,39 @@
                   
                       
                      
-                    <a class="linkVisualizar" href="/produtos/<%= prod.id%>"> Visualizar</a> </h4></td>
+                   
                 </div>
             <% } %> 
     </section>
     
     <a></a>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>NOME<span>logo</span></h3>
+
+            <p class="footer-links">
+                <a class="linkfooter" href="#">Home</a> ·
+                <a class="linkfooter" href="#">About</a> ·
+                <a class="linkfooter" href="#">Faq</a> ·
+                <a class="linkfooter" href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">MVRCA © 2022</p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+
+
+            </div>
+
+
+
+    </footer>
 </body>
 </html>

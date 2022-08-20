@@ -2,16 +2,15 @@ const db = require ("../config/sequelize");
 const Sequelize = require ("sequelize");
 const sequelize = require("../config/sequelize");
 
-const Product = db.define(
-  "Products",
+const Product = db.define("Products",
   {
     id:{
       type:Sequelize.DataTypes.INTEGER.UNSIGNED,
       autoIncrement:true,
       primaryKey: true,
     },
-    genre:{
-      type:Sequelize.DataTypes.STRING (10),
+    gender:{
+      type:Sequelize.DataTypes.STRING (20),
       allowNull:false,
     },
     mark:{

@@ -1,23 +1,35 @@
 const fs = require('fs')
 const path = require("path");
-const productsJson = fs.readFileSync(
-    // Caminho do arquivo
-    path.join(__dirname, "..", "data", "products.json"),
-    // Formato de leitura
-    "utf-8"
-  );
+const sequelize = require("../config/sequelize");
+const db = require("../config/sequelize")
+const Admin = require('../models/Admin')
+const Products = require('../models/Product');
 
-  const products = JSON.parse(productsJson);
+//const productsJson = fs.readFileSync(
+    // Caminho do arquivo
+   // path.join(__dirname, "..", "data", "products.json"),
+    // Formato de leitura
+    //"utf-8"
+  //);
+
+//const products = JSON.parse(productsJson);
 
   
 
 
 const userController = {
-    home:(req, res) => {
-        var productsPartial = products.slice(products.length - 8, products.length);
-        
-        return res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:productsPartial});
-
+    index: async (req, res) => {
+        //var productsPartial = products.slice(products.length - 8, products.length);
+        //return res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:productsPartial});
+        try {
+           const product = await Products.findAll();
+           console.log(product)
+            res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:product});
+            
+        } catch (error) {
+            console.log(error);
+            res.render("error", {title:"OPS!", message:"ALGO DEU ERRADO!"})
+        }
 
     },
     produts:(req,res) =>{
