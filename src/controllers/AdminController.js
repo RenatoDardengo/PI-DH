@@ -45,7 +45,7 @@ const adminController = {
         
 
           return res.render("adminProductCreate", {
-          title: "Cadastrar Produto", user: req.session.name, genre,
+          title: "Cadastrar Produto", user: req.session.name, genre,userPermission: req.session.permission,
           error: {message: "Atenção!Todos os campos devem ser preenchidos!"}})
       }
 
@@ -66,7 +66,7 @@ const adminController = {
         
       } catch (error) {
         return res.render("adminProductCreate", {
-          title: "Cadastrar Produto", user: req.session.name, genre,
+          title: "Cadastrar Produto", user: req.session.name, genre,userPermission: req.session.permission,
           error: {message: `Erro ao cadastrar o produto: ${error}`}})
       }
 

@@ -100,8 +100,9 @@
             </div>
             <h2>Editar Produto</h2>
             <section id="frm">
+                <!-- enctype="multipart/form-data" id="frmedit" -->
 
-                <form action="/administrator/product/edit/<%= product.id %>?_method=put" method="post" enctype="multipart/form-data" id="frmedit">
+                <form action="/administrator/product/edit/<%= product.id %>?_method=put" method="post" enctype="multipart/form-data">
                     <div class="container-input">
                         <div class="Product-input">
                             <label for="id">Id:</label>
@@ -111,6 +112,7 @@
                         <div class="Product-input">
                             <label for="genre-id">Gênero:</label>
                             <select name="genre" id="genre-id">
+                                <option value="" selected></option>
                                 <option value="Masculino" <%=product.genre=="Masculino" ? "selected" :""%>>Marculino</option>
                                 <option value="Feminino" <%=product.genre=="Feminino" ? "selected" :""%>>Feminino</option>
                             </select>
