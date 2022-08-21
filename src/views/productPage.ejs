@@ -5,63 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <%= title %></title>
-    <link rel="stylesheet" href="/css/paginaDeProduto.css" />
+    <link rel="stylesheet" href="/css/productPage.css" />
     <!-- <link rel="stylesheet" href="./img" /> -->
 </head>
 <body>
 
     <!-- Header Victor Hugo -->
-
-    <div class="headermobile">
-        <div class="abremenu"> 
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <div class="logomenu">
-            <div id="imgTablet">
-                <img src="img/logo.png" alt="img"/>
-            </div>
-        </div>
-           
-</div>
-    
-   
-    <header class="header">
-        <div id="img">
-        <img src="img/logo.png" alt="img"/>
-        </div>
-            <div class="menu">
-                <div class="feminino"> <a class="links" href=""> Feminino </a> </div>  
-                <div class="masculino"> <a class="links" href=""> Maculino </a> </div>
-                <div class="inverno"> <a class="links" href=""> Inverno </a> </div>
-                 <div class="promo"> <a class="links" href=""> Promoções </a> </div> 
-            </div>
-            
-            <div class="pesquisa">
-                <label for="pesquisa"> </label>
-                <img id="img2" src="img/lupa.png" alt="lupa">
-                <input type="text" id="pesquisa1" name="pesquisa" placeholder="Pesquisar"/>
-            </div>
-            <div class="redes">
-                <div class="login">
-                    <a class="links" href="login.html"> Login </a>
-                </div>
-                <div class="cadastro">
-                    <a class="links" href=""> Cadastro </a>
-                </div>
-            </div>
-    </header>
-
-   
-        <div id="carrocel">
-            <ul>
-                <li> <div class="imgcarrocel"> <img class="imgcarrocel" src="./img/procarrocel.jpg" alt="carrocel"> </div> </li>
-                <li> <div class="imgcarrocel1"><img class="imgcarrocel" src="./img/procarrocel1.jpg" alt="carrocel"> </div> </li>
-                <li> <div class="imgcarrocel2"><img class="imgcarrocel" src="./img/procarrocel2.jpg" alt="carrocel"> </div> </li>
-            </ul>
-        </div>
 
         <!-- Final Header Victor Hugo -->
 
@@ -150,23 +99,23 @@
                     <h1>TÊNIS RECOTES TAUPE</h1>
                 </div>
 
-                <div id="container-ppDe">
-                    <em class="ppDe">
+                <div id="container-ppin">
+                    <em class="ppin">
                         De: 
                         <strong>R$ 279,90</strong>
                     </em>
                 
-                    <em class="ppPor">
+                    <em class="ppPer">
                         Por: 
                         <strong>R$ 179,90</strong>
                     </em>
     
-                    <em class="ppOu">
+                    <em class="ppOr">
                         <span>
                             Ou
-                            <label class="nVezes">
+                            <label>
                                 2
-                                <span class="ppX">X</span>
+                                <span>X</span>
                             </label>
                                 de
                                 <strong>
@@ -176,25 +125,25 @@
                     </em>
                 </div>
                     
-                <div id="container-ppCor">
+                <div id="container-ppColor">
                     <label for="cores">COR: </label>
                     <label for="cor">TAUPE</label>
                 </div>
 
-                <div id="container-ppTamanho">
+                <div id="container-ppSize">
                     <label><b>TAMANHOS</b></label>
-                    <ul class="ppMedida">
-                        <li class="ppMedidas">41</li>
-                        <li class="ppMedidas">42</li>
-                        <li class="ppMedidas">43</li>
-                        <li class="ppMedidas">44</li>
-                        <li class="ppMedidas">45</li>
-                        <li class="ppMedidas">46</li>
+                    <ul class="ppSize">
+                        <li class="ppSizes">41</li>
+                        <li class="ppSizes">42</li>
+                        <li class="ppSizes">43</li>
+                        <li class="ppSizes">44</li>
+                        <li class="ppSizes">45</li>
+                        <li class="ppSizes">46</li>
                     </ul>
                 </div>
 
-                <div id="container-ppCompras">
-                    <a class="ppButtom" href="/confirmacao" ><b>COMPRAR</b></a>
+                <div id="container-ppPurchases">
+                    <a class="ppButtom" href="./confirmation" ><b>COMPRAR</b></a>
                 </div>
 
                 <div>
@@ -205,16 +154,16 @@
                     </article>
                 </div>
 
-                <div id="container-ppCores">
+                <div id="container-ppColors">
                     <label>CORES</label>
                     <ul class="ppOtherCor">
                         <img class="ppOther" src="../img/TENIS-RECORTESMH1.jpg" />
                         <img class="ppOther" src="../img/TENIS-RECORTESOW1.jpg" />
                     </ul>
                 </div>
-                <div id="container-ppEntrega">
+                <div id="container-ppDelivery">
                     <img src="../img/caminhao2.png" alt="" width="70" height="70" />
-                    <div class="ppEntrega">
+                    <div class="ppDelivery">
                         <p>
                             ENTREGA EM ATÉ 48H
                         </p>
@@ -223,13 +172,13 @@
                         </p>
                     </div>
                 </div>
-                <div id="container-ppCalcule">
-                    <p class="ppCalcule">
+                <div>
+                    <p class="ppShipping">
                         CALCULE O FRETE, O PRAZO DE ENTREGA E DISPONIBILIDADE EM UMA DE NOSSAS LOJAS FÍSICAS:
                     </p>
-                    <div class="ppCep">
+                    <div class="ppZcode">
                         <input
-                        id="pppCep"
+                        id="pppZcode"
                         name="cep"
                         placeholder="cep"
                         required pattern="\d{5}-\d{3}"/>
@@ -237,14 +186,14 @@
                     </div>
                 </div>
 
-                <div id="container-ppCompreWhats">
-                    <div class="ppCompre">
+                <div id="container-ppBuyWhats">
+                    <div class="ppBuy">
                         <img src="../img/whatsapp.png" alt="" width="50" height="50" />
                         <p>
                             Compre com um de nossos vendedores pelo Whats app
                         </p>
                     </div>
-                    <div class="ppCompartilhe">
+                    <div class="ppShare">
                         <img src="../img/compartilhar.png" alt="" width="40" height="40" />
                         <p>
                             Compartilhe com seus amigos
@@ -258,34 +207,6 @@
     <!-- Final Main Marcel de Sousa -->
 
     <!-- Inicio Footer Victor Hugo -->
-
-    <footer class="footer-distributed">
-
-        <div class="footer-left">
-
-            <h3>NOME<span>logo</span></h3>
-
-            <p class="footer-links">
-                <a class="linkfooter" href="#">Home</a> ·
-                <a class="linkfooter" href="#">About</a> ·
-                <a class="linkfooter" href="#">Faq</a> ·
-                <a class="linkfooter" href="#">Contact</a>
-            </p>
-
-            <p class="footer-company-name">MVRCA © 2022</p>
-
-            <div class="footer-icons">
-
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-
-
-            </div>
-
-
-
-    </footer>
 
     <!-- Final Footer Victor Hugo -->
 

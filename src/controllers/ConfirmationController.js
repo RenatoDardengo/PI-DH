@@ -1,6 +1,6 @@
-const confirmacao={
+const confirmation={
     index: (req, res)=>{
-        return res.render ("confirmacao", {title:"Pagina de Confirmação"})
+        return res.render ("confirmation", {title:"Pagina de Confirmação"})
     },
 
     // show:(req,res)=>{
@@ -20,4 +20,4 @@ const confirmacao={
 
 }
 
-module.exports = confirmacao;
+module.exports = confirmation;

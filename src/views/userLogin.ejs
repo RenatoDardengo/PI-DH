@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/adminLogin.css">
+  <link rel="stylesheet" href="./css/userLogin.css">
 </head>
 
 <body>
   <div id="login-container">
-    <h1>Administrador</h1>
+    <h1>Login</h1>
     
-    <form action="/admin" method="post">
+    <form action="/login" method="post">
       <label for="userName">Usuário</label>
-      <input type="text" name="userName" id="user" placeholder="Digite seu usuário" autocomplete="off" required>
+      <input type="email" name="userLogin" id="user" placeholder="Digite seu email" autocomplete="off" required>
       <label for="password">Senha</label>
       <div id="passwor-img">    
-        <input type="password" name="userPassword" id="password" placeholder="Digite sua senha" required>
+        <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
         <a href="javaScript:mostrarSenha()"> <img src="/img/view2.png" alt="" id="img-password"></a>
         <script>
           function mostrarSenha() {
@@ -45,8 +45,9 @@
     </form>
    
     <div id="cadastrar-container">
+      <p> Não é cadastrado?</p>
 
-      <a href="/">voltar para home</a>
+      <a href="/login/create">Clique aqui</a>
     </div>
   </div>
 </body>
