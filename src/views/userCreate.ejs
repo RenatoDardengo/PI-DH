@@ -41,7 +41,7 @@
       <div id="title">
         <label for="birthdate"><span>*</span> Nascimento</label>
       </div>
-      <input type="text" name="birthdate" id="birthdate" autocomplete="off" required>
+      <input type="text" name="birthDate" id="birthdate" autocomplete="off" required>
 
 
       <div id="title">
@@ -58,14 +58,14 @@
         <label for="password"><span>*</span> Senha</label>
       </div>
       <div id="password-img">    
-        <input type="password" name="userPassword" id="password" placeholder="Digite sua senha" required>
+        <input type="password" name="password" id="password1" placeholder="Digite sua senha" required>
         <a href="javaScript:mostrarSenha()"> <img src="/img/view2.png" alt="" id="img-password"></a>
       </div>
       <div id="title">
         <label for="genre"><span>*</span> Confirmar Senha</label>
       </div>
       <div id="password-img">    
-        <input type="password" name="userPassword2" id="password" placeholder="Digite sua senha" required>
+        <input type="password" name="password2" id="password2" placeholder="Digite sua senha" required>
         <a href="javaScript:mostrarSenha()"> <img src="/img/view2.png" alt="" id="img-password"></a>
       </div>
 
@@ -84,7 +84,7 @@
   </div>
   <script>
     function mostrarSenha() {
-      var tipo = document.getElementById("password");
+      var tipo = document.getElementById("password1");
 
       if (tipo.type == "password") {
         tipo.type = "text";

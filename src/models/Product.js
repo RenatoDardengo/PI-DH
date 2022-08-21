@@ -9,7 +9,7 @@ const Product = db.define("Products",
       autoIncrement:true,
       primaryKey: true,
     },
-    gender:{
+    genre:{
       type:Sequelize.DataTypes.STRING (20),
       allowNull:false,
     },

@@ -3,6 +3,7 @@ const sequelize = require("../config/sequelize");
 const db = require("../config/sequelize")
 const User = require("../models/User");
 const { Op } = require("sequelize");
+const bcrypt = require("../helpers/bcrypt");
 
 
 const authUserRote = {
@@ -13,14 +14,49 @@ const authUserRote = {
   create:(req, res)=>{
     return res.render ("usercreate")
   },
+  authentication:async (req, res)=>{
+    res.clearCookie("user");
+    res.clearCookie("isAdmin");
+     const{userLogin, userPassword} = req.body;
+    
+     
+    const userAuth = await User.findOne({
+      where: {
+        email:userLogin,
+        password:password
+      }
+      
+    })
+    if(!userAuth){
+      
+      return res.render("userLogin",{
+        Title:"Login",
+        error:{
+          message: "Dados incorretos!"},
+      });
+    };
+    
+
+    const user = JSON.parse(
+      JSON.stringify(userAuth, ["id", "firstName", "isAdmin"])
+    );
+    req.session.name = user.firstName;
+    req.session.isAdmin = parseInt(user.isAdmin);
+    res.cookie("user", user.firstName)
+    
+    res.redirect("/")
+
+
+  },
   
   store:async (req, res) => {
-    
-    const { firstName, lastName, cpf, email, telephone, birthDate, genre, password, isAdmin } = req.body;
+    const isAdmin = 0;
+    console.log(req.body)
+    const { firstName, lastName, cpf, email, telephone, birthDate, genre, password} = req.body;
 
     
 
-      if (!firstName || !lastName || !cpf || !email || !telephone || !birthDate || !genre || !password || !isAdmin ) {
+      if (!firstName || !lastName || !cpf || !email || !telephone || !birthDate || !genre || !password ) {
         
 
           return res.render("usercreate", {
@@ -37,7 +73,7 @@ const authUserRote = {
             telephone,
             birthDate,
             genre,
-            password,
+            password: bcrypt.generateHash(password),
             isAdmin
           })
         })

@@ -26,14 +26,14 @@ const storage = multer.diskStorage({
 router.get("/", isAuthenticated, adminController.index)
 
 //rotas produtos
-router.get("/product", /*isAuthenticated,*/ adminController.showAll)
-router.get("/product/show", /*isAuthenticated,*/ adminController.show)
-router.get("/product/create", /*isAuthenticated,*/ adminController.create)
-router.post("/product/create", /*isAuthenticated,*/ upload.single("picture-input"),adminController.store)
-router.get("/product/edit/:id",/*isAuthenticated,*/ adminController.edit)
-router.put("/product/edit/:id",/*isAuthenticated,*/ adminController.update)
-router.get("/product/delete/:id", /*isAuthenticated,*/ adminController.delete)
-router.delete("/product/delete/:id",/*isAuthenticated,*/ adminController.destroy)
+router.get("/product", isAuthenticated, adminController.showAll)
+router.post("/product/show", isAuthenticated, adminController.show)
+router.get("/product/create", isAuthenticated, adminController.create)
+router.post("/product/create", isAuthenticated, upload.single("picture-input"),adminController.store)
+router.get("/product/edit/:id",isAuthenticated, adminController.edit)
+router.put("/product/edit/:id",isAuthenticated,upload.single("picture-input"), adminController.update)
+router.get("/product/delete/:id", isAuthenticated, adminController.delete)
+router.delete("/product/delete/:id",isAuthenticated, adminController.destroy)
 
 //rotas usuários
 

@@ -146,11 +146,11 @@
 
                         <div class="Product-input">
                             <label for="cost-id">Custo:</label>
-                            <input value="R$ <%= product.costValue %>" type="text" name="cost" id="cost-id" />
+                            <input value="<%= product.costValue %>" type="text" name="costValue" id="cost-id" />
                         </div>
                         <div class="Product-input">
                             <label for="sale-id">Venda:</label>
-                            <input value="R$ <%= product.saleValue %>" type="text" name="sale" id="sale-id" />
+                            <input value=" <%= product.saleValue %>" type="text" name="saleValue" id="sale-id" />
                         </div>
 
                         <div class="Product-input">
@@ -170,12 +170,12 @@
                     <div class="Product-input">
                         <label class="picture" for="picture-input" tabIndex="0">
                             <input type="file" accept="image/png" name="picture-input" id="picture-input" />
-                            <span class="picture-image"><img src="/uploads/<%= product.img %>"></span>
-                            
-                           </label>
+                            <span class="picture-image"> <img src="/uploads/<%= product.img %>" alt=""></span>
+                        </label>
 
 
                     </div>
+                    
 
 
                     <div id="btn-options">
@@ -199,7 +199,7 @@
 
         </div>
     </span>
-    <!-- <script src="/js/adminProduct.js"></script> -->
+    <script src="/js/adminProduct.js"></script>
 </body>
 
 </html>

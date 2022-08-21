@@ -6,5 +6,6 @@ const autheUserController = require ("../controllers/AuthenticationUserControlle
 router.get("/", autheUserController.login)
 router.get("/create", autheUserController.create)
 router.post("/create", autheUserController.store)
+router.post ("/",autheUserController.authentication)
 
 module.exports = router;

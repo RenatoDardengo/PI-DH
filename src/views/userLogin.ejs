@@ -5,33 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-    <link rel="stylesheet" href="./css/userLogin.css">
+    <link rel="stylesheet" href="/css/userLogin.css">
 </head>
 
 <body>
   <div id="login-container">
-    <h1>Usuário</h1>
+    <h1>Login</h1>
     
-    <form action="/admin" method="post">
-      <label for="userName">Usuário</label>
-      <input type="text" name="userName" id="user" placeholder="Digite seu usuário" autocomplete="off" required>
+    <form action="/login" method="post">
+      <label for="userName">Email</label>
+      <input type="email" name="userLogin" id="user" placeholder="Digite seu email" autocomplete="off" required>
       <label for="password">Senha</label>
       <div id="password-img">    
         <input type="password" name="userPassword" id="password" placeholder="Digite sua senha" required>
         <a href="javaScript:mostrarSenha()"> <img src="/img/view2.png" alt="" id="img-password"></a>
-        <script>
-          function mostrarSenha() {
-            var tipo = document.getElementById("password");
-
-            if (tipo.type == "password") {
-              tipo.type = "text";
-              document.getElementById("img-password").src = "/img/hidden2.png"
-            } else {
-              tipo.type = "password";
-              document.getElementById("img-password").src = "/img/view2.png"
-            }
-          }
-        </script>
+        
 
       </div>
 
@@ -48,6 +36,19 @@
       <a href="/login/create">Clique aqui</a>
     </div>
   </div>
+  <script>
+    function mostrarSenha() {
+      var tipo = document.getElementById("password");
+
+      if (tipo.type == "password") {
+        tipo.type = "text";
+        document.getElementById("img-password").src = "/img/hidden2.png"
+      } else {
+        tipo.type = "password";
+        document.getElementById("img-password").src = "/img/view2.png"
+      }
+    }
+  </script>
 </body>
 
 </html>
