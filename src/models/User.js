@@ -30,7 +30,7 @@ const User = db.define("Users",
     allowNull:false,
   },
   birthDate:{
-    type:Sequelize.DataTypes.DATEONLY,
+    type:Sequelize.DataTypes.DATE,
     
   },
   genre:{
@@ -38,7 +38,7 @@ const User = db.define("Users",
     allowNull:false,
   },
   password:{
-    type:Sequelize.DataTypes.STRING(50),
+    type:Sequelize.DataTypes.STRING(100),
     allowNull:false,
   },
   isAdmin:{

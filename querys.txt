@@ -31,7 +31,23 @@ CREATE TABLE products (
     quantity INT,
     description VARCHAR(200) NOT NULL,
     img VARCHAR(50) NOT NULL
+
+
+  
   
 );
 
---adiciona
+-- Querys para criar tabela de usuários (inserida dia 21/08/2022)
+CREATE TABLE users (
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50),
+    cpf VARCHAR(15) NOT NULL,
+    email VARCHAR (30) NOT NULL,
+    telephone VARCHAR(15),
+    birthDate DATE,
+    genre varchar (15),
+    password VARCHAR(100) NOT NULL,
+    isAdmin TINYINT NOT NULL
+    
+);

@@ -4,6 +4,8 @@ const sequelize = require("../config/sequelize");
 const db = require("../config/sequelize")
 const Product = require("../models/Product");
 const { Op, col} = require("sequelize");
+const files = require("../helpers/files");
+const upload = require("../config/upload")
 const adminController = {
   index: (req, res) => {
 
@@ -143,7 +145,7 @@ const adminController = {
   edit: async (req, res) => {
     const { id } = req.params;
 
-    const productResult = await Product.findOne({
+    var productResult = await Product.findOne({
       where: {
         id: id
       }
@@ -156,6 +158,15 @@ const adminController = {
       })
 
     }
+
+    const pp = {
+      ...productResult,
+      img:files.base64Encode(
+        upload.path + productResult.img
+      )
+    } 
+
+    productResult.img = pp.img;
 
     return res.render("adminProductEdit", { title: "Editar Produto", user: req.session.name, product: productResult, userPermission: req.session.permission })
   },

@@ -6,25 +6,45 @@
   color: #080808;
   border: none;
 }
+body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #e9e7e5, #bbb9b8, #a09d9d);
+  margin-bottom: 10px;
 
+}
+.error-alert2 {
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: red;
+}
+span {
+  font-size: 15px;
+}
+.genre {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  text-align: right;
+  margin-top: 10px;
+
+}
+#title {
+  display: flex;
+
+}
+#title span {
+  color: red;
+}
 textarea:focus,
 input:focus {
   outline: none;
-  
+
 }
-
-
-a {
-  font-size: .8rem;
-}
-
-a:hover {
-  color: #99d0f5;
-}
-
 #login-container {
-  
-  background-color:#FFFFFF;
+  background-color: #FFFFFF;
   margin-left: auto;
   margin-right: auto;
   width: 400px;
@@ -34,21 +54,21 @@ a:hover {
   text-align: center;
   border: solid rgb(15, 15, 15);
 }
-#passwor-img img{
+#password-img img {
   position: relative;
   bottom: 50px;
   left: 150px;
 }
-#passwor-img img:hover{
-  
+
+#password-img img:hover {
+
   cursor: pointer;
 }
-
 form {
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  
 }
-
 label,
 input {
   display: block;
@@ -60,7 +80,6 @@ label {
   font-weight: bold;
   font-size: .8rem;
 }
-
 input {
   border-bottom: 2px solid #323232;
   padding: 10px;
@@ -69,7 +88,7 @@ input {
   color: black;
   border-radius: 7px;
   border: 1px solid black;
-  
+
 }
 
 input:focus {
@@ -79,12 +98,13 @@ input:focus {
 #forgot-pass {
   display: block;
   text-align: right;
+  
 }
+
 .error-alert {
   font-size: 1.2rem;
   color: red;
 }
-
 #btn {
   width: 100%;
   text-align: center;
@@ -94,16 +114,20 @@ input:focus {
   border-radius: 10px;
   margin-top: 30px;
   cursor: pointer;
+  background-color: black;
   color: #fff;
-  background-color: black; 
   font-weight: bold;
 }
 
 input[type="submit"]:hover {
   background-color: #1B223C;
   transition: .5s;
-}
 
+}
+input[type="submit"] {
+  margin-top: -20px;
+
+}
 #cadastrar-container p {
   margin-bottom: 10px;
 }

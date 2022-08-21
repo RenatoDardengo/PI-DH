@@ -14,39 +14,48 @@ const authUserRote = {
   create:(req, res)=>{
     return res.render ("usercreate")
   },
+
   authentication:async (req, res)=>{
     res.clearCookie("user");
     res.clearCookie("isAdmin");
-     const{userLogin, userPassword} = req.body;
+     const{userLogin, password} = req.body;
     
-     
-    const userAuth = await User.findOne({
-      where: {
-        email:userLogin,
-        password:password
+     try {
+      const userAuth = await User.findOne({
+        where: {
+          email:userLogin
+          
+        }
+        
+      })
+      if(!userAuth){
+        throw error
+
       }
+
+      if (bcrypt.compareHash(password, userAuth.password)) {
+        const user = JSON.parse(
+          JSON.stringify(userAuth, ["id", "firstName", "isAdmin"])
+        );
+        req.session.name = user.firstName;
+        req.session.isAdmin = parseInt(user.isAdmin);
+        res.cookie("user", user.firstName)
+        
+        res.redirect("/")
+        
+      }else{
+        throw error
+      }
+
       
-    })
-    if(!userAuth){
-      
+     } catch (error) {
       return res.render("userLogin",{
         Title:"Login",
         error:{
-          message: "Dados incorretos!"},
+          message: "Dados incorretos ou usuário não cadastrado!"},
       });
-    };
-    
-
-    const user = JSON.parse(
-      JSON.stringify(userAuth, ["id", "firstName", "isAdmin"])
-    );
-    req.session.name = user.firstName;
-    req.session.isAdmin = parseInt(user.isAdmin);
-    res.cookie("user", user.firstName)
-    
-    res.redirect("/")
-
-
+     }
+   
   },
   
   store:async (req, res) => {
@@ -62,6 +71,7 @@ const authUserRote = {
           return res.render("usercreate", {
           error: {message: "Atenção!Todos os campos devem ser preenchidos!"}})
       }
+      
 
       try {
         const result = await sequelize.transaction(async(t)=>{

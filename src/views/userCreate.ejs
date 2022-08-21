@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="/css/userLogin.css">
+  <link rel="stylesheet" href="/css/userCreate.css">
 </head>
 
 <body>
@@ -59,14 +59,14 @@
       </div>
       <div id="password-img">    
         <input type="password" name="password" id="password1" placeholder="Digite sua senha" required>
-        <a href="javaScript:mostrarSenha()"> <img src="/img/view2.png" alt="" id="img-password"></a>
+        <a href="javaScript:mostrarSenha1()"> <img src="/img/view2.png" alt="" id="img-password1"></a>
       </div>
       <div id="title">
         <label for="genre"><span>*</span> Confirmar Senha</label>
       </div>
       <div id="password-img">    
         <input type="password" name="password2" id="password2" placeholder="Digite sua senha" required>
-        <a href="javaScript:mostrarSenha()"> <img src="/img/view2.png" alt="" id="img-password"></a>
+        <a href="javaScript:mostrarSenha2()"> <img src="/img/view2.png" alt="" id="img-password2"></a>
       </div>
 
 
@@ -83,15 +83,26 @@
 
   </div>
   <script>
-    function mostrarSenha() {
+    function mostrarSenha1() {
       var tipo = document.getElementById("password1");
 
       if (tipo.type == "password") {
         tipo.type = "text";
-        document.getElementById("img-password").src = "/img/hidden2.png"
+        document.getElementById("img-password1").src = "/img/hidden2.png"
       } else {
         tipo.type = "password";
-        document.getElementById("img-password").src = "/img/view2.png"
+        document.getElementById("img-password1").src = "/img/view2.png"
+      }
+    }
+    function mostrarSenha2() {
+      var tipo = document.getElementById("password2");
+
+      if (tipo.type == "password") {
+        tipo.type = "text";
+        document.getElementById("img-password2").src = "/img/hidden2.png"
+      } else {
+        tipo.type = "password";
+        document.getElementById("img-password2").src = "/img/view2.png"
       }
     }
   </script>

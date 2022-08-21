@@ -3,7 +3,7 @@ const { compareSync, hashSync } = require("bcrypt");
 const bcrypt = {
  
   generateHash: (text) => {
-    return hashSync(text, 10);
+    return hashSync(text, 5);
   },
  
   compareHash: (text, hashed) => {
