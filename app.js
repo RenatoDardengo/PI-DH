@@ -11,7 +11,6 @@ const adminRoute = require("./src/routes/adminRoute")
 const checkoutRoute = require("./src/routes/checkoutRoute")
 const userRouter = require("./src/routes/userRouter");
 const clienteRoute = require("./src/routes/clienteRoute");
-const productPageRoute = require("./src/routes/productPageRoute")
 const confirmationRoute = require("./src/routes/confirmationRoute")
 const authenticationAdminRoute = require("./src/routes/authenticationAdminRoute")
 const autheUserRoute = require("./src/routes/authenticationUserRoute")
@@ -27,15 +26,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser());
 app.use(session({ secret: process.env.SECRET_WORD }));
-app.use("/administrator", adminRoute)
-app.use("/checkout", checkoutRoute)
+app.use("/administrator", adminRoute);
+app.use("/checkout", checkoutRoute);
 app.use("/", userRouter);
 app.use("/painelCliente", clienteRoute);
-app.use("/productPage", productPageRoute)
-app.use("/confirmation", confirmationRoute)
+app.use("/confirmation", confirmationRoute);
 app.use("/admin", authenticationAdminRoute);
 app.use("/create", createUserRoute);
-app.use("/login", autheUserRoute)
+app.use("/login", autheUserRoute);
 
 
 
