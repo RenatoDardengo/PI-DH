@@ -4,6 +4,7 @@ const db = require("../config/sequelize")
 const User = require("../models/User");
 const { Op } = require("sequelize");
 const bcrypt = require("../helpers/bcrypt");
+const Products = require("../models/Product");
 
 
 const authUserRote = {
@@ -33,7 +34,7 @@ const authUserRote = {
 
       }
 
-      if (bcrypt.compareHash(password, userAuth.password)) {
+      if (bcrypt.compareHnpmash(password, userAuth.password)) {
         const user = JSON.parse(
           JSON.stringify(userAuth, ["id", "firstName", "isAdmin"])
         );
@@ -41,7 +42,8 @@ const authUserRote = {
         req.session.isAdmin = parseInt(user.isAdmin);
         res.cookie("user", user.firstName)
         
-        res.redirect("/")
+        const product = await Products.findAll();
+        res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:product, logged:req.session.name});
         
       }else{
         throw error
