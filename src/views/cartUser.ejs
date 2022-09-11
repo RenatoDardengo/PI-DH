@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg bg-dark p-3">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img  src="./img/logo.png" alt="logo">
+          <img  src="/img/logo.png" alt="logo">
 
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,17 +41,23 @@
             <button class="btn btn-outline-light" type="submit">Buscar</button>
           </form>
           <ul class="navbar-nav ">
-              <li class="nav-item mx-3">
-                
-                  <a class="nav-link  text-light " href="/login">Logar</a>
-              </li>
+            <li class="nav-item mx-3 display-flex">
+              <% if(locals.user){ %>
+                <a class="nav-link  text-light ">Olá, <%= user %></a>
+                <a class="nav-link  text-light " href="/painelCliente">Minha conta</a>
+
+              <% } else{%>
+                <a class="nav-link  text-light " href="/login"> Logar</a>
+                <%}%>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
   </header>
-  
+  <% if(locals.productSelected){%>
+      
   <section id="section-principal">
     <div id="div-products-descriptions">
       <h2>minha cesta</h2>
@@ -65,9 +71,9 @@
       </article>
       <article id="product-list">
         
-        <div> <img src="/img/tenis.jpg" alt=""></div>
+        <div> <img src="<%= productSelected.img %>" alt=""></div>
         <div>
-          <h6> Este é o titulo da descrição</h6>
+          <h6> <%= productSelected.description %></h6>
           <span> Vendido e entregue por MRV</span>
         </div>
         <div id="product-list-qtde-container">
@@ -82,32 +88,11 @@
           <span> Receba até dia 20 de setembro</span>
         </div>
         <div id="product-list-price">
-          <span> R$ 300,00</span>
+          <span> R$ <%= productSelected.saleValue %></span>
         </div>
 
       </article>
-      <article id="product-list">
-        <div> <img src="/img/tenis.jpg" alt=""></div>
-        <div>
-          <h6> Este é o titulo da descrição</h6>
-          <span> Vendido e entregue por MRV</span>
-        </div>
-        <div id="product-list-qtde-container">
-          <div id="product-list-qtde">
-            <button> - </button>
-            <input type="text" name="" id="" value="1">
-            <button> + </button>
-          </div>
-          <a href="#"> Remover</a>
-        </div>
-        <div id="product-list-shipping">
-          <span> Receba até dia 20 de setembro</span>
-        </div>
-        <div id="product-list-price">
-          <span> R$ 300,00</span>
-        </div>
-
-      </article>
+      
       <form action="" id="product-shipping">
         <div id="shipping-calculate">
        
@@ -154,7 +139,14 @@
     </div>
 
   </section>
-
+  <% }else { %>
+    <span class="error-alert">
+      <h2 >seu carrinho está vazio :(</h2>
+      <a href="/"> voltar para home</a>
+    
+    </span>
+    
+  <%} %>
   
 
 </body>

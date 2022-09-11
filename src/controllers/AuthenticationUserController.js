@@ -5,6 +5,9 @@ const User = require("../models/User");
 const { Op } = require("sequelize");
 const bcrypt = require("../helpers/bcrypt");
 const Products = require("../models/Product");
+const files = require("../helpers/files");
+
+
 
 
 const authUserRote = {
@@ -34,17 +37,26 @@ const authUserRote = {
 
       }
 
-      if (bcrypt.compareHnpmash(password, userAuth.password)) {
+      if (bcrypt.compareHash(password, userAuth.password)) {
         const user = JSON.parse(
           JSON.stringify(userAuth, ["id", "firstName", "isAdmin"])
         );
         req.session.name = user.firstName;
+        req.session.id = user.id;
         req.session.isAdmin = parseInt(user.isAdmin);
         res.cookie("user", user.firstName)
         
-        const product = await Products.findAll();
-        res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:product, logged:req.session.name});
         
+        // const product = await Products.findAll();
+
+        // const productMark = await Products.findAll({
+        //   where: { mark: "adidas" }});
+
+        //   productMark.map(productMark => productMark.img = files.base64Encode(__dirname + "/../../uploads/" + productMark.img),)
+        //   const productsPartial = productMark.slice(productMark.length - 8, productMark.length);
+        // res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:product, productMark, productsPartial, logged:req.session.name});
+        
+        res.redirect("/")
       }else{
         throw error
       }

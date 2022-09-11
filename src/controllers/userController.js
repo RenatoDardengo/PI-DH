@@ -34,9 +34,10 @@ const userController = {
             where: { mark: "adidas" }});
             productMark.map(productMark => productMark.img = files.base64Encode(__dirname + "/../../uploads/" + productMark.img),)
             const productsPartial = productMark.slice(productMark.length - 8, productMark.length);
+            const user = req.session.name
             
              
-            res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products,productMark,productsPartial});
+            res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products,productMark,productsPartial,user});
 
            
             
