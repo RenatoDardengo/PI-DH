@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const confirmationController = require("../controllers/ConfirmationController")
+const cartController = require("../controllers/CartController")
 
-router.get("/", confirmationController.index)
+router.get("/", cartController.index)
 // router.get("/product", confirmacao.show)
 // router.get("/product/create", confirmacao.create)
 // router.get("/product/edit", confirmacao.edit)

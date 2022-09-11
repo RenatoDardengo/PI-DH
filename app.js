@@ -11,7 +11,7 @@ const adminRoute = require("./src/routes/adminRoute")
 const checkoutRoute = require("./src/routes/checkoutRoute")
 const userRouter = require("./src/routes/userRouter");
 const clienteRoute = require("./src/routes/clienteRoute");
-const confirmationRoute = require("./src/routes/confirmationRoute")
+const cartRoute = require("./src/routes/cartRoute")
 const authenticationAdminRoute = require("./src/routes/authenticationAdminRoute")
 const autheUserRoute = require("./src/routes/authenticationUserRoute")
 const createUserRoute = require("./src/routes/createUserRoute")
@@ -30,7 +30,7 @@ app.use("/administrator", adminRoute);
 app.use("/checkout", checkoutRoute);
 app.use("/", userRouter);
 app.use("/painelCliente", clienteRoute);
-app.use("/confirmation", confirmationRoute);
+app.use("/cart", cartRoute);
 app.use("/admin", authenticationAdminRoute);
 app.use("/create", createUserRoute);
 app.use("/login", autheUserRoute);

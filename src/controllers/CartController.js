@@ -1,6 +1,6 @@
 const confirmation={
     index: (req, res)=>{
-        return res.render ("confirmation", {title:"Pagina de Confirmação"})
+        return res.render ("cartuser", {title:"Meu Carrinho"})
     },
 
     // show:(req,res)=>{
