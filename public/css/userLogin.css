@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Gotham;
-  color: white;
+  color: #080808;
   border: none;
 }
 
@@ -19,12 +19,12 @@ a {
 }
 
 a:hover {
-  color: #bdd9ec;
+  color: #99d0f5;
 }
 
 #login-container {
-  /* background-color:#FFF; */
-  background-color:#2d3643;
+  
+  background-color:#FFFFFF;
   margin-left: auto;
   margin-right: auto;
   width: 400px;
@@ -68,6 +68,7 @@ input {
   margin-bottom: 20px;
   color: black;
   border-radius: 7px;
+  border: 1px solid black;
   
 }
 
@@ -93,10 +94,8 @@ input:focus {
   border-radius: 10px;
   margin-top: 30px;
   cursor: pointer;
-  /* color: #FFF;
-  background-color: black; */
-  color: black;
-  background-color:rgb(241, 236, 236);
+  color: #fff;
+  background-color: black; 
   font-weight: bold;
 }
 

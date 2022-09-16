@@ -7,6 +7,20 @@
     
 
 }
+#btn-search{
+    background-color: transparent;
+    border: transparent;
+    width: 5px;
+    position: relative;
+   left: 150px;
+    bottom: 20px;
+}
+#btn-search :hover{
+cursor: pointer;
+}
+#btn-create{
+    
+}
 
 body,
 html {
@@ -246,6 +260,13 @@ td:first-child {
     text-decoration: none;
     color: azure;
 }
+.error-alert2 {
+    flex-direction: column;
+    align-items: flex-end;
+   
+    font-size: 1.2rem;
+    color: red;
+  }
 
 
 

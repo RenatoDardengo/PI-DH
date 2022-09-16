@@ -21,38 +21,41 @@
             <div id="menu-options">
                 <ul id="options">
 
-                    <li id="seller"> <img src="/img/seller.png">
-                        <a href=""> Vendedores</a>
-                    </li>
-                    <hr>
-                    <li id="cleint"> <img src="/img/cleint.png">
-                        <a href=""> Fornecedores</a>
-                    </li>
-                    <hr>
-                    <li id="represented"> <img src="/img/home.png">
-                        <a href=""> Representada</a>
-                    </li>
-                    <hr>
-                    <li id="payment"> <img src="/img/payment-plans.png">
-                        <a href=""> Planos de Pagamento</a>
-                    </li>
-                    <hr>
-                    <li id="price"> <img src="/img/price.png">
-                        <a href=""> Tabela de Preços</a>
-                    </li>
-                    <hr>
-                    <li id="product"> <img src="/img/product.png">
-                        <a href="""> Produtos</a>
+                    <% if(userPermission===2) {%>
+                        <li id="seller"> <img src="/img/add-user.png">
+                            <a> Usuários</a>
+                        </li>
+                        <hr>
+
+                        <% }%>
+                            <li id="cleint"> <img src="/img/cleint.png">
+                                <a href=""> Fornecedores</a>
+                            </li>
+                            <hr>
+                            <li id="represented"> <img src="/img/home.png">
+                                <a href=""> Representada</a>
+                            </li>
+                            <hr>
+                            <li id="payment"> <img src="/img/payment-plans.png">
+                                <a href=""> Planos de Pagamento</a>
+                            </li>
+                            <hr>
+                            <li id="price"> <img src="/img/price.png">
+                                <a href=""> Tabela de Preços</a>
+                            </li>
+                            <hr>
+                            <li id="product"> <img src="/img/product.png">
+                                <a href="""> Produtos</a>
                     </li>
                     <hr>
                     <li id=" requests"> <img src="/img/cart.png">
-                          <a href="">Pedidos</a>
-                    </li>
-                    <hr>
-                    <li id="report"> <img src="/img/report.png">
-                        <a href="">Relatórios</a>
-                    </li>
-                    <hr>
+                                    <a href="">Pedidos</a>
+                            </li>
+                            <hr>
+                            <li id="report"> <img src="/img/report.png">
+                                <a href="">Relatórios</a>
+                            </li>
+                            <hr>
 
                 </ul>
             </div>
@@ -67,15 +70,17 @@
                 <div id="img-Avatar">
                     <div>
                         <ul>
-                            <li id="avatar" > <img src="/img/businessman.png" > </li>
-                       </ul>
+                            <li id="avatar"> <img src="/img/businessman.png"> </li>
+                        </ul>
                     </div>
                     <div id="avatar-name">
                         <ul>
-                            <li> <%= user %></li>  
+                            <li>
+                                <%= user %>
+                            </li>
                         </ul>
                     </div>
-                  
+
                 </div>
 
                 <div id="panel-header">
@@ -84,7 +89,7 @@
                     </div>
 
                     <div id="panel-header-option">
-                       <a id="return-a" href="/administrator/product"> Retornar </a>
+                        <a id="return-a" href="/administrator/product"> Retornar </a>
                     </div>
 
                 </div>
@@ -95,41 +100,38 @@
             </div>
             <h2>Editar Produto</h2>
             <section id="frm">
-                <% if(locals.error){ %>
-                    <h3 class="error-alert"> <%= error.message %></h3>
+                <!-- enctype="multipart/form-data" id="frmedit" -->
 
-                <%}%>
-                <form action="/cadastrarProduto" method="post" id="frm2">
+                <form action="/administrator/product/edit/<%= product.id %>?_method=put" method="post" enctype="multipart/form-data">
                     <div class="container-input">
                         <div class="Product-input">
                             <label for="id">Id:</label>
                             <input value="<%= product.id %>" type="text" name="id" id="id" disabled />
                         </div>
-    
+
                         <div class="Product-input">
                             <label for="genre-id">Gênero:</label>
                             <select name="genre" id="genre-id">
-                                <option value="" selected><%= product.genre %></option>
-                                <option value="mas">Marculino</option>
-                                <option value="fem">Feminino</option>
+                                <option value="" selected></option>
+                                <option value="Masculino" <%=product.genre=="Masculino" ? "selected" :""%>>Marculino</option>
+                                <option value="Feminino" <%=product.genre=="Feminino" ? "selected" :""%>>Feminino</option>
                             </select>
                         </div>
                         <div class="Product-input">
                             <label for="mark-id">Marca:</label>
                             <select name="mark" id="mark-id">
-                                <option value="" selected><%= product.mark %></option>
-                                <option value="adidas">Adidas</option>
-                                <option value="mizuno">Mizuno</option>
-                                <option value="nike">Nike</option>
+                                <option value="Adidas" <%=product.mark=="Adidas" ? "selected" :"" %>>Adidas</option>
+                                <option value="Mizuno" <%=product.mark=="Mizuno" ? "selected" :"" %>>Mizuno</option>
+                                <option value="Nike" <%=product.mark=="Nike" ? "selected" :"" %>>Nike</option>
                             </select>
                         </div>
                         <div class="Product-input">
                             <label for="style-id">Estilo:</label>
                             <select name="style" id="style-id">
-                                <option value="" selected><%= product.style %></option>
-                                <option value="sporte">Esportivo</option>
-                                <option value="casual">Casual</option>
-                                <option value="social">Social</option>
+                                <option value="Esportivo" <%=product.style=="Esportivo" ? "selected" :"" %>>Esportivo
+                                </option>
+                                <option value="Casual" <%=product.style=="Casual" ? "selected" :"" %>>Casual</option>
+                                <option value="Social" <%=product.style=="Social" ? "selected" :"" %>>Social</option>
                             </select>
                         </div>
                         <div class="Product-input">
@@ -140,17 +142,17 @@
                     </div>
 
                     <div class="container-input">
-                        
-                       
+
+
                         <div class="Product-input">
                             <label for="cost-id">Custo:</label>
-                            <input value="R$ <%= product.costValue %>" type="text" name="cost" id="cost-id" />
+                            <input value="<%= product.costValue %>" type="text" name="costValue" id="cost-id" />
                         </div>
                         <div class="Product-input">
                             <label for="sale-id">Venda:</label>
-                            <input value="R$ <%= product.saleValue %>" type="text" name="sale" id="sale-id" />
+                            <input value=" <%= product.saleValue %>" type="text" name="saleValue" id="sale-id" />
                         </div>
-                       
+
                         <div class="Product-input">
                             <label for="quantity-id">Quantidade:</label>
                             <input value="<%= product.quantity %>" type="text" name="quantity" id="quantity-id" />
@@ -161,31 +163,35 @@
                     <div class="container-input">
                         <div class="Product-input">
                             <label for="description-id">Descrição:</label>
-                            <textarea  name="description" id="description-id"><%= product.description %> </textarea>
+                            <textarea name="description" id="description-id"><%= product.description %> </textarea>
                         </div>
 
                     </div>
                     <div class="Product-input">
                         <label class="picture" for="picture-input" tabIndex="0">
-                            <input type="file" accept="image/png" name="picture-input" id="picture-input" src="<%= product.img %>"/>
-                            <span class="picture-image"  ></span>
-                          </label>
-                        
-                         
+                            <input type="file" accept="image/png" name="picture-input" id="picture-input" />
+                            <span class=""> <img src="<%= product.img %>" alt=""></span>
+                        </label>
+
+
                     </div>
-
-
-
+                    
                     
 
-                   
-                    
+
                     <div id="btn-options">
-                        <input type="submit" value="Gravar" / class="btn">
-                       
+                        <input  type="submit" value="Alterar" class="btn">
+
                     </div>
-                    
+
                 </form>
+                <% if(locals.error){%>
+
+                    <h3 class="error-alert2">
+                        <%= error.message %>
+                    </h3>
+
+                    <%}%>
             </section>
 
 

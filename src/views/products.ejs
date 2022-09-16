@@ -33,48 +33,58 @@
                 </div>
             </div>
     </header>
-
-
-
-
-
     <section> 
-       
-            <table>
-                <tr>
-                    <th>id</th>
-                    <th>Genero</th>
-                    <th>Marca</th>
-                     <th>Estilo</th>
-                     <th>Numero</th>
-                     <th>Descricão</th>
-                     <th>Valor </th>
-                     <th>Quantidade </th>
+             <% for(prod of products) { %> 
+                <div class = "products">
+                    <div class="imgVitrine">
+                        <%= prod.img %>
+                       
+                    </div>
+                    <div class = precoVitrine> 
+                        <a class="linkVisualizar" href="/produtos/<%= prod.id%>"> R$ <%= prod.saleValue  %> </a> 
+                    </div>
+                    <div class="'descricaoVitrine">
+                        <%= prod.description  %> 
+                        <h4> Quantidade restante: <%= prod.quantity  %> </h4>
+
+                    </div>
+                    
+                  
+                      
                      
-                  </tr>
-            <% for(prod of products) { %> 
-                <tr>
-                    <td>  <%= prod.id  %>    </td>
-                    <td><h4>  <%= prod.genre  %> </td>
-                    <td><h4>  <%= prod.mark  %> </td>
-                    <td><h4>  <%= prod.style  %> </td>
-                    <td><h4>  <%= prod.number  %> </td>
-                    <td><h4>  <%= prod.description  %> </td>
-                    <td><h4>  <%= prod.saleValue  %> </td>
-                    <td><h4>  <%= prod.quantity  %> </td>
-                    <td> <h4> <a class="linkVisualizar" href="/produtos/<%= prod.id%>"> Visualizar</a> </h4></td>
-                </tr>
+                   
+                </div>
             <% } %> 
-
-
-
-
-            </table>
-       
-
-
     </section>
     
     <a></a>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>NOME<span>logo</span></h3>
+
+            <p class="footer-links">
+                <a class="linkfooter" href="#">Home</a> ·
+                <a class="linkfooter" href="#">About</a> ·
+                <a class="linkfooter" href="#">Faq</a> ·
+                <a class="linkfooter" href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">MVRCA © 2022</p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+
+
+            </div>
+
+
+
+    </footer>
 </body>
 </html>

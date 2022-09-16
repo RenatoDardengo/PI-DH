@@ -28,7 +28,7 @@ inputFile.addEventListener("change", function (e) {
 });
 
 function showModal(title,id, genre, mark, style, number, description, costValue, saleValue, quantity){
-    var id=id; 
+    var id_deletar=id; 
   document.getElementById('title-modal').text=title;  
   document.getElementById('input-id-modal').value=id;
   document.getElementById('input-genre-modal').value=genre;

@@ -1,6 +1,6 @@
 const clienteController = {
     home: (req, res) => {
-        return res.render("painelCliente", { title: "Painel do cliente" })
+        return res.render("createuser", { title: "Painel do cliente" })
 
 
     },

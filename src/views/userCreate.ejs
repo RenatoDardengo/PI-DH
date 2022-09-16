@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/userCreate.css">
+  <script async type="text/javascript" src="/js/user.js" ></script>
+</head>
+
+<body>
+  <div id="login-container">
+    <h2>Crie seu cadastro</h2>
+
+    <form action="/login/create" method="post">
+      <div id="title">
+        <label for="firstName"><span>*</span> Nome</label>
+      </div>
+      <input type="text" name="firstName" id="firstName" autocomplete="off" required>
+
+      <div id="title">
+        <label for="lastName"><span>*</span> Sobrenome</label>
+      </div>
+      <input type="text" name="lastName" id="lastName" autocomplete="off" required>
+
+      <div id="title">
+        <label for="cpf"><span>*</span> CPF</label>
+      </div>
+      <input type="text" maxlength="14" name="cpf" id="cpf" placeholder="Digite somente os números" autocomplete="off" required>
+
+      <div id="title">
+        <label for="email"><span>*</span> Email</label>
+      </div>
+      <input type="email" name="email" id="email" placeholder="Digite seu melhor email" autocomplete="off" required>
+
+      <div id="title">
+        <label for="telephone"><span>*</span> Telefone</label>
+      </div>
+      <input type="text" name="telephone" id="telephone" autocomplete="off" required>
+
+      <div id="title">
+        <label for="birthdate"><span>*</span> Nascimento</label>
+      </div>
+      <input type="text" name="birthDate" id="birthdate" autocomplete="off" required>
+
+
+      <div id="title">
+        <label for="genre"><span>*</span> Gênero</label>
+      </div>
+
+      <div class="genre">
+        <input type="radio" value="Masculino" name="genre">Masculino
+        <input type="radio" value="Feminino" name="genre">Feminino
+        <input type="radio" value="naoinformar" name="genre">Não informar
+        
+      </div>
+
+      <div id="title">
+        <label for="password"><span>*</span> Senha</label>
+      </div>
+      <div id="password-img">    
+        <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
+        <a href="javaScript:mostrarSenha('password')"> <img src="/img/view2.png" alt="" id="img-password"></a>
+      </div>
+      <div id="title">
+        <label for="genre"><span>*</span> Confirmar Senha</label>
+      </div>
+      <div id="password-img">    
+        <input type="password" name="password" id="password-confirmation" placeholder="Digite sua senha" required>
+        <a href="javaScript:mostrarSenha('password-confirmation')" > <img src="/img/view2.png" alt="" id="img-password-confirmation"></a>
+      </div>
+
+
+      <button type="submit" id="btn">Cadastrar</button>
+
+    </form>
+    <% if(locals.error){%>
+
+      <h3 class="error-alert2">
+          <%= error.message %>
+      </h3>
+
+      <%}%>
+
+  </div>
+
+
+  
+</body>
+
+
+</html>

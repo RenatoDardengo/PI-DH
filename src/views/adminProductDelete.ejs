@@ -21,10 +21,13 @@
             <div id="menu-options">
                 <ul id="options">
 
-                    <li id="seller"> <img src="/img/seller.png">
-                        <a href=""> Vendedores</a>
-                    </li>
-                    <hr>
+                    <% if(userPermission===2) {%>
+                        <li id="seller"> <img src="/img/add-user.png">
+                            <a> Usuários</a>
+                        </li>
+                        <hr>
+
+                   <% }%>
                     <li id="cleint"> <img src="/img/cleint.png">
                         <a href=""> Fornecedores</a>
                     </li>
@@ -104,29 +107,18 @@
     
                         <div class="Product-input">
                             <label for="genre-id">Gênero:</label>
-                            <select name="genre" id="genre-id">
-                                <option value="" selected><%= product.genre %></option>
-                                <option value="mas">Marculino</option>
-                                <option value="fem">Feminino</option>
-                            </select>
+                             <input value="<%= product.genre %>" type="text" name="genre" id="genre-id" />
+                            
                         </div>
                         <div class="Product-input">
                             <label for="mark-id">Marca:</label>
-                            <select name="mark" id="mark-id">
-                                <option value="" selected><%= product.mark %></option>
-                                <option value="adidas">Adidas</option>
-                                <option value="mizuno">Mizuno</option>
-                                <option value="nike">Nike</option>
-                            </select>
+                            <input value="<%= product.mark %>" type="text" name="mark" id="mark-id" />
+                            
                         </div>
                         <div class="Product-input">
                             <label for="style-id">Estilo:</label>
-                            <select name="style" id="style-id">
-                                <option value="" selected><%= product.style %></option>
-                                <option value="sporte">Esportivo</option>
-                                <option value="casual">Casual</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <input value="<%= product.style %>" type="text" name="style" id="style-id" />
+                            
                         </div>
                         <div class="Product-input">
                             <label for="number-id">Numero:</label>
@@ -161,10 +153,18 @@
                         </div>
 
                     </div>
+                    <div class="Product-input">
+                        <label class="picture" for="picture-input" tabIndex="0">
+                            <input type="file" accept="image/png" name="picture-input" id="picture-input"/>
+                            <span class="picture-image" ><img src="/uploads/<%= product.img %>" alt=""></span>
+                          </label>
+                        
+                         
+                    </div>
 
                     
                     <div id="btn-options">
-                        <input type="submit" value="Gravar" / class="btn">
+                        <input type="submit" value="Excluir" / class="btn">
                        
                     </div>
                     
