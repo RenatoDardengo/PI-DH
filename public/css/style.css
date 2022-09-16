@@ -2,3 +2,8 @@
   display: flex;
   flex-flow: row;
 }
+
+.border-radius{
+  border: 1px solid white;
+  border-radius: 5px;
+}

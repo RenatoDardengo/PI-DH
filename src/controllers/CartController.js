@@ -1,54 +1,47 @@
-// const sequelize = require("../config/sequelize");
-// const db = require("../config/sequelize")
 const Product = require("../models/Product");
-// const { Op, col} = require("sequelize");
+const { Op, col } = require("sequelize");
 const files = require("../helpers/files");
-const upload = require("../config/upload")
+const upload = require("../config/upload");
 
-const confirmation={
-    index: (req, res)=>{
-        const user= req.session.name
-        return res.render ("cartuser", {title:"Meu Carrinho", user})
+const confirmation = {
+    index: (req, res) => {
+        const user = req.session.name
+        return res.render("cartuser", { title: "Meu Carrinho", user })
     },
 
-    show: async(req,res)=>{
-        const {id}= req.params;
-        var productSelected = await Product.findOne({
-            where:{ id:id}
-        });
+    show: async (req, res) => {
 
-        if (!productSelected) {
-            return res.render("error", {
-              title: "Erro de Servidor",
-              message: "Nenhum usuário encontrado"
-            })
-      
+        const id = req.params.id;
+
+        if (req.cookies.idProd) {
+            var ids = req.cookies.idProd
+            var arrayIds = [...ids, id]
+            res.cookie("idProd", arrayIds);
+            var productSelected = await Product.findAll({
+                where: { id: { [Op.in]: arrayIds } }
+            });
+
+        } else {
+            res.cookie("idProd", [id]);
+            var productSelected = await Product.findOne({
+                where: { id: id }
+            });
         }
-        const imgProduct = {
-            ...productSelected,
-            img:files.base64Encode(
-              upload.path + productSelected.img
-            )
+        if(productSelected.length > 0){
+            productSelected.map(productSelected => 
+            productSelected.img = files.base64Encode(__dirname + "/../../uploads/" + productSelected.img),)
+
+        }else{
+            const imgProduct = {...productSelected,
+                img:files.base64Encode(upload.path + productSelected.img)
+            }
+    
+            productSelected.img=imgProduct.img
         }
+        const user = req.session.name
+        return res.render("cartuser", { title: "Meu Carrinho", productSelected, user })
 
-        productSelected.img=imgProduct.img
-       
-        const user= req.session.name
-
-
-        return res.render ("cartuser", {title:"Meu Carrinho", productSelected, user})
     },
-
-    // create:(req, res) =>{
-    //     return res.render("confirmacao", {title: "Pagina de Confirmação"});
-    // },
-
-    // edit:(req,res)=>{
-    //     return res.render ("confirmacao", {title:"Pagina de Confirmação"})
-    // },
-    // delete:(req, res)=>{
-    //     return res.render ("confirmacao", {title: "Pagina de Confirmação"})
-    // }
 
 }
 

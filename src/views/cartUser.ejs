@@ -22,19 +22,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!-- <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#">Categoria</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/produtos">Produtos</a>
-            </li>
             
-            <li class="nav-item">
-              <a class="nav-link disabled text-light">Promoções</a>
-            </li> -->
           </ul>
           <form action="/procurar" method="get" class="d-flex"  >
             <input type="text"  name="buscar" class="form-control me-2 bg-dark "  style="color:aliceblue;" placeholder="Pesquisar" >
@@ -69,11 +57,14 @@
         <h5>Preço</h5>
 
       </article>
+      <% if(productSelected.length > 0){ %>
+      <% for(let product of productSelected) { %>
       <article id="product-list">
         
-        <div> <img src="<%= productSelected.img %>" alt=""></div>
+        
+        <div> <img src="<%= product.img %>" alt=""></div>
         <div>
-          <h6> <%= productSelected.description %></h6>
+          <h6> <%= product.description %></h6>
           <span> Vendido e entregue por MRV</span>
         </div>
         <div id="product-list-qtde-container">
@@ -88,11 +79,41 @@
           <span> Receba até dia 20 de setembro</span>
         </div>
         <div id="product-list-price">
-          <span> R$ <%= productSelected.saleValue %></span>
+          <span> R$ <%= product.saleValue %></span>
         </div>
 
       </article>
-      
+      <% } %>
+      <% }else { %>
+        <article id="product-list">
+        
+        
+          <div> <img src="<%= productSelected.img %>" alt=""></div>
+          <div>
+            <h6> <%= productSelected.description %></h6>
+            <span> Vendido e entregue por MRV</span>
+          </div>
+          <div id="product-list-qtde-container">
+            <div id="product-list-qtde">
+              <button> - </button>
+              <input type="text" name="" id="" value="1">
+              <button> + </button>
+            </div>
+            <a href="#"> Remover</a>
+          </div>
+          <div id="product-list-shipping">
+            <span> Receba até dia 20 de setembro</span>
+          </div>
+          <div id="product-list-price">
+            <span> R$ <%= productSelected.saleValue %></span>
+          </div>
+  
+        </article>
+
+
+        <% } %>
+
+
       <form action="" id="product-shipping">
         <div id="shipping-calculate">
        
