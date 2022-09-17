@@ -1,0 +1,28 @@
+{
+    "data":[
+        {
+            "id": 1,
+            "modelo": "TÊNIS RECORTES TAUPE M",
+            "precoNormal": "R$: 278,90",
+            "precoPromocional": "R$: 179,90",
+            "qtdParcelado": "2",
+            "vrParcelado": "R$: 89,95"
+        },
+        {
+            "id": 2,
+            "modelo": "TÊNIS RECORTES TAUPE C",
+            "precoNormal": "R$: 279,90",
+            "precoPromocional": "R$: 179,90",
+            "qtdParcelado": "2",
+            "vrParcelado": "R$: 89,95"
+        },
+        {
+            "id": 3,
+            "modelo": "TÊNIS RECORTES TAUPE B",
+            "precoNormal": "R$: 279,90",
+            "precoPromocional": "R$: 179,90",
+            "qtdParcelado": "2",
+            "vrParcelado": "R$: 89,95"
+        }
+    ]
+}

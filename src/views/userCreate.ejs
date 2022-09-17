@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="/css/userCreate.css">
+  <script async type="text/javascript" src="/js/user.js" ></script>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
       <div id="title">
         <label for="firstName"><span>*</span> Nome</label>
       </div>
-      <input type="text" name="firstName" id="firsttName" autocomplete="off" required>
+      <input type="text" name="firstName" id="firstName" autocomplete="off" required>
 
       <div id="title">
         <label for="lastName"><span>*</span> Sobrenome</label>
@@ -26,7 +27,7 @@
       <div id="title">
         <label for="cpf"><span>*</span> CPF</label>
       </div>
-      <input type="text" name="cpf" id="cpf" placeholder="Digite somente os números" autocomplete="off" required>
+      <input type="text" maxlength="14" name="cpf" id="cpf" placeholder="Digite somente os números" autocomplete="off" required>
 
       <div id="title">
         <label for="email"><span>*</span> Email</label>
@@ -49,24 +50,25 @@
       </div>
 
       <div class="genre">
-        <input type="radio" value="Masculino" name="genre"><span>Masculino</span>
-        <input type="radio" value="Feminino" name="genre"><span>Feminino</span>
-        <input type="radio" value="naoinformar" name="genre"><span>Não informar</span>
+        <input type="radio" value="Masculino" name="genre">Masculino
+        <input type="radio" value="Feminino" name="genre">Feminino
+        <input type="radio" value="naoinformar" name="genre">Não informar
+        
       </div>
 
       <div id="title">
         <label for="password"><span>*</span> Senha</label>
       </div>
       <div id="password-img">    
-        <input type="password" name="password" id="password1" placeholder="Digite sua senha" required>
-        <a href="javaScript:mostrarSenha1()"> <img src="/img/view2.png" alt="" id="img-password1"></a>
+        <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
+        <a href="javaScript:mostrarSenha('password')"> <img src="/img/view2.png" alt="" id="img-password"></a>
       </div>
       <div id="title">
         <label for="genre"><span>*</span> Confirmar Senha</label>
       </div>
       <div id="password-img">    
-        <input type="password" name="password2" id="password2" placeholder="Digite sua senha" required>
-        <a href="javaScript:mostrarSenha2()"> <img src="/img/view2.png" alt="" id="img-password2"></a>
+        <input type="password" name="password" id="password-confirmation" placeholder="Digite sua senha" required>
+        <a href="javaScript:mostrarSenha('password-confirmation')" > <img src="/img/view2.png" alt="" id="img-password-confirmation"></a>
       </div>
 
 
@@ -82,30 +84,10 @@
       <%}%>
 
   </div>
-  <script>
-    function mostrarSenha1() {
-      var tipo = document.getElementById("password1");
 
-      if (tipo.type == "password") {
-        tipo.type = "text";
-        document.getElementById("img-password1").src = "/img/hidden2.png"
-      } else {
-        tipo.type = "password";
-        document.getElementById("img-password1").src = "/img/view2.png"
-      }
-    }
-    function mostrarSenha2() {
-      var tipo = document.getElementById("password2");
 
-      if (tipo.type == "password") {
-        tipo.type = "text";
-        document.getElementById("img-password2").src = "/img/hidden2.png"
-      } else {
-        tipo.type = "password";
-        document.getElementById("img-password2").src = "/img/view2.png"
-      }
-    }
-  </script>
+  
 </body>
+
 
 </html>
