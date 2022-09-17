@@ -51,3 +51,9 @@ CREATE TABLE users (
     isAdmin TINYINT NOT NULL
     
 );
+
+-- Incluindo campos na tabela do produtos - Marcel 17/09
+ALTER TABLE products ADD (
+    productModel VARCHAR (20) NOT NULL, 
+    specialValue DOUBLE NOT NULL
+);

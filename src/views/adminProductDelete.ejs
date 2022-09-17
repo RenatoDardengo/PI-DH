@@ -115,6 +115,13 @@
                             <input value="<%= product.mark %>" type="text" name="mark" id="mark-id" />
                             
                         </div>
+
+                        <div class="Product-input">
+                            <label for="model-id">Modelo:</label>
+                            <input value="<%= product.productModel %>" type="text" name="mark" id="model-id" />
+                            
+                        </div>
+
                         <div class="Product-input">
                             <label for="style-id">Estilo:</label>
                             <input value="<%= product.style %>" type="text" name="style" id="style-id" />
@@ -137,6 +144,11 @@
                         <div class="Product-input">
                             <label for="sale-id">Venda:</label>
                             <input value="R$ <%= product.saleValue %>" type="text" name="sale" id="sale-id" />
+                        </div>
+
+                        <div class="Product-input">
+                            <label for="special-id">Especial:</label>
+                            <input value="R$ <%= product.specialValue %>" type="text" name="special" id="special-id" />
                         </div>
                        
                         <div class="Product-input">

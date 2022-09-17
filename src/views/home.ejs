@@ -87,9 +87,9 @@
             <div class="card my-2 mx-3" style="width: 17rem;">
                 <img src="<%= prod.img %> " class="card-img-top " alt="...">
                 <div class="card-body d-flex align-items-center flex-column">
-                    <h5 class="card-title"><%= prod.saleValue  %> </h5>
+                    <h5 class="card-title"><%=prod.mark%> <%=prod.productModel%></h5>
                     <p class="card-text"> <%= prod.description  %></p>
-                    <a href="/cart/<%=prod.id %> " class="btn btn-primary"> R$ <%=  prod.saleValue %> </a>
+                    <a href="/productPage/<%=prod.id %> " class="btn btn-primary"> R$ <%=  prod.saleValue %> </a>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
                  <div class="card-body d-flex align-items-center flex-column">
                      <h5 class="card-title"><%= prodMark.saleValue  %> </h5>
                      <p class="card-text"> <%= prodMark.description  %></p>
-                     <a href="/productPage" class="btn btn-primary"> R$<%=  prodMark.costValue %> </a>
+                     <a href="/productPage/<%=prodMark.id %>" class="btn btn-primary"> R$<%=  prodMark.costValue %> </a>
                  </div>
              </div>
          </div>
@@ -132,7 +132,7 @@
                <div class="card-body d-flex align-items-center flex-column">
                    <h5 class="card-title"><%= prodPartial.saleValue  %> </h5>
                    <p class="card-text"> <%= prodPartial.description  %></p>
-                   <a href="/" class="btn btn-primary"> R$<%=  prodPartial.costValue %> </a>
+                   <a href= "/productPage/<%=prodPartial.id %>" class="btn btn-primary"> R$<%=  prodPartial.costValue %> </a>
                </div>
            </div>
        </div>

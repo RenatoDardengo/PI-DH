@@ -6,7 +6,7 @@ const upload = require("../config/upload");
 const confirmation = {
     index: (req, res) => {
         const user = req.session.name
-        return res.render("cartuser", { title: "Meu Carrinho", user })
+        return res.render("ProductPage", { title: "Pagina de produtos", user })
     },
 
     show: async (req, res) => {

@@ -27,7 +27,7 @@ inputFile.addEventListener("change", function (e) {
   }
 });
 
-function showModal(title,id, genre, mark, style, number, description, costValue, saleValue, quantity){
+function showModal(title,id, genre, mark, style, number, description, productModel, costValue, saleValue, specialValue, quantity){
     var id_deletar=id; 
   document.getElementById('title-modal').text=title;  
   document.getElementById('input-id-modal').value=id;
@@ -36,8 +36,10 @@ function showModal(title,id, genre, mark, style, number, description, costValue,
   document.getElementById('input-style-modal').value=style;
   document.getElementById('input-number-modal').value=number;
   document.getElementById('input-description-modal').value=description;
+  document.getElementById('input-description-modal').value=productModel;
   document.getElementById('input-costValue-modal').value=costValue;
   document.getElementById('input-saleValue-modal').value=saleValue;
+  document.getElementById('input-saleValue-modal').value=specialValue;
   document.getElementById('input-quantity-modal').value=quantity;
   document.getElementsByName("teste").value=title
 

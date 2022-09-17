@@ -33,8 +33,16 @@ const Product = db.define("Products",
       type:Sequelize.DataTypes.DOUBLE,
       allowNull:false,
     },
+    specialValue:{
+      type:Sequelize.DataTypes.DOUBLE,
+      allowNull:false,
+    },
     quantity:{
       type:Sequelize.DataTypes.INTEGER,
+      allowNull:false,
+    },
+    productModel:{
+      type:Sequelize.DataTypes.STRING(20),
       allowNull:false,
     },
     description:{

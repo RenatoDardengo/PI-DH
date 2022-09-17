@@ -158,11 +158,13 @@
                                 <th>Id</th>
                                 <th>Gênero</th>
                                 <th>Marca</th>
+                                <th>Modelo</th>
                                 <th>Estilo</th>
                                 <th>Numero</th>
                                 <th>Descrição</th>
                                 <th>Custo</th>
                                 <th>Venda</th>
+                                <th>Especial</th>
                                 <th>Qtde</th>
                                 <th>Ações</th>
                               </tr>
@@ -173,11 +175,13 @@
                                 <td><%= product.id %></td>
                                 <td><%= product.genre %></td>
                                 <td><%= product.mark %></td>
+                                <td><%= product.productModel %></td>
                                 <td><%= product.style %></td>
                                 <td><%= product.number %></td>
                                 <td><%= product.description %></td>
                                 <td><%= product.costValue %></td>
                                 <td><%= product.saleValue %></td>
+                                <td><%= product.specialValue %></td>
                                 <td><%= product.quantity %></td>
                                 
                                 <td class="table-actions">
@@ -244,6 +248,11 @@
                                     <input type="text" name="mark" id="input-mark-modal" disabled/>
                                 </div>
 
+                                <div class="Product-input">
+                                    <label for="input-productModel-modal">Marca:</label>
+                                    <input type="text" name="model" id="input-productModel-modal" disabled/>
+                                </div>
+
                                 
         
                             </div>
@@ -270,6 +279,11 @@
                                 <div class="Product-input">
                                     <label for="input-saleValue-modal">Venda:</label>
                                     <input  type="text" name="sale" id="input-saleValue-modal" disabled/>
+                                </div>
+
+                                <div class="Product-input">
+                                    <label for="input-specialValue-modal">Especial:</label>
+                                    <input  type="text" name="special" id="input-specialValue-modal" disabled/>
                                 </div>
                                
                                 <div class="Product-input">
