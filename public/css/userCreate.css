@@ -27,10 +27,12 @@ span {
   display: flex;
   flex-direction: row;
   align-content: flex-start;
-  text-align: right;
   margin-top: 10px;
+  text-align:start;
 
 }
+
+
 #title {
   display: flex;
 
@@ -47,7 +49,7 @@ input:focus {
   background-color: #FFFFFF;
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
+  width: 430px;
   padding: 25px;
   margin-top: 10vh;
   border-radius: 5px;
@@ -130,4 +132,15 @@ input[type="submit"] {
 }
 #cadastrar-container p {
   margin-bottom: 10px;
+}
+.message-error {
+  color: rgb(241, 14, 14);
+  font-size: 0.75rem;
+  /* display: none; */
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+#container-cadastro form input.error {
+  border: 2px solid rgb(245, 16, 16);
 }
