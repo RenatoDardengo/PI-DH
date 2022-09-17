@@ -21,8 +21,5 @@ const storage = multer.diskStorage({
 
 router.get("/", cartController.index)
 router.get("/:id",upload.single("picture-input"), cartController.show)
-// router.get("/product/create", confirmacao.create)
-// router.get("/product/edit", confirmacao.edit)
-// router.get("/product/delete", confirmacao.delete)
 
 module.exports=router;
