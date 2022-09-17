@@ -1,11 +1,8 @@
 // var products = require("../data/productsPage.json");
 // products = products.data;
-<<<<<<< HEAD
 const Product = require("../models/Product");
 const files = require("../helpers/files");
 const upload = require("../config/upload");
-=======
->>>>>>> 55d478dac771fbeca55b6ddf2cdc6000a93e2f4b
 
 const productPageController={
     show: async(req,res)=>{
@@ -17,11 +14,7 @@ const productPageController={
         if (!productSelected) {
             return res.render("error", {
               title: "Erro de Servidor",
-<<<<<<< HEAD
               message: "Nenhum produto encontrado!"
-=======
-              message: "Nenhum usuário encontrado"
->>>>>>> 55d478dac771fbeca55b6ddf2cdc6000a93e2f4b
             })
       
         }
@@ -37,11 +30,7 @@ const productPageController={
         const user= req.session.name
 
 
-<<<<<<< HEAD
         return res.render ("productPage", {title:"PÁGINA DO PRODUTO", productSelected, user})
-=======
-        return res.render ("productPage", {title:"Pagina de produtos", productSelected, user})
->>>>>>> 55d478dac771fbeca55b6ddf2cdc6000a93e2f4b
     },
     // index: (req, res)=>{
     //     return res.render ("productPage", {title:"Pagina de Produto"})
