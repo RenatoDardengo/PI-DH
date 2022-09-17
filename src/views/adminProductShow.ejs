@@ -161,7 +161,6 @@
                                 <th>Modelo</th>
                                 <th>Estilo</th>
                                 <th>Numero</th>
-                                <th>Descrição</th>
                                 <th>Custo</th>
                                 <th>Venda</th>
                                 <th>Especial</th>
@@ -178,7 +177,6 @@
                                 <td><%= product.productModel %></td>
                                 <td><%= product.style %></td>
                                 <td><%= product.number %></td>
-                                <td><%= product.description %></td>
                                 <td><%= product.costValue %></td>
                                 <td><%= product.saleValue %></td>
                                 <td><%= product.specialValue %></td>
@@ -249,7 +247,7 @@
                                 </div>
 
                                 <div class="Product-input">
-                                    <label for="input-productModel-modal">Marca:</label>
+                                    <label for="input-productModel-modal">Model:</label>
                                     <input type="text" name="model" id="input-productModel-modal" disabled/>
                                 </div>
 
@@ -293,15 +291,7 @@
         
         
                             </div>
-                            <div class="container-input">
-                                <div class="Product-input">
-                                    <label for="input-description-modal">Descrição:</label>
-                                    <textarea  name="description" id="input-description-modal" disabled> </textarea>
-                                </div>
-        
-                            </div>
-        
-                            
+              
                            
                             <div id="btn-options">
                                 <input type="submit" value="Excluir"  class="btn">

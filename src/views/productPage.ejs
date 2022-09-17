@@ -86,24 +86,10 @@
       </div>
     </nav>
 
-        <!-- Main Marcel de Sousa -->
-    
-        <!-- <div id="container-ppSubPage">
-            <a href="/tipo" class="ppTmm"><b>TENIS ></b></a>
-            <a href="" class="ppTmm"><b>  </b></a>
-            <a href="/tipo/marca/modelo" class="ppTmm"><b>MODELO ></b></a>
-        </div> -->
-
-        
+      
                                 <!-- Main Marcel de Sousa -->
                    
                             <main>
-                                <!-- <div id="container-ppSubPage">
-                                    <a href="/tipo" class="ppTmm"><b>TENIS ></b></a>
-                                    <a href="/tipo/marca" class="ppTmm"><b>MARCA ></b></a>
-                                    <a href="/tipo/marca/modelo" class="ppTmm"><b>MODELO ></b></a>
-                                </div> -->
-                        
                                 <div id="container-ppVerticalCatalog">
                                     <div>
                                                              
@@ -123,24 +109,17 @@
                                                     </p> -->
                                                 </li>
                                                 <br></br>
-                                                <li class="ppDescInf"><b>MATERIAL:</b>
-                                                    <p>
-                                                        <br><%= productSelected.description %>.</br>
-                                                    </p>
-                                                </li>
                                                 <br></br>
                                                 <li class="ppDescInf">
                                                     <br></br>
                                                     <p>
                                                         <br><b>COMO CUIDAR DO SEU ORIGINAL MR. CAT:</b></br>
                                                         
-                                                        <br><%= productSelected.description %>.</br>
-               
                                                         <br><b>E LEMBRE-SE ...</b></br>
                                                         
-                                                        <br>... O SEU ORIGINAL MR. CAT É FABRICADO COM COUROS ESPECIALMENTE TRATADOS, POR ISSO PODEM APRESENTAR MARCAS, PEQUENOS ARRANHÕES E DIFERENÇAS DE TONALIDADE, O QUE NÃO SÃO DEFEITOS, MAS CARACTERÍSTICAS NATURAIS DA PELE.</br>
+                                                        <br>... O SEU CALÇADO PRECISA DE CUIDADOS PARA UMA VIDA UTIL PROLONGADA.</br>
                                                         
-                                                        <br><b>CUIDE BEM DO SEU MR. CAT.</b> VOCÊ PERCEBERÁ QUE QUANTO MAIS O TEMPO PASSA, MAIS PESSOAL E BONITO ELE FICA.</br>
+                                                        <br><b>CUIDE BEM</b> VOCÊ PERCEBERÁ QUE QUANTO MAIS O TEMPO PASSA, MAIS PESSOAL E BONITO ELE FICA.</br>
                                                     </p>
                                                 </li>
                                             </ul>
@@ -154,12 +133,12 @@
                                         <div id="container-ppin">
                                             <em class="ppin">
                                                 De
-                                                <strong>R$: <%= productSelected.saleValue %></strong>
+                                                <strong>R$: <%= productSelected.saleValue %>,00</strong>
                                             </em>
                                         
                                             <em class="ppPer">
                                                 Por: 
-                                                <strong>R$ :<%= productSelected.specialValue %></strong>
+                                                <strong>R$: <%= productSelected.specialValue %>,00</strong>
                                             </em>
                             
                                             <em class="ppOr">
@@ -177,15 +156,11 @@
                                             </em>
                                         </div>
                                             
-                                        <div id="container-ppColor">
-                                            <label for="cores">COR: </label>
-                                            <label for="cor">TAUPE</label>
-                                        </div>
                                         <div id="container-ppSize">
                                             <label><b>TAMANHOS</b></label>
                                             <ul class="ppSize">
                                                 <li class="ppSizes">41</li>
-                                                <li class="ppSizes"><%=productSelected.number%></li>
+                                                <li class="ppSizes">42</li>
                                                 <li class="ppSizes">43</li>
                                                 <li class="ppSizes">44</li>
                                                 <li class="ppSizes">45</li>
@@ -202,13 +177,7 @@
                                                 </p>
                                             </article>
                                         </div>
-                                        <div id="container-ppColors">
-                                            <label>CORES</label>
-                                            <ul class="ppOtherCor">
-                                                <img class="ppOther" src="../img/TENIS-RECORTESMH1.jpg" />
-                                                <img class="ppOther" src="../img/TENIS-RECORTESOW1.jpg" />
-                                            </ul>
-                                        </div>
+
                                         <div id="container-ppDelivery">
                                             <img src="../img/caminhao2.png" alt="" width="70" height="70" />
                                             <div class="ppDelivery">
@@ -220,19 +189,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div>
-                                            <p class="ppShipping">
-                                                CALCULE O FRETE, O PRAZO DE ENTREGA E DISPONIBILIDADE EM UMA DE NOSSAS LOJAS FÍSICAS:
-                                            </p>
-                                            <div class="ppZcode">
-                                                <input
-                                                id="pppZcode"
-                                                name="cep"
-                                                placeholder="cep"
-                                                required pattern="\d{5}-\d{3}"/>
-                                                <input type="submit" value="CALCULAR">
-                                            </div>
-                                        </div>
+                                        
                                         <div id="container-ppBuyWhats">
                                             <div class="ppBuy">
                                                 <img src="../img/whatsapp.png" alt="" width="50" height="50" />
