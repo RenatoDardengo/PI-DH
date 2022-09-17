@@ -3,7 +3,7 @@ const path = require("path");
 const sequelize = require("../config/sequelize");
 const db = require("../config/sequelize")
 const Product = require("../models/Product");
-const { Op, col} = require("sequelize");
+const { Op, col } = require("sequelize");
 const files = require("../helpers/files");
 const upload = require("../config/upload")
 const adminController = {
@@ -19,67 +19,46 @@ const adminController = {
     return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products, user: req.session.name, userPermission: req.session.permission })
   },
   show: async (req, res) => {
-    const{ search, column } = req.body;
+    const { search, column } = req.body;
 
-    if(search, !column){
+    if (search, !column) {
       var products = await Product.findAll()
 
 
-    return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products,
-     user: req.session.name, userPermission: req.session.permission ,error: { message: "Ambos os campos de pesquisa são obrigatórios!"}})
+      return res.render("adminProductShow", {
+        title: "Cadastro de Produtos", products: products,
+        user: req.session.name, userPermission: req.session.permission, error: { message: "Ambos os campos de pesquisa são obrigatórios!" }
+      })
 
     }
 
     try {
-      switch (column){
-         case "mark":
-          var products = await Product.findAll({
-            where: {
-              mark:{
-                [Op.like]:`%${search}%`
-              }
-      
-            }
-    
-          });
-          break;
-          case "genre":
-            var products = await Product.findAll({
-              where: {
-                genre:{
-                  [Op.like]:`%${search}%`
-                }
-        
-              }
-      
-            });
-            break;
-            case "style":
-            var products = await Product.findAll({
-              where: {
-                style:{
-                  [Op.like]:`%${search}%`
-                }
-        
-              }
-      
-            });
-            break;
-      }
+      var products = await Product.findAll({
+        where: {
+          [column]: {
+            [Op.like]: `%${search}%`
+          }
+        }
+      })
 
-  
-      return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products,
-       user: req.session.name, userPermission: req.session.permission })
-      
+
+
+      return res.render("adminProductShow", {
+        title: "Cadastro de Produtos", products: products,
+        user: req.session.name, userPermission: req.session.permission
+      })
+
     } catch (error) {
       var products = await Product.findAll()
-      return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products,
-     user: req.session.name, userPermission: req.session.permission ,error: { message: `Ocorreu um erro na sua pesquisa: ${error}`}})
+      return res.render("adminProductShow", {
+        title: "Cadastro de Produtos", products: products,
+        user: req.session.name, userPermission: req.session.permission, error: { message: `Ocorreu um erro na sua pesquisa: ${error}` }
+      })
 
-      
+
     }
-    
-    
+
+
   },
 
   create: (req, res) => {
@@ -123,11 +102,13 @@ const adminController = {
         })
       })
       var products = await Product.findAll()
-      
-      return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products, user: req.session.name,
-      userPermission: req.session.permission, success: { message: "Produto cadastrado com sucesso!"}})
 
-      
+      return res.render("adminProductShow", {
+        title: "Cadastro de Produtos", products: products, user: req.session.name,
+        userPermission: req.session.permission, success: { message: "Produto cadastrado com sucesso!" }
+      })
+
+
 
     } catch (error) {
       return res.render("adminProductCreate", {
@@ -137,7 +118,7 @@ const adminController = {
     }
 
 
-    
+
 
 
   },
@@ -161,10 +142,10 @@ const adminController = {
 
     const pp = {
       ...productResult,
-      img:files.base64Encode(
+      img: files.base64Encode(
         upload.path + productResult.img
       )
-    } 
+    }
 
     productResult.img = pp.img;
 
@@ -207,14 +188,16 @@ const adminController = {
           })
       })
       var products = await Product.findAll()
-     
 
 
-      return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products, user: req.session.name,
-      userPermission: req.session.permission, success: { message: "Produto atualizado com sucesso!"}})
-     
 
-      
+      return res.render("adminProductShow", {
+        title: "Cadastro de Produtos", products: products, user: req.session.name,
+        userPermission: req.session.permission, success: { message: "Produto atualizado com sucesso!" }
+      })
+
+
+
 
     } catch (error) {
       const productResult = await Product.findOne({
@@ -263,15 +246,19 @@ const adminController = {
 
       });
       var products = await Product.findAll()
-      if(!products){
-        return res.render("adminProductShow", { title: "Cadastro de Produtos", products: null, user: req.session.name,
-      userPermission: req.session.permission, success: { message: "Produto excluído com sucesso!"}})
-      }else{
-      return res.render("adminProductShow", { title: "Cadastro de Produtos", products: products, user: req.session.name,
-      userPermission: req.session.permission, success: { message: "Produto excluído com sucesso!"}})
+      if (!products) {
+        return res.render("adminProductShow", {
+          title: "Cadastro de Produtos", products: null, user: req.session.name,
+          userPermission: req.session.permission, success: { message: "Produto excluído com sucesso!" }
+        })
+      } else {
+        return res.render("adminProductShow", {
+          title: "Cadastro de Produtos", products: products, user: req.session.name,
+          userPermission: req.session.permission, success: { message: "Produto excluído com sucesso!" }
+        })
 
       }
-     
+
 
 
     } catch (error) {
