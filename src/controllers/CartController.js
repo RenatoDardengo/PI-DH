@@ -12,6 +12,7 @@ const confirmation = {
     show: async (req, res) => {
 
         const id = req.params.id;
+       
 
         if (req.cookies.idProd) {
             var ids = req.cookies.idProd
@@ -38,6 +39,7 @@ const confirmation = {
     
             productSelected.img=imgProduct.img
         }
+        
         const user = req.session.name
         return res.render("cartuser", { title: "Meu Carrinho", productSelected, user })
 

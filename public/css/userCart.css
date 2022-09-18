@@ -107,7 +107,7 @@ img {
   max-height: 80px;
 }
 
-#product-list {
+.product-list {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
   grid-column-gap: 5px;
@@ -119,6 +119,11 @@ img {
   text-decoration: none;
   color: darkgray;
   margin-left: 10px;
+  
+}
+#product-list-qtde-container a:hover{
+ cursor: pointer;
+  
 }
 
 #product-shipping {
@@ -187,10 +192,19 @@ img {
 #product-list-shipping {
   margin-top: 30px;
 }
+.product-deleted{
+  display: none;
+}
 
 #product-list-price {
   margin-top: 30px;
   font-weight: bold;
+}
+#product-list-price input {
+ border: none;
+width: 60px;
+font-weight: bold;
+background-color: transparent;
 }
 #product-list-qtde a {
   text-decoration: none;
