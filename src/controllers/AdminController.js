@@ -69,7 +69,7 @@ const adminController = {
 
   store: async (req, res) => {
 
-    const { genre, mark, style, number, costValue, saleValue, quantity, description } = req.body;
+    const { genre, mark, style, number, costValue, saleValue, quantity, description, productModel, specialValue } = req.body;
     let filename = "shoes-defaut.png";
 
 
@@ -78,7 +78,7 @@ const adminController = {
     }
 
 
-    if (!genre || !mark || !style || !number || !costValue || !saleValue || !quantity || !description) {
+    if (!genre || !mark || !style || !number || !costValue || !saleValue || !quantity || !description || !productModel || !specialValue) {
 
 
       return res.render("adminProductCreate", {
@@ -96,8 +96,10 @@ const adminController = {
           number: parseInt(number),
           costValue: parseFloat(costValue),
           saleValue: parseFloat(saleValue),
+          specialValue: parseFloat(specialValue),
           quantity: parseInt(quantity),
           description: description,
+          productModel: productModel,
           img: filename
         })
       })
@@ -153,7 +155,7 @@ const adminController = {
   },
 
   update: async (req, res) => {
-    const { genre, mark, style, number, costValue, saleValue, quantity, description } = req.body;
+    const { genre, mark, style, number, costValue, saleValue, quantity, description, productModel, specialValue } = req.body;
     const { id } = req.params;
 
 
@@ -165,7 +167,7 @@ const adminController = {
     }
 
     try {
-      if (!genre || !mark || !style || !number || !costValue || !saleValue || !quantity || !description) {
+      if (!genre || !mark || !style || !number || !costValue || !saleValue || !quantity || !description || !productModel || !specialValue) {
         throw Error("Todos os campos devem ser preenchidos!");
 
 
@@ -178,8 +180,10 @@ const adminController = {
           number: parseInt(number),
           costValue: parseFloat(costValue),
           saleValue: parseFloat(saleValue),
+          specialValue: parseFloat(specialValue),
           quantity: parseInt(quantity),
           description: description,
+          productModel: productModel,
           img: filename
 
         },

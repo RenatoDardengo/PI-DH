@@ -1,5 +1,8 @@
 // var products = require("../data/productsPage.json");
 // products = products.data;
+const Product = require("../models/Product");
+const files = require("../helpers/files");
+const upload = require("../config/upload");
 
 const productPageController={
     show: async(req,res)=>{
@@ -11,7 +14,7 @@ const productPageController={
         if (!productSelected) {
             return res.render("error", {
               title: "Erro de Servidor",
-              message: "Nenhum usuário encontrado"
+              message: "Nenhum produto encontrado!"
             })
       
         }
@@ -27,7 +30,7 @@ const productPageController={
         const user= req.session.name
 
 
-        return res.render ("productPage", {title:"Pagina de produtos", productSelected, user})
+        return res.render ("productPage", {title:"PÁGINA DO PRODUTO", productSelected, user})
     },
     // index: (req, res)=>{
     //     return res.render ("productPage", {title:"Pagina de Produto"})

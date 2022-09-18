@@ -15,6 +15,7 @@ const cartRoute = require("./src/routes/cartRoute")
 const authenticationAdminRoute = require("./src/routes/authenticationAdminRoute")
 const autheUserRoute = require("./src/routes/authenticationUserRoute")
 const createUserRoute = require("./src/routes/createUserRoute")
+const productPageRoute = require("./src/routes/productPageRoute")
 
 
 app.use(express.static(__dirname + "/public"));
@@ -34,7 +35,7 @@ app.use("/cart", cartRoute);
 app.use("/admin", authenticationAdminRoute);
 app.use("/create", createUserRoute);
 app.use("/login", autheUserRoute);
-
+app.use("/productPage", productPageRoute)
 
 
 app.listen(port, () => {
