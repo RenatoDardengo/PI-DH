@@ -6,6 +6,10 @@
     text-decoration: none;
 
 }
+img {
+    max-width: 290px;
+    max-height: 200px;
+  }
 
 body,
 html {
@@ -245,6 +249,11 @@ select{
     padding-top: 10px;
     padding-bottom: 5px;
     margin-right: 40px;
+    width: 150px;
+
+}
+.Product-input select{
+    width: 150px;
 
 }
 .Product-input textarea{

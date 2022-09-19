@@ -11,19 +11,29 @@ const confirmation = {
 
     show: async (req, res) => {
 
-        const id = req.params.id;
+        const {id}= req.params;
        
 
         if (req.cookies.idProd) {
             var ids = req.cookies.idProd
-            var arrayIds = [...ids, id]
-            res.cookie("idProd", arrayIds);
+            ids.push ({'id':parseInt (id),'qtde':1})
+            console.log(ids)
+            res.cookie("idProd", ids)
+            var onlyId=[]
+            var only= ids.map(Element=>{
+                Element.id
+                onlyId.push(Element.id)
+
+             })
+           
+             console.log(only)
+
             var productSelected = await Product.findAll({
-                where: { id: { [Op.in]: arrayIds } }
+                where: { id: { [Op.in]: onlyId } }
             });
 
         } else {
-            res.cookie("idProd", [id]);
+            res.cookie("idProd", [{'id':parseInt(id),'qtde':1}]);
             var productSelected = await Product.findOne({
                 where: { id: id }
             });

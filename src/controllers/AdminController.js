@@ -69,7 +69,7 @@ const adminController = {
 
   store: async (req, res) => {
 
-    const { genre, mark, style, number, costValue, saleValue, quantity, description, productModel, specialValue } = req.body;
+    const { genre, mark, style, productModel, number, costValue, saleValue,specialValue , quantity, description} = req.body;
     let filename = "shoes-defaut.png";
 
 

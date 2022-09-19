@@ -1,25 +1,28 @@
 const { format } = require("sequelize/types/utils")
 
-function IncrementValue(idInput, idSpan, valueProduct){
+function IncrementValue(idInput, idSpan, valueProduct,idProd){
+    
     var selectedInput = document.getElementById(idInput)
     var inputValue= parseInt(selectedInput.value)
     var newValue = inputValue+1
 
     selectedInput.value = newValue
-    AlterQuantity(idInput, idSpan, valueProduct)
+    
+    
+    AlterQuantity(idInput, idSpan, valueProduct,"",idProd)
 }
 
-function DecrementValue(idInput, idSpan, valueProduct, article){
+function DecrementValue(idInput, idSpan, valueProduct, article,idProd){
     var selectedInput = document.getElementById(idInput)
     var inputValue= parseInt(selectedInput.value)
     
     var newValue = inputValue-1
 
     selectedInput.value = newValue
-    AlterQuantity(idInput, idSpan, valueProduct,article)
+    AlterQuantity(idInput, idSpan, valueProduct,article,idProd)
 }
 
-function AlterQuantity(idInput, idSpan, valueProduct,article){
+function AlterQuantity(idInput, idSpan, valueProduct,article,idProd){
     var valueReturn=0;
     var valuep =parseFloat (valueProduct)
     var selectedInput = document.getElementById(idInput)
@@ -35,17 +38,50 @@ function AlterQuantity(idInput, idSpan, valueProduct,article){
         selectedSpan.innerText="R$ "+ new Intl.NumberFormat().format(valueReturn) 
     }
     
+    MostrarCookie(idInput,idProd)
+    
 }
-function RemoveItem(article){
+function RemoveItem(article, idProd){
     var articleSelected = document.getElementById(article)
     articleSelected.parentNode.removeChild(articleSelected)
-    alert("Produto será removido do carrinho!")
+    var carCookies =decodeURIComponent(document.cookie.split("idProd=")[1])
+    var carCookies = JSON.parse (carCookies.replace("j:",""))
+    var newCookie= []
+    for (let e of carCookies){
+        if(e.id!=idProd){
+            newCookie.push (e)
+        } 
+
+    }
+    console.log(idProd)
+   
+    document.cookie='idProd=j:'+JSON.stringify(newCookie)+'; path=/'
+    
+    
 }
 
-function MostrarCookie(){
-    var teste = document.cookie.valueOf("idProd").split(",")
-    const encoded = encodeURIComponent(teste);
-    console.log(decodeURIComponent(encoded));
-    //console.log(teste)
+function MostrarCookie(idInput,idProd){
+    var selectedInput = document.getElementById(idInput)
+    var carCookies =decodeURIComponent(document.cookie.split("idProd=")[1])
+    var carCookies = JSON.parse (carCookies.replace("j:",""))
+    var inputValue= parseInt(selectedInput.value)
+    
+   var newCookie= []
+    for (let e of carCookies){
+        if(e.id==parseInt (idProd)){
+            e.qtde=inputValue
+            newCookie.push (e)
+        } else{
+
+            newCookie.push (e)
+        }
+
+    }
+   
+    document.cookie='idProd=j:'+JSON.stringify(newCookie)+'; path=/'
+    
+
+    console.log(idProd)
+    console.log(newCookie)
 }
 

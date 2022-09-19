@@ -42,11 +42,11 @@ const Product = db.define("Products",
       allowNull:false,
     },
     productModel:{
-      type:Sequelize.DataTypes.STRING(20),
+      type:Sequelize.DataTypes.STRING(100),
       allowNull:false,
     },
     description:{
-      type:Sequelize.DataTypes.STRING(200),
+      type:Sequelize.DataTypes.TEXT("long"),
       allowNull:false,
     },
     img:{
