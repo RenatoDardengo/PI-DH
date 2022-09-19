@@ -1,24 +1,21 @@
 const { format } = require("sequelize/types/utils")
 
 function IncrementValue(idInput, idSpan, valueProduct,idProd){
-    
     var selectedInput = document.getElementById(idInput)
     var inputValue= parseInt(selectedInput.value)
     var newValue = inputValue+1
-
     selectedInput.value = newValue
-    
-    
+        
     AlterQuantity(idInput, idSpan, valueProduct,"",idProd)
 }
+
 
 function DecrementValue(idInput, idSpan, valueProduct, article,idProd){
     var selectedInput = document.getElementById(idInput)
     var inputValue= parseInt(selectedInput.value)
-    
     var newValue = inputValue-1
-
     selectedInput.value = newValue
+
     AlterQuantity(idInput, idSpan, valueProduct,article,idProd)
 }
 
@@ -34,8 +31,8 @@ function AlterQuantity(idInput, idSpan, valueProduct,article,idProd){
         articleSelected.parentNode.removeChild(articleSelected)
         alert("Produto será removido do carrinho!")
     }else{
-        valueReturn =parseFloat (inputValue * valuep).toFixed(2)
-        selectedSpan.innerText="R$ "+ new Intl.NumberFormat().format(valueReturn) 
+        valueReturn =inputValue * valuep
+        selectedSpan.innerText= valueReturn.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
     
     MostrarCookie(idInput,idProd)
