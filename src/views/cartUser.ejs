@@ -89,7 +89,7 @@
               </div>
               <div id="product-list-price">
                               
-                <span id="value-unit-<%= product.id %>"> R$ <%= product.saleValue %></span>
+                <span id="value-unit-<%= product.id %>"> R$ <%= product.saleValue %>,00</span>
               </div>
 
             </article>
@@ -100,7 +100,7 @@
                   <div> <img src="<%= productSelected.img %>" alt=""></div>
                   <div>
                     <h6>
-                      <%= product.productModel %>
+                      <%= productSelected.productModel %>
                     </h6>
                     <span> Vendido e entregue por MRCat</span>
                   </div>
@@ -117,7 +117,7 @@
                   </div>
                   <div id="product-list-price">
                                   
-                    <span id="value-unit-<%= productSelected.id %>"> R$ <%= productSelected.saleValue %></span>
+                    <span id="value-unit-<%= productSelected.id %>"> R$ <%= productSelected.saleValue %>,00</span>
                   </div>
     
                 </article>

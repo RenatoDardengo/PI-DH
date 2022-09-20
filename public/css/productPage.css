@@ -334,3 +334,83 @@ main {
     }
 }
 
+@media only screen and (max-width: 720px){
+    main {
+		padding:0px 0px 0px 0px;
+		width:100%;
+		position: absolute;
+		background-color: black;
+	}
+	#container-ppDescription {
+		margin-top: 250px;
+		padding-bottom: 10px;
+		border-radius: 15px;
+		width: 397px;
+		position: absolute;
+	}
+	#container-ppInfProduct {
+		margin-top: 575px;
+        padding-left: 5px;
+		margin-left: 1px;
+		width: 395px;
+		/* height: 1170px; */
+	}
+	#container-ppVerticalCatalog {
+		padding: 5px;
+		width: 100vw;
+		height: 1180px;
+	}
+	.ppZoom1 {
+		padding: 5px 100px 195px 100px;
+		width: 580px;
+	}
+	#container-ppZoom {
+		padding: 10px;
+		margin-left: -0.1vw;
+		display: flex;
+		width: 398px;
+		height: 15rem;
+		position: absolute;
+		background-color: white;
+		border-radius: 15px;
+		border: rgb(0, 0, 0) solid 2px;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+    #container-ppPurchases {
+        margin-top: 5px;
+        width: 379px;
+        height: 100px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px gray;
+        /* text-decoration: none; */
+    }
+    #container-ppSubPage {
+        background-color: black;
+    }
+    .ppTmm {
+        color: white;
+    }
+    .ppSize {
+        margin-left: -36px;
+        margin-right: -5px;
+        display: flex;
+        flex-direction: row;
+    }
+    .ppSizes {
+        width: 14.5%;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+        color: white;
+        border: gray 4px;
+        border-style: solid double;
+        background-color: black;
+    }
+}
