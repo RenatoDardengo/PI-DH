@@ -89,7 +89,7 @@
               </div>
               <div id="product-list-price">
                               
-                <span id="value-unit-<%= product.id %>"> R$ <%= product.saleValue %></span>
+                <span id="value-unit-<%= product.id %>" class="class-prod-price"> R$ <%= product.saleValue %></span>
               </div>
 
             </article>
@@ -100,7 +100,7 @@
                   <div> <img src="<%= productSelected.img %>" alt=""></div>
                   <div>
                     <h6>
-                      <%= product.productModel %>
+                      <%= productSelected.productModel %>
                     </h6>
                     <span> Vendido e entregue por MRCat</span>
                   </div>
@@ -117,7 +117,7 @@
                   </div>
                   <div id="product-list-price">
                                   
-                    <span id="value-unit-<%= productSelected.id %>"> R$ <%= productSelected.saleValue %></span>
+                    <span id="value-unit-<%= productSelected.id %>" class="class-prod-price"> R$ <%= productSelected.saleValue %></span>
                   </div>
     
                 </article>
@@ -149,12 +149,12 @@
           </div>
           <ul id="products-summary-ul">
             <li class="products-summary-li">
-              <label> 2 produtos</label>
-              <span> R$ 600,00</span>
+              <label id="lbl-qtde-products"> 2 produtos</label>
+              <span id='span-value-total-products'> R$ 600,00</span>
             </li>
             <li class="products-summary-li">
               <label> Frete</label>
-              <span> R$ 30,00</span>
+              <span class="shipping-free"> Grátis</span>
             </li>
           </ul>
           <div id="products-summary-total">
@@ -162,7 +162,7 @@
               total
             </span>
             <span id="products-summary-value">
-              <p class="text-bold">R$ 630,00</p>
+              <p class="text-bold" id='span-value-total-products-car'>R$ 630,00</p>
               <p> em até 6x sem juros</p>
             </span>
           </div>
@@ -175,14 +175,14 @@
 
     </section>
      
-    <% }else { %>
-      <span class="error-alert">
+    <%} %>
+      <span class="error-alert error" id="span-error">
         <h2>seu carrinho está vazio :(</h2>
         <a href="/"> voltar para home</a>
 
       </span>
 
-      <%} %>
+      
 
 
 </body>
