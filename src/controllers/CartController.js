@@ -12,11 +12,16 @@ const confirmation = {
     show: async (req, res) => {
 
         const {id}= req.params;
-       
+
+        var newProduct= await Product.findOne({
+            where: { id: id }
+        });
+
+        var valueProd = parseFloat(newProduct.saleValue).toFixed(2)
 
         if (req.cookies.idProd) {
             var ids = req.cookies.idProd
-            ids.push ({'id':parseInt (id),'qtde':1})
+            ids.push ({'id':parseInt (id),'qtde':1, 'value':valueProd})
             console.log(ids)
             res.cookie("idProd", ids)
             var onlyId=[]
@@ -33,7 +38,7 @@ const confirmation = {
             });
 
         } else {
-            res.cookie("idProd", [{'id':parseInt(id),'qtde':1}]);
+            res.cookie("idProd", [{'id':parseInt(id),'qtde':1,'value':valueProd}]);
             var productSelected = await Product.findOne({
                 where: { id: id }
             });
@@ -41,6 +46,10 @@ const confirmation = {
         if(productSelected.length > 0){
             productSelected.map(productSelected => 
             productSelected.img = files.base64Encode(__dirname + "/../../uploads/" + productSelected.img),)
+            productSelected.map(productSelected => 
+                productSelected.saleValue = parseFloat(productSelected.saleValue).toFixed(2));
+
+
 
         }else{
             const imgProduct = {...productSelected,
@@ -48,7 +57,9 @@ const confirmation = {
             }
     
             productSelected.img=imgProduct.img
+            productSelected.saleValue = parseFloat(productSelected.saleValue).toFixed(2)
         }
+        
         
         const user = req.session.name
         return res.render("cartuser", { title: "Meu Carrinho", productSelected, user })

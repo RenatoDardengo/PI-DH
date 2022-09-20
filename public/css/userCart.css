@@ -12,6 +12,14 @@ header {
   
   
 }
+.shipping-free{
+  color: green;
+  font-weight: bold;
+}
+
+.error{
+  display: none;
+}
 .display-flex{
   display: flex;
   flex-flow: row;
