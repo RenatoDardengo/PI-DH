@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-dark p-3">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
               <img  src="/img/logo.png" alt="logo">
     
             </a>
@@ -51,10 +51,7 @@
             <h3 class="text-light "> <%= productSelected.mark %></h3>
         </div>
    </div>
-    <!-- Header Victor Hugo -->
 
-    <!-- Main Marcel de Sousa -->
-                   
     <main>
         <div id="container-ppVerticalCatalog">
             <div>
@@ -92,19 +89,19 @@
                 <div id="container-ppin">
                     <em class="ppin">
                         De
-                        <strong>R$: <%= productSelected.saleValue %></strong>
+                        <strong>R$: <%= productSelected.saleValue %>,00</strong>
                     </em>
                 
                     <em class="ppPer">
                         Por: 
-                        <strong>R$: <%= productSelected.specialValue %></strong>
+                        <strong>R$: <%= productSelected.specialValue %>,00</strong>
                     </em>
     
                     <em class="ppOr">
                         <span>
                             Ou até
                             <label>
-                                12
+                                6
                                 <span>X</span>
                             </label>
                                 
@@ -168,6 +165,5 @@
             <% } %>
         </div>
     </main>
-    <!-- Final Main Marcel de Sousa -->
 </body>
 </html>
