@@ -9,7 +9,6 @@
 body {
   width: 100%;
   height: 100%;
-  background: linear-gradient(-45deg, #e9e7e5, #bbb9b8, #a09d9d);
   margin-bottom: 10px;
 
 }
@@ -23,21 +22,36 @@ body {
 span {
   font-size: 15px;
 }
-.genre {
+
+.display-radio{
   display: flex;
   flex-direction: row;
   align-content: flex-start;
+ 
+}
+
+.radio-btn{
+  width: 20px;
+
+}
+.genre {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
   margin-top: 10px;
   text-align:start;
+}
 
+.invisible{
+  display: none;
 }
 
 
-#title {
+.title {
   display: flex;
 
 }
-#title span {
+.title span {
   color: red;
 }
 textarea:focus,
@@ -46,7 +60,7 @@ input:focus {
 
 }
 #login-container {
-  background-color: #FFFFFF;
+  background: linear-gradient(-45deg, #f3f0ee, #e6e3e2, #d4d0d0);
   margin-left: auto;
   margin-right: auto;
   width: 430px;
@@ -56,16 +70,20 @@ input:focus {
   text-align: center;
   border: solid rgb(15, 15, 15);
 }
-#password-img img {
+.password-img img {
   position: relative;
   bottom: 50px;
   left: 150px;
 }
 
-#password-img img:hover {
+.password-img {
+  height: 55px;
+ }
 
+.password-img img:hover {
   cursor: pointer;
 }
+
 form {
   margin-top: 5px;
   margin-bottom: 5px;

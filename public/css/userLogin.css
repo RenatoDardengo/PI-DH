@@ -23,8 +23,7 @@ a:hover {
 }
 
 #login-container {
-  
-  background-color:#FFFFFF;
+  background: linear-gradient(-45deg, #f3f0ee, #e6e3e2, #d4d0d0);
   margin-left: auto;
   margin-right: auto;
   width: 400px;

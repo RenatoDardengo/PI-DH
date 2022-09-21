@@ -176,12 +176,14 @@ main {
     box-shadow: 4px 4px 4px gray;
     /* text-decoration: none; */
 }
+
 .ppButtom {
     text-decoration: none;
     font-size: 30px;
     color: white;
     display: flex;
     align-items: center;
+    background-color: transparent;
 }
 #container-ppPurchases:hover {
     cursor:pointer;

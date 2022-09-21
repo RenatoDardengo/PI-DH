@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/userLogin.css">
+  <link rel="stylesheet" href="/css/userLogin.css">
+  <script async type="text/javascript" src="/js/user.js" ></script>
 </head>
 
 <body>
@@ -20,19 +21,7 @@
       <div id="passwor-img">    
         <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
         <a href="javaScript:mostrarSenha()"> <img src="/img/view2.png" alt="" id="img-password"></a>
-        <script>
-          function mostrarSenha() {
-            var tipo = document.getElementById("password");
-
-            if (tipo.type == "password") {
-              tipo.type = "text";
-              document.getElementById("img-password").src = "/img/hidden2.png"
-            } else {
-              tipo.type = "password";
-              document.getElementById("img-password").src = "/img/view2.png"
-            }
-          }
-        </script>
+        
 
       </div>
 

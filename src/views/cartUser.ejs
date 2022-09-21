@@ -78,7 +78,7 @@
               </div>
               <div id="product-list-qtde-container">
                 <div id="product-list-qtde">
-                  <button onclick="DecrementValue('input-Quantity-<%= product.id %>','value-unit-<%= product.id %>','<%= product.saleValue %>','article-<%= product.id %>','<%= product.id %>')"> - </button>
+                  <button onclick="DecrementValue('input-Quantity-<%= product.id %>','value-unit-<%= product.id %>','<%= product.saleValue %>','<%= product.id %>')"> - </button>
                   <input type="text" id="input-Quantity-<%= product.id %>" class="input-Quantity" value="1">
                   <button onclick="IncrementValue('input-Quantity-<%= product.id %>','value-unit-<%= product.id %>','<%= product.saleValue %>','<%= product.id %>')"> + </button>
                 </div>
@@ -106,7 +106,7 @@
                   </div>
                   <div id="product-list-qtde-container">
                     <div id="product-list-qtde">
-                      <button onclick="DecrementValue('input-Quantity-<%= productSelected.id %>','value-unit-<%= productSelected.id %>','<%= productSelected.saleValue %>','article-<%= productSelected.id %>','<%= productSelected.id %>')"> - </button>
+                      <button onclick="DecrementValue('input-Quantity-<%= productSelected.id %>','value-unit-<%= productSelected.id %>','<%= productSelected.saleValue %>','<%= productSelected.id %>')"> - </button>
                       <input type="text" id="input-Quantity-<%= productSelected.id %>" class="input-Quantity" value="1">
                       <button onclick="IncrementValue('input-Quantity-<%= productSelected.id %>','value-unit-<%= productSelected.id %>','<%= productSelected.saleValue %>','<%= productSelected.id %>')"> + </button>
                     </div>

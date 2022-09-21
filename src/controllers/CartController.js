@@ -12,6 +12,7 @@ const confirmation = {
     show: async (req, res) => {
 
         const {id}= req.params;
+        
 
         var newProduct= await Product.findOne({
             where: { id: id }

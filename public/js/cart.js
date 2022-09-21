@@ -7,11 +7,11 @@ function IncrementValue(idInput, idSpan, valueProduct,idProd){
     var newValue = inputValue+1
     selectedInput.value = newValue
         
-    AlterQuantity(idInput, idSpan, valueProduct,"",idProd)
+    AlterQuantity(idInput, idSpan, valueProduct,idProd)
 }
 
 
-function DecrementValue(idInput, idSpan, valueProduct, article,idProd){
+function DecrementValue(idInput, idSpan, valueProduct, idProd){
     var selectedInput = document.getElementById(idInput)
     var inputValue= parseInt(selectedInput.value)
     var newValue = inputValue-1
@@ -19,27 +19,20 @@ function DecrementValue(idInput, idSpan, valueProduct, article,idProd){
         newValue=1
     }
     selectedInput.value = newValue
-
-    AlterQuantity(idInput, idSpan, valueProduct,article,idProd)
+    AlterQuantity(idInput, idSpan, valueProduct,idProd)
 }
 
-function AlterQuantity(idInput, idSpan, valueProduct,article,idProd){
+function AlterQuantity(idInput, idSpan, valueProduct,idProd){
     var valueTotal =0;
     var valueProduct =parseFloat (valueProduct);
     var selectedInput = document.getElementById(idInput);
     var selectedSpan = document.getElementById(idSpan);
     var inputValue= parseInt(selectedInput.value);
-    var articleSelected = document.getElementById(article);
+   
 
-    if(inputValue <=0){
-        articleSelected.parentNode.removeChild(articleSelected)
-        alert("Produto será removido do carrinho!")
-    }else{
-        valueTotal =inputValue * valueProduct
-
-        selectedSpan.innerText= valueTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    }
-    
+    valueTotal =inputValue * valueProduct
+    selectedSpan.innerText= valueTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+       
     UpdateCookie(idProd, inputValue, valueTotal)
     
 }
