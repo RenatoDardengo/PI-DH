@@ -79,7 +79,7 @@
               <div id="product-list-qtde-container">
                 <div id="product-list-qtde">
                   <button onclick="DecrementValue('input-Quantity-<%= product.id %>','value-unit-<%= product.id %>','<%= product.saleValue %>','<%= product.id %>')"> - </button>
-                  <input type="text" id="input-Quantity-<%= product.id %>" class="input-Quantity" value="1">
+                  <input type="text" id="input-Quantity-<%= product.id %>" class="input-Quantity" value="<%= product.Qtde %>">
                   <button onclick="IncrementValue('input-Quantity-<%= product.id %>','value-unit-<%= product.id %>','<%= product.saleValue %>','<%= product.id %>')"> + </button>
                 </div>
                 <a onclick="RemoveItem('article-<%= product.id %>','<%=product.id %>')"> Remover</a>
@@ -89,7 +89,7 @@
               </div>
               <div id="product-list-price">
                               
-                <span id="value-unit-<%= product.id %>" class="class-prod-price"> R$ <%= product.saleValue %></span>
+                <span id="value-unit-<%= product.id %>" class="class-prod-price"> R$ <%= product.valueTotal %></span>
               </div>
 
             </article>
@@ -107,7 +107,7 @@
                   <div id="product-list-qtde-container">
                     <div id="product-list-qtde">
                       <button onclick="DecrementValue('input-Quantity-<%= productSelected.id %>','value-unit-<%= productSelected.id %>','<%= productSelected.saleValue %>','<%= productSelected.id %>')"> - </button>
-                      <input type="text" id="input-Quantity-<%= productSelected.id %>" class="input-Quantity" value="1">
+                      <input type="text" id="input-Quantity-<%= productSelected.id %>" class="input-Quantity" value="<%= productSelected.Qtde %>">
                       <button onclick="IncrementValue('input-Quantity-<%= productSelected.id %>','value-unit-<%= productSelected.id %>','<%= productSelected.saleValue %>','<%= productSelected.id %>')"> + </button>
                     </div>
                     <a onclick="RemoveItem('article-<%= productSelected.id %>','<%= productSelected.id %>')"> Remover</a>
@@ -117,7 +117,7 @@
                   </div>
                   <div id="product-list-price">
                                   
-                    <span id="value-unit-<%= productSelected.id %>" class="class-prod-price"> R$ <%= productSelected.saleValue %></span>
+                    <span id="value-unit-<%= productSelected.id %>" class="class-prod-price"> R$ <%= productSelected.valueTotal %></span>
                   </div>
     
                 </article>

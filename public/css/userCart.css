@@ -245,7 +245,7 @@ background-color: transparent;
 }
 
 @media (max-width: 770px) {
-  #product-list {
+  .product-list {
     display: grid;
     grid-template-columns: 1fr 2fr;
     /* border: 1px solid black; */
