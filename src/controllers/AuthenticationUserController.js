@@ -79,7 +79,7 @@ const authUserRote = {
 
     
 
-      if (!firstName || !lastName || !cpf || !email || !telephone || !birthDate || !genre || !password ) {
+      if (!firstName || !lastName || !cpf || !email || !telephone || !birthDate || !genre || !password) {
         
 
           return res.render("usercreate", {
@@ -110,6 +110,7 @@ const authUserRote = {
 
       
       res.redirect("/login")
+      
      
 
  },

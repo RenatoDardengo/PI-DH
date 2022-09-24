@@ -34,12 +34,12 @@ a:hover {
   text-align: center;
   border: solid rgb(15, 15, 15);
 }
-#passwor-img img{
+#password-img img{
   position: relative;
-  bottom: 50px;
+  bottom: 55px;
   left: 150px;
 }
-#passwor-img img:hover{
+#password-img img:hover{
   
   cursor: pointer;
 }
@@ -107,4 +107,15 @@ input[type="submit"]:hover {
 
 #cadastrar-container p {
   margin-bottom: 10px;
+}
+
+@media (max-width: 500px) {
+  #login-container {
+    width: 300px;
+
+  }
+  #password-img img{
+    
+    left: 100px;
+  }
 }

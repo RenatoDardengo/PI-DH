@@ -43,7 +43,10 @@ function RemoveItem(article, idProd){
     
     var spanValue = document.getElementsByClassName("product-list")
     var carCookies =decodeURIComponent(document.cookie.split("idProd=")[1])
-    var carCookies = JSON.parse (carCookies.replace("j:",""))
+    
+    // var carCookies = JSON.parse (carCookies.replace("j:",""))
+    var carCookies = JSON.parse (carCookies.substring(2))
+    console.log(carCookies)
     var newCookie= []
     for (let e of carCookies){
         if(e.id!=idProd){
@@ -69,7 +72,8 @@ function RemoveItem(article, idProd){
 
 function UpdateCookie(idProd, inputValue, valueTotal){
     var carCookies =decodeURIComponent(document.cookie.split("idProd=")[1])
-    var carCookies = JSON.parse (carCookies.replace("j:",""))
+    var carCookies = JSON.parse (carCookies.substring(2))
+    console.log(carCookies)
     
    var newCookie= []
     for (let e of carCookies){
@@ -93,7 +97,8 @@ function UpdateValue(){
     var spanValueCar = document.getElementById("span-value-total-products-car")
     var lblQtde = document.getElementById("lbl-qtde-products")
     var carCookies =decodeURIComponent(document.cookie.split("idProd=")[1])
-    var carCookies = JSON.parse (carCookies.replace("j:",""))
+    var carCookies = JSON.parse (carCookies.substring(2))
+    console.log(carCookies)
     var sum=0;
     var qtde=0;
 

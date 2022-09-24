@@ -1,31 +1,78 @@
 * {
-
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
     
-
 }
+
+html, body, main{
+    height: 97%;
+}
+
 #btn-search{
     background-color: transparent;
     border: transparent;
     width: 5px;
     position: relative;
-   left: 150px;
+   left: 130px;
     bottom: 20px;
 }
 #btn-search :hover{
-cursor: pointer;
+    cursor: pointer;
 }
-#btn-create{
+
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+   
     
 }
 
-body,
-html {
-    height: 100vh;
+.table-img{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   margin-top: 5px;
+    
 }
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100%;
+
+}
+
+#div-img{
+    width: auto;
+    padding-top: 15px;
+    background-color: #2d3643;
+    height: 60px;
+}
+#div-body{
+    /* border: 2px yellow solid; */
+    height: auto;
+  }
+#div-body h2{
+    padding-left: 20px;
+}
+
+#div-title{
+    height: 60px;
+    color: black;
+    background-color: whitesmoke;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+#div-menu{
+    background-color: #2d3643;
+    padding-left: 5px;
+    height: auto;
+    padding-top: 20px;
+}
+
+
 
 #conteudo {
     display: flex;
@@ -56,15 +103,11 @@ html {
     margin-top: 10px;
 }
 
-#menu {
-    height: 100vh;
-    width: 260px;
-    background-color: #2d3643;
-    padding-left: 5px;
-}
+
 
 #menu-options {
-    padding: 5px;
+    
+    padding: 20px 5px 0px 5px;
 
 }
 
@@ -90,11 +133,9 @@ html {
 
 #panel {
     color: black;
-    height: 100vh;
     width: 100%;
     background-color: whitesmoke;
-    padding-left: 10px;
-    padding-right: 5px;
+
 }
 
 #panel>ul {
@@ -120,6 +161,7 @@ html {
 .Product-input {
     padding-top: 15px;
     padding-left: 15px;
+    width: auto;
 }
 
 #avatar img {
@@ -155,6 +197,17 @@ html {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 25px;
+    display: flex;
+    
+}
+#nav img{
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+#nav-title{
+    margin-top: 3px;
 }
 
 #header1 {
@@ -163,7 +216,7 @@ html {
 }
 
 th {
-    /* border: 1px solid black; */
+
     background-color: rgb(231, 228, 232);
     height: 30px;
     text-align: left;
@@ -184,14 +237,19 @@ th {
     color: black;
 }
 input{
-    height: 20px;
+    width: 150px;
+    height: 30px;
     border-radius: 5px;
+    border: 1px solid black;
     
 }
-select{
-    height: 25px;
+
+#criterion-id{
+    width: 150px;
+    height: 30px;
     border-radius: 5px;
-    
+    border: 1px solid black;
+
 }
 
 
@@ -203,6 +261,7 @@ table {
     border-spacing: 2px;
     border-color: gray;
     width: 100%;
+    
 
 }
 
@@ -220,14 +279,19 @@ td {
 }
 
 td:first-child {
-    width: 10%
+    width: 10%;
+    
 }
+
 
 
 
 #div-table {
 
     border: 1px solid darkgray;
+    margin-left: 5px;
+    margin-right: 5px;
+    
 }
 
 #product {
@@ -249,6 +313,7 @@ td:first-child {
     background-color:  #2d3643;
     width: 120px;
     height: 35px;
+    margin-top: 15px;
     
 }
 #btn:hover{
@@ -260,10 +325,9 @@ td:first-child {
     text-decoration: none;
     color: azure;
 }
-.error-alert2 {
-    flex-direction: column;
-    align-items: flex-end;
-   
+.error-alert {
+    flex-direction:row;
+    text-align: center;
     font-size: 1.2rem;
     color: red;
   }
@@ -289,22 +353,18 @@ td:first-child {
     border: 1px solid darkgray;
     justify-content: space-evenly;
     box-sizing: border-box;
-    height: 400px;
-    padding-left: 10px;
     padding-bottom: 30px;
     margin-bottom: 20px;
  
 }
-#criterion-id{
+/* #criterion-id{
     width: 90px;
 
-}
+} */
 
  .container-input{
     display: flex;
-   
-
-
+ 
 }
 
 .Product-input {
@@ -328,8 +388,8 @@ td:first-child {
     cursor: pointer;
     border-radius: 5px;
     background-color:  #2d3643;
-    width: 120px;
-    height: 35px;
+    width: 130px;
+    height: 30px;
     margin-left: 5px;
 
 
@@ -495,3 +555,51 @@ td:first-child {
     right: 0;
     top: 0;
 }
+
+@media (max-width: 900px) {
+    .main-container{
+        grid-template-columns: 1fr;
+        height: auto;
+     
+    }
+    .header-container{
+        grid-template-columns: 1fr;
+            
+    }
+
+   #div-menu{
+       height: 60px;
+        
+    }
+
+    #div-img{
+        display: none;
+   }
+
+    main{
+        height: 100%;
+    }
+    .display-none{
+        display: none;
+    }
+
+    #options{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+    .th-hide{
+        display: none;
+        
+    }
+    
+
+  }
+  @media (max-width: 500px) {
+    .th-hide2{
+        display: none;
+        
+    }
+  }
