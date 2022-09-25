@@ -6,7 +6,7 @@
   }
 
 body,main,html {
-    height: 97%;
+    height: 96.7%;
     
 }
 .header-container{
@@ -15,6 +15,7 @@ body,main,html {
    
     
 }
+
 
 #return {
     display: flex;

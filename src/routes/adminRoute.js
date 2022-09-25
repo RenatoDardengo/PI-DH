@@ -34,6 +34,9 @@ router.get("/product/edit/:id",isAuthenticated, adminController.edit)
 router.put("/product/edit/:id",isAuthenticated,upload.single("picture-input"), adminController.update)
 router.get("/product/delete/:id", isAuthenticated, adminController.delete)
 router.delete("/product/delete/:id",isAuthenticated, adminController.destroy)
+router.get("/product/view/:id", isAuthenticated, adminController.view)
+
+
 
 //rotas usuários
 

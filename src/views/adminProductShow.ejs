@@ -9,6 +9,7 @@
         <%= title %>
     </title>
     <link rel="stylesheet" href="/css/adminProductShow.css">
+    <script async type="text/javascript" src="/js/adminProduct.js"></script>
 
 </head>
 
@@ -54,11 +55,7 @@
                         </div>
                     </div>
                 </div>
-
             </span>
-
-
-
 
         </section>
 
@@ -107,9 +104,6 @@
 
                     </ul>
                 </div>
-
-
-
             </span>
 
             <span id="div-body">
@@ -226,12 +220,11 @@
                                                                     </td>
 
                                                                     <td class="table-actions table-img">
-                                                                        <a href=""><img src="/img/view3.png" alt=""></a>
-                                                                        <a
-                                                                            href="/administrator/product/edit/<%= product.id%>"><img
+                                                                        <a href="/administrator/product/view/<%= product.id%>" class="display-visible"><img src="/img/view3.png" alt=""></a>
+                                                                        <a href="/administrator/product/edit/<%= product.id%>"><img
                                                                                 src="/img/edit.png"></a>
-                                                                        <!-- <a onclick="javaScript:showModal('Confirmar Exclusão!','<%= product.id %>','<%= product.genre %>',
-                                   '<%= product.mark %>', '<%= product.style %>','<%= product.number %>','<%= product.description %>',
+                                                                        <!-- <a onclick="javaScript:showModal('<%= product.id %>','<%= product.genre %>',
+                                   '<%= product.mark %>', '<%= product.style %>','<%= product.number %>','<%= product.productModel %>',
                                    '<%= product.costValue %>', '<%= product.saleValue %>','<%= product.quantity %>')"><img src="/img/cancel.png"></a> -->
                                                                         <a
                                                                             href="/administrator/product/delete/<%= product.id%>"><img
@@ -277,12 +270,12 @@
                         </header>
                         <div class="container">
                             <section id="frm2">
-                                <form id="frm-delete" action="/administrator/product/delete>" method="post"
+                                <form id="frm-delete" action="/administrator/product/delete" method="post"
                                     enctype="multipart/form-data">
                                     <div class="container-input">
                                         <div class="Product-input">
                                             <label for="input-id-modal">Id:</label>
-                                            <input type="text" name="id" id="input-id-modal" disabled />
+                                            <input type="text" name="id" id="inputIdModal" disabled />
                                         </div>
 
                                         <div class="Product-input">
@@ -362,10 +355,6 @@
         </section>
 
     </main>
-
-
-    <script src="/js/adminProduct.js"></script>
-
 
 </body>
 

@@ -3,11 +3,11 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    
+  
 }
 
 html, body, main{
-    height: 97%;
+    height: 96.7%;
 }
 
 #btn-search{
@@ -26,7 +26,6 @@ html, body, main{
     display: grid;
     grid-template-columns: 1fr 4fr;
    
-    
 }
 
 .table-img{
@@ -106,7 +105,6 @@ html, body, main{
 
 
 #menu-options {
-    
     padding: 20px 5px 0px 5px;
 
 }
@@ -135,11 +133,9 @@ html, body, main{
     color: black;
     width: 100%;
     background-color: whitesmoke;
-
 }
 
 #panel>ul {
-
     padding: 10px;
 }
 
@@ -148,8 +144,6 @@ html, body, main{
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 0px;
-
-
 }
 
 #panel-header {
@@ -177,19 +171,15 @@ html, body, main{
 #panel-header>li {
     margin-left: 15px;
     margin-right: 15px;
-
 }
 
 #panel-header>li:hover {
     background-color: darkgrey;
-
 }
 
 #header-left {
-    display: flex;
-    justify-items: end;
-
-
+   display: flex;
+   justify-items: end;
 }
 
 #nav {
@@ -198,14 +188,15 @@ html, body, main{
     margin-bottom: 10px;
     height: 25px;
     display: flex;
-    
 }
+
 #nav img{
     width: 17px;
     height: 17px;
     margin-right: 5px;
     margin-top: 3px;
 }
+
 #nav-title{
     margin-top: 3px;
 }
@@ -252,7 +243,9 @@ input{
 
 }
 
-
+.display-visible{
+    display: none;
+}
 
 
 table {
@@ -565,6 +558,9 @@ td:first-child {
     .header-container{
         grid-template-columns: 1fr;
             
+    }
+    .display-visible{
+        display: inline;
     }
 
    #div-menu{

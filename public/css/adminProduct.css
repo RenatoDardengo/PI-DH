@@ -1,19 +1,69 @@
 * {
-
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
-
 }
 img {
     max-width: 290px;
     max-height: 200px;
   }
 
-body,
-html {
-    height: 100vh;
+body, html, main {
+    height: 96.7%;
+}
+.div-input{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+   
+}
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100%;
+
+}
+
+#div-img{
+    width: auto;
+    padding-top: 15px;
+    background-color: #2d3643;
+    height: 60px;
+   
+    
+}
+#div-img>ul> {
+    /* width: 120px; */
+    display:inline;
+    vertical-align: bottom;
+}
+#div-body{
+    height: auto;
+  }
+#div-body h2{
+    padding-left: 20px;
+}
+
+#div-title{
+    color: black;
+    background-color: whitesmoke;
+    padding-left: 10px;
+    padding-right: 5px;
+    height: 60px;
+    
+}
+
+#div-menu{
+    background-color: #2d3643;
+    padding-left: 5px;
+    height: auto;
+    padding-top: 20px;
 }
 
 #conteudo {
@@ -43,15 +93,8 @@ html {
 }
 
 
-#menu {
-    height: 100vh;
-    width: 260px;
-    background-color: #2d3643;
-    padding-left: 5px;
-}
-
 #menu-options {
-    padding: 5px;
+    padding: 20px 5px 0px 5px;
 
 }
 
@@ -78,15 +121,11 @@ html {
 
 #panel {
     color: black;
-    height: 100vh;
     width: 100%;
     background-color: whitesmoke;
-    padding-left: 10px;
-    padding-right: 5px;
 }
 
 #panel>ul {
-
     padding: 10px;
 }
 
@@ -95,8 +134,7 @@ html {
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 0px;
-
-
+    
 }
 
 #panel-header {
@@ -114,25 +152,20 @@ html {
 
 #panel-header>li>a {
     color: black;
-
 }
 
 #panel-header>li {
     margin-left: 15px;
     margin-right: 15px;
-
 }
 
 #panel-header>li:hover {
     background-color: darkgrey;
-
 }
 
 #header-left {
     display: flex;
     justify-items: end;
-
-
 }
 
 #nav {
@@ -140,7 +173,19 @@ html {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 25px;
-    
+    display: flex;
+    width: 100%;
+}
+
+#nav img{
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+#nav-title{
+    margin-top: 3px;
 }
 
 #header1 {
@@ -164,12 +209,13 @@ html {
 }
 
 input{
-    height: 20px;
+    height: 30px;
     border-radius: 5px;
+    border: 1px solid black;
     
 }
 select{
-    height: 25px;
+    height: 30px;
     border-radius: 5px;
     
 }
@@ -225,12 +271,12 @@ select{
 
 #frm {
     border: 1px solid darkgray;
-    /* display: flex; */
-    /* flex-direction:row; */
     justify-content: space-evenly;
     box-sizing: border-box;
-    height: 80%;
+    height: auto;
     padding-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     padding-bottom: 30px;
     
 
@@ -238,9 +284,7 @@ select{
 
 .container-input{
     display: flex;
-   
-
-
+  
 }
 
 .Product-input {
@@ -257,7 +301,7 @@ select{
 
 }
 .Product-input textarea{
-    width: 550px;
+    width: 500px;
     height: 80px;
 }
 
@@ -439,3 +483,79 @@ select{
     right: 0;
     top: 0;
 }
+
+@media (max-width: 980px) {
+    .main-container{
+        grid-template-columns: 1fr;
+        height: auto;
+     
+    }
+    .header-container{
+        grid-template-columns: 1fr;
+            
+    }
+
+    #options>li>img:hover {
+        position: relative;
+        bottom: 10px;
+        width: 28px;
+    }
+    #options>li>a>img:hover {
+        position: relative;
+        bottom: 10px;
+        width: 28px;
+    }
+
+   #div-menu{
+       height: 60px;
+        
+    }
+
+    #div-img{
+        display: none;
+   }
+
+    main{
+        height: 100%;
+    }
+    .display-none{
+        display: none;
+    }
+
+    #options{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+    .th-hide{
+        display: none;
+        
+    }
+    
+
+}
+  @media (max-width: 780px) {
+    .div-input{
+       grid-template-columns: 1fr 1fr 1fr;
+    }
+    .Product-input textarea{
+        width: 300px;
+        
+    }
+
+
+  }
+  @media (max-width: 570px) {
+    .div-input{
+       grid-template-columns: 1fr 1fr;
+    }
+   
+
+  }
+  @media (max-width: 430px) {
+    
+   
+
+  }

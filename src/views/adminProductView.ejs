@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/adminProduct.css">
-    <script async type="text/javascript" src="/js/adminProduct.js"></script>
 </head>
 
 <body>
@@ -98,12 +97,12 @@
                 <hr>
                 <div id="nav">
                     <div><img src="/img/arrow-16.png" alt=""></div>
-                    <div id="nav-title">Administrador/ Produtos / Deletar</div>
+                    <div id="nav-title">Administrador/ Produtos / Visualizar</div>
                 </div>
-                <h2>Excluir Produto</h2>
+                <h2>Detalhamento Produto</h2>
 
                 <div id="frm">
-                    <form action="/administrator/product/delete/<%= product.id %>?_method=delete" method="post" id="frm2">
+                    <div id="frm2">
                         <div class="div-input">
                             <div class="Product-input">
                                 <label for="id">Id:</label>
@@ -166,15 +165,12 @@
                         </div>
                         <div class="Product-input">
                             <label class="picture" for="picture-input" tabIndex="0">
-                                <input type="file" accept="image/png" name="picture-input" id="picture-input" />
-                                <span class=""> <img src="<%= product.img %>" alt=""></span>
+                                <input type="file" accept="image/png" name="picture-input" id="picture-input"/>
+                                <span class="" ><img src="<%= product.img %>" alt=""></span>
                             </label>
                         </div>
-                        <div id="btn-options">
-                            <input type="submit" value="Excluir" class="btn">
-                           
-                        </div>
-                    </form>
+                        
+                    </div>
                     <% if(locals.error){%>
                         <h3 class="error-alert2"><%= error.message %></h3>
                    <%}%>
