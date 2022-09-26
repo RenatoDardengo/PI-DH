@@ -7,3 +7,13 @@
   border: 1px solid white;
   border-radius: 5px;
 }
+
+.color-text{
+  font-size: 20px;
+  color: darkgray;
+  font-weight: bold;
+  height: 300px;
+  text-align: center;
+  margin-top: 50px;
+
+}

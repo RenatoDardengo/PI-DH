@@ -1,20 +1,23 @@
 const inputFile = document.querySelector("#picture-input");
 const pictureImage = document.querySelector(".picture-image");
 const pictureImageTxt = "Selecione uma imagem";
-  pictureImage.innerHTML = pictureImageTxt;
+pictureImage.innerHTML = pictureImageTxt;
 
 inputFile.addEventListener("change", function (e) {
   const inputTarget = e.target;
+  console.log(e.target);
   const file = inputTarget.files[0];
+  console.log(file)
 
   if (file) {
     const reader = new FileReader();
 
     reader.addEventListener("load", function (e) {
       const readerTarget = e.target;
-
+      console.log(readerTarget)
       const img = document.createElement("img");
       img.src = readerTarget.result;
+      console.log(img.src)
       img.classList.add("picture-img");
 
       pictureImage.innerHTML = "";
@@ -27,19 +30,20 @@ inputFile.addEventListener("change", function (e) {
   }
 });
 
-function showModal(id, genre, mark, style, number, description,  costValue, saleValue, quantity){
-    var id_deletar=id; 
+function showModal(id, genre, mark, number, description,  costValue, saleValue, quantity){
+  const frm = document.getElementById ("frmDelete")
+  document.getElementById('idModal').value= id;
+  document.getElementById('genreModal').value= genre;
+  document.getElementById('markModal').value= mark;
+  document.getElementById('numberModal').value= number;
+  document.getElementById('modelModal').value= description;
+  document.getElementById('costModal').value= costValue;
+  document.getElementById('saleModal').value= saleValue;
+  document.getElementById('quantityModal').value= quantity;
+
+
+frm.action = "/administrator/product/delete/"+id+"?_method=delete";
  
-  document.getElementById('inputIdModal').value=id;
-  document.getElementById('input-genre-modal').value=genre;
-  document.getElementById('input-mark-modal').value=mark;
-  document.getElementById('input-style-modal').value=style;
-  document.getElementById('input-number-modal').value=number;
-  document.getElementById('input-productModel-modal').value=description;
-  document.getElementById('input-costValue-modal').value=costValue;
-  document.getElementById('input-saleValue-modal').value=saleValue;
-  document.getElementById('input-quantity-modal').value=quantity;
-  
   document.getElementById('id01').style.display='block'
  
 }

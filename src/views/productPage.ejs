@@ -46,11 +46,11 @@
       </header>
 <body>
 
-    <div class="p-2  bg-dark ">
+    <!-- <div class="p-2  bg-dark ">
         <div class="col d-flex justify-content-center ">
             <h3 class="text-light "> <%= productSelected.mark %></h3>
         </div>
-   </div>
+   </div> -->
 
     <main>
         <div id="container-ppVerticalCatalog">
@@ -89,12 +89,12 @@
                 <div id="container-ppin">
                     <em class="ppin">
                         De
-                        <strong>R$: <%= productSelected.saleValue %>,00</strong>
+                        <strong>R$ <%= productSelected.saleValue %></strong>
                     </em>
                 
                     <em class="ppPer">
                         Por: 
-                        <strong>R$: <%= productSelected.specialValue %>,00</strong>
+                        <strong>R$ <%= productSelected.specialValue %></strong>
                     </em>
     
                     <em class="ppOr">

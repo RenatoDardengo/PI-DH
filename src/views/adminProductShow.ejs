@@ -136,7 +136,7 @@
 
                                 </div>
                                 <div id="btn-img">
-                                    <button id="btn"><a href="/administrator/product/create">Adicionar</a></button>
+                                    <button class="btn" id="btn"><a href="/administrator/product/create">Adicionar</a></button>
 
                                 </div>
 
@@ -223,12 +223,12 @@
                                                                         <a href="/administrator/product/view/<%= product.id%>" class="display-visible"><img src="/img/view3.png" alt=""></a>
                                                                         <a href="/administrator/product/edit/<%= product.id%>"><img
                                                                                 src="/img/edit.png"></a>
-                                                                        <!-- <a onclick="javaScript:showModal('<%= product.id %>','<%= product.genre %>',
-                                   '<%= product.mark %>', '<%= product.style %>','<%= product.number %>','<%= product.productModel %>',
-                                   '<%= product.costValue %>', '<%= product.saleValue %>','<%= product.quantity %>')"><img src="/img/cancel.png"></a> -->
-                                                                        <a
+                                                                        <a onclick="javaScript:showModal('<%= product.id %>','<%= product.genre %>',
+                                                                             '<%= product.mark %>', '<%= product.number %>','<%= product.productModel %>','<%= product.costValue %>',
+                                                                                '<%= product.saleValue %>','<%= product.quantity %>')"><img src="/img/cancel.png"></a>
+                                                                        <!-- <a
                                                                             href="/administrator/product/delete/<%= product.id%>"><img
-                                                                                src="/img/cancel.png"></a>
+                                                                                src="/img/cancel.png"></a> -->
                                                                     </td>
                                                                 </tr>
                                                                 <% } %>
@@ -246,21 +246,7 @@
 
 
                 </div>
-                <div id="id02" class="modal">
-                    <div class="modal-content animate-zoom card-4">
-                        <header class="container teal">
-                            <span onload="document.getElementById('id02').style.display='none'"
-                                class=" button display-topright">&times;</span>
-                            <h2>Cucesso!</h2>
-                        </header>
-                        <div class="container">
-                            <h4>Produto atualizado com sucesso!</h4>
-                            <br>
-
-                        </div>
-
-                    </div>
-                </div>
+               
                 <div id="id01" class="modal">
                     <div class="modal-content animate-zoom card-4">
                         <header class="container teal">
@@ -268,82 +254,67 @@
                                 class=" button display-topright">&times;</span>
                             <h2 id="title-modal">Confirmar Exclusão</h2>
                         </header>
-                        <div class="container">
-                            <section id="frm2">
-                                <form id="frm-delete" action="/administrator/product/delete" method="post"
-                                    enctype="multipart/form-data">
-                                    <div class="container-input">
-                                        <div class="Product-input">
-                                            <label for="input-id-modal">Id:</label>
-                                            <input type="text" name="id" id="inputIdModal" disabled />
-                                        </div>
+                        <div id="frm">
+                            <form  method="post" id="frmDelete">
 
-                                        <div class="Product-input">
-                                            <label for="input-genre-modal">Gênero:</label>
-                                            <input name="genre" id="input-genre-modal" disabled>
-                                        </div>
-
-                                        <div class="Product-input">
-                                            <label for="input-mark-modal">Marca:</label>
-                                            <input type="text" name="mark" id="input-mark-modal" disabled />
-                                        </div>
-
-                                        <div class="Product-input">
-                                            <label for="input-productModel-modal">Model:</label>
-                                            <input type="text" name="model" id="input-productModel-modal" disabled />
-                                        </div>
-
-
-
+                            <div class="Product-input" id="divteste">
+                                <div class="div-input">
+                                    <div class="Product-input">
+                                        <label for="id">Id:</label>
+                                        <input type="text"  id="idModal" disabled />
                                     </div>
-                                    <div class="container-input">
-                                        <div class="Product-input">
-                                            <label for="input-style-modal">Estilo:</label>
-                                            <input type="text" name="style" id="input-style-modal" disabled />
-
-                                        </div>
-                                        <div class="Product-input">
-                                            <label for="input-number-modal">Numero:</label>
-                                            <input type="text" name="number" id="input-number-modal" disabled />
-                                        </div>
-
-                                        <div class="Product-input">
-                                            <label for="input-costValue-modal">Custo:</label>
-                                            <input type="text" name="cost" id="input-costValue-modal" disabled />
-                                        </div>
-
+                
+                                    <div class="Product-input">
+                                        <label for="genre-id">Gênero:</label>
+                                         <input  type="text" name="genre" id="genreModal" disabled />
+                                        
                                     </div>
-
-                                    <div class="container-input">
-
-                                        <div class="Product-input">
-                                            <label for="input-saleValue-modal">Venda:</label>
-                                            <input type="text" name="sale" id="input-saleValue-modal" disabled />
-                                        </div>
-
-                                        <div class="Product-input">
-                                            <label for="input-specialValue-modal">Especial:</label>
-                                            <input type="text" name="special" id="input-specialValue-modal" disabled />
-                                        </div>
-
-                                        <div class="Product-input">
-                                            <label for="input-quantity-modal">Quantidade:</label>
-                                            <input type="text" name="quantity" id="input-quantity-modal" disabled />
-                                        </div>
-
-
+                                    <div class="Product-input">
+                                        <label for="mark-id">Marca:</label>
+                                        <input  type="text" name="mark" id="markModal" disabled />
+                                        
                                     </div>
-
-
-                                    <div id="btn-options">
-                                        <input type="submit" value="Excluir" class="btn">
-
+            
+                                    
+                                    <div class="Product-input">
+                                        <label for="number-id">Numero:</label>
+                                        <input  type="text"  id="numberModal" disabled/>
                                     </div>
+                                    
+                                   
+                                    <div class="Product-input">
+                                        <label for="cost-id">Custo:</label>
+                                        <input type="text"  id="costModal" disabled />
+                                    </div>
+                                    <div class="Product-input">
+                                        <label for="sale-id">Venda:</label>
+                                        <input  type="text"  id="saleModal" disabled/>
+                                    </div>
+            
+                                                                     
+                                    <div class="Product-input">
+                                        <label for="quantity-id">Quantidade:</label>
+                                        <input  type="text" id="quantityModal" />
+                                    </div>
+                                    <div class="Product-input">
+                                        <label for="model-id">Modelo:</label>
+                                        <input  type="text"  id="modelModal" />
+                                        
+                                    </div>
+        
+                                </div>
+                                <div id="container-btn">
+                                    
+                                    <button type="submit" class="btn2 div-btn"> Confirmar</button>
+                                    
+                                   <a onclick="document.getElementById('id01').style.display='none'"  > <button class="btn2"> Cancelar</button></a>
 
-
-                                </form>
-                            </section>
-
+                                </div>
+                                
+                            </div>
+                        </form>
+                            
+                           
                         </div>
 
                     </div>

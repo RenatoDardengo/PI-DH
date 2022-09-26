@@ -71,6 +71,10 @@ html, body, main{
     padding-top: 20px;
 }
 
+.div-input{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 
 #conteudo {
@@ -296,6 +300,29 @@ td:first-child {
     color: red;
     font-size: 19px;
 }
+#container-btn{
+    display: flex;
+    flex-direction: row;
+    
+}
+.div-btn{
+    margin-right: 15px;
+}
+.btn2:hover{
+    background-color: darkgray;
+}
+.btn2{
+   
+    text-decoration: none;
+    color: azure;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:  #2d3643;
+    width: 120px;
+    height: 35px;
+    margin-top: 15px;
+
+}
 
 #btn {
 
@@ -499,16 +526,29 @@ td:first-child {
     .modal {
         padding-top: 30px
     }
+    .div-input{
+        
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
 }
 
 @media (max-width:768px) {
     .modal-content {
-        width: 400px
+        width: 250px
     }
 
     .modal {
         padding-top: 50px
     }
+    .div-input{
+        
+        grid-template-columns: 1fr;
+        
+        
+        align-items: center;
+    }
+   
 }
 
 @media (min-width:993px) {
