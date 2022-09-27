@@ -5,129 +5,141 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <link rel="stylesheet" href="/css/adminHome.css">
+
 </head>
 
 <body>
-    <span id="conteudo">
-        <div id="menu">
-            <div id="top">
+    <main>
+        <section class="header-container">
+            <span id="div-img">
                 <ul>
                     <li><img src="/img/logo.png"></li>
                 </ul>
-            </div>
+            </span>
 
-            <div id="menu-options">
-                <ul id="options">
-                    <% if(userPermission===2) {%>
-                        <li id="seller"> <img src="/img/add-user.png">
-                            <a onclick="document.getElementById('id01').style.display='block'" > Usuários</a>
-                        </li>
+            <span id="div-title">
+                <div id="panel">
+                    <div id="header-options">
+                        <div id="img-Avatar">
+                            <div>
+                                <ul>
+                                    <li id="avatar"> <img src="/img/businessman.png"> </li>
+                                </ul>
+
+                            </div>
+                            <div id="avatar-name">
+                                <ul>
+                                    <li>
+                                        <%= user %>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="panel-header">
+                            <div id="return">
+                                <img src="/img/exit.png" alt="">
+                            </div>
+
+                            <div id="panel-header-option">
+                                <a id="return-a" href="/admin"> Sair </a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+
+            </span>
+
+        </section>
+
+        <section class="main-container">
+            <span id="div-menu">
+                <div id="menu-options">
+                    <ul id="options">
                         <hr>
 
-                   <% }%>
+                        <% if(userPermission===2) {%>
+                            <li id="seller"> <img src="/img/add-user.png">
+                                <a onclick="document.getElementById('id01').style.display='block'" class="display-none"> Usuários</a>
+                            </li>
+                            <hr>
 
-                   
-                    <li id="cleint"> <img src="/img/cleint.png">
-                        <a onclick="document.getElementById('id01').style.display='block'"> Fornecedores</a>
-                    </li>
-                    <hr>
-                    <li id="represented"> <img src="/img/home.png">
-                        <a onclick="document.getElementById('id01').style.display='block'" > Representada</a>
-                    </li>
-                    <hr>
-                    <li id="payment"> <img src="/img/payment-plans.png">
-                        <a onclick="document.getElementById('id01').style.display='block'" > Planos de Pagamento</a>
-                    </li>
-                    <hr>
-                    <li id="price"> <img src="/img/price.png">
-                        <a onclick="document.getElementById('id01').style.display='block'" > Tabela de Preços</a>
-                    </li>
-                    <hr>
-                    <li id="product"> <img src="/img/product.png">
-                        <a href="/administrator/product"> Produtos</a>
-                    </li>
-                    <hr>
-                    <li id="requests"> <img src="/img/cart.png">
-                        <a onclick="document.getElementById('id01').style.display='block'" >Pedidos</a>
-                    </li>
-                    <hr>
-                    <li id="report"> <img src="/img/report.png">
-                        <a onclick="document.getElementById('id01').style.display='block'">Relatórios</a>
-                    </li>
-                    <hr>
-
-                </ul>
-            </div>
-
-        </div>
+                            <% }%>
 
 
-        <div id="panel">
-            <div id="header-options">
-                <div id="img-Avatar">
-                    <div>
-                        <ul>
-                            <li id="avatar" > <img src="/img/businessman.png" > </li>
-                       </ul>
+                                <li id="cleint"> <img src="/img/cleint.png">
+                                    <a onclick="document.getElementById('id01').style.display='block'" class="display-none"> Fornecedores</a>
+                                </li>
+                                <hr>
+                                <li id="represented"> <img src="/img/home.png">
+                                    <a onclick="document.getElementById('id01').style.display='block'" class="display-none"> Representada</a>
+                                </li>
+                                <hr>
+                                <li id="payment"> <img src="/img/payment-plans.png">
+                                    <a onclick="document.getElementById('id01').style.display='block'" class="display-none"> Planos </a>
+                                </li>
+                                <hr>
+                                <li id="price"> <img src="/img/price.png">
+                                    <a onclick="document.getElementById('id01').style.display='block'" class="display-none"> Preços</a>
+                                </li>
+                                <hr>
+                                <li id="product"> <a href="/administrator/product" ><img src="/img/product.png"  ></a> <a href="/administrator/product" class="display-none"> Produtos</a>
+                                </li>
+                                <hr>
+                                <li id="requests"> <img src="/img/cart.png">
+                                    <a onclick="document.getElementById('id01').style.display='block'" class="display-none">Pedidos</a>
+                                </li>
+                                <hr>
+                                <li id="report"> <a onclick="document.getElementById('id01').style.display='block'"><img src="/img/report.png"></a>
+                                    <a onclick="document.getElementById('id01').style.display='block'" class="display-none">Relatórios</a>
+                                </li>
+                                <hr>
 
-                    </div>
-                    <div id="avatar-name">
-                        <ul>
-                            <li> <%= user %> </li>  
-                        </ul>
-
-                    </div>
-                    
-
+                    </ul>
                 </div>
-               
-                <div id="panel-header">
-                    <div id="panel-header-img">
-                        <img src="/img/exit.png" alt="">
-                    </div>
-                    <form action="/admin/logout" method="post">
-                    <div id="panel-header-option">
-                       <a href="javascript:document.querySelector('form').submit();"> Sair </a>
-                    </div>
-                </form>
 
-                    
+            </span>
 
+            <span id="div-body">
+                <hr>
+                <div id="nav">
+                    <div><img src="/img/arrow-16.png" alt=""></div>
+                    <div id="nav-title">Administrador</div>
                 </div>
-            </div>
+                <h2>Bem Vindo!</h2>
+                <hr>
+                <div id="id01" class="modal">
+                    <div class="modal-content animate-zoom card-4">
+                        <header class="container teal">
+                            <span onclick="document.getElementById('id01').style.display='none'"
+                                class=" button display-topright">&times;</span>
+                            <h2>Atenção!</h2>
+                        </header>
+                        <div class="container">
+                            <h4>Esta funcionalidade não foi implementada nesse projeto!</h4>
+                            <br>
 
+                        </div>
 
-
-            <hr>
-            <div id="nav">
-                > Administrador
-            </div>
-            <h2>Bem Vindo!</h2>
-            <hr>
-            
-
-
-        </div>
-        <div id="id01" class="modal">
-            <div class="modal-content animate-zoom card-4">
-                <header class="container teal">
-                    <span onclick="document.getElementById('id01').style.display='none'"
-                        class=" button display-topright">&times;</span>
-                    <h2>Atenção!</h2>
-                </header>
-                <div class="container">
-                    <h4>Esta funcionalidade não foi implementada nesse projeto!</h4>
-                    <br>
-                    
+                    </div>
                 </div>
-    
-            </div>
-        </div>
-        
-    </span>
-   
+
+            </span>
+
+        </section>
+
+
+    </main>
+
+
+
 </body>
 
 </html>

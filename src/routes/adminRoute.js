@@ -26,14 +26,17 @@ const storage = multer.diskStorage({
 router.get("/", isAuthenticated, adminController.index)
 
 //rotas produtos
-router.get("/product", isAuthenticated, adminController.showAll)
-router.post("/product/show", isAuthenticated, adminController.show)
-router.get("/product/create", isAuthenticated, adminController.create)
-router.post("/product/create", isAuthenticated, upload.single("picture-input"),adminController.store)
-router.get("/product/edit/:id",isAuthenticated, adminController.edit)
-router.put("/product/edit/:id",isAuthenticated,upload.single("picture-input"), adminController.update)
-router.get("/product/delete/:id", isAuthenticated, adminController.delete)
-router.delete("/product/delete/:id",isAuthenticated, adminController.destroy)
+router.get("/product", adminController.showAll)
+router.post("/product/show",  adminController.show)
+router.get("/product/create",  adminController.create)
+router.post("/product/create",  upload.single("picture-input"),adminController.store)
+router.get("/product/edit/:id", adminController.edit)
+router.put("/product/edit/:id",upload.single("picture-input"), adminController.update)
+router.get("/product/delete/:id",  adminController.delete)
+router.delete("/product/delete/:id", adminController.destroy)
+router.get("/product/view/:id",  adminController.view)
+
+
 
 //rotas usuários
 

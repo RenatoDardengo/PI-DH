@@ -9,17 +9,6 @@ const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
 
-//const productsJson = fs.readFileSync(
-    // Caminho do arquivo
-   // path.join(__dirname, "..", "data", "products.json"),
-    // Formato de leitura
-    //"utf-8"
-  //);
-
-//const products = JSON.parse(productsJson);
-
-  
-
 
 const userController = {
     index: async (req, res) => {
@@ -27,12 +16,13 @@ const userController = {
         //return res.render("home", {title: "Bem Vindo", message: "Bem vindo ao Home", products:productsPartial});
         try {
             const products = await Products.findAll();
-            products.map(product => product.img = files.base64Encode(__dirname + "/../../uploads/" + product.img),
-            )
+            products.map(product => product.img = files.base64Encode(__dirname + "/../../uploads/" + product.img));
+            products.map(products => products.saleValue = parseFloat(products.saleValue).toFixed(2));
           
             const productMark = await Products.findAll({
             where: { mark: "adidas" }});
-            productMark.map(productMark => productMark.img = files.base64Encode(__dirname + "/../../uploads/" + productMark.img),)
+            productMark.map(productMark => productMark.img = files.base64Encode(__dirname + "/../../uploads/" + productMark.img));
+            productMark.map(productMark => productMark.saleValue = parseFloat(productMark.saleValue).toFixed(2));
             const productsPartial = productMark.slice(productMark.length - 8, productMark.length);
             const user = req.session.name
             
@@ -51,8 +41,9 @@ const userController = {
     produts:async(req,res) =>{
         try {
             const productsAll = await Products.findAll();
-            productsAll.map(productsAll => productsAll.img = files.base64Encode(__dirname + "/../../uploads/" + productsAll.img)),
-            console.log(productsAll) 
+            productsAll.map(productsAll => productsAll.img = files.base64Encode(__dirname + "/../../uploads/" + productsAll.img))
+            productsAll.map(productsAll => productsAll.saleValue = parseFloat(productsAll.saleValue).toFixed(2));
+           
              res.render("products", {title: "Lista de Produtos", message:"Produtos Disponiveis", productsAll})
     
             
@@ -82,19 +73,24 @@ const userController = {
 
     },
     procurar: async (req,res) => {
+        const product=[]
         try {
             const {buscar} = req.query;
             
-            const products = await Products.findAll({
+             products = await Products.findAll({
                 where: { mark:{[Op.like]:`%${buscar}%` } }
             })
+
+            if(products.length<=0){
+                throw error
+            }
             console.log(products)
             return res.render("search", {title: "Bem Vindo", message: "Bem vindo ao Home", products});
            
           
             
         } catch (error) {
-            return res.render("search", {title: "Bem Vindo", error:{message: "Bem vindo ao Home"}});
+            return res.render("search", {title: "Bem Vindo", error:{message: "Ops! Não encontramos nenhum produto :("}, products});
             
         }
     }

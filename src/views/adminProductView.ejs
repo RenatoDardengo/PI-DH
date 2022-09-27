@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/adminProduct.css">
-    <script async type="text/javascript" src="/js/adminProduct.js"></script>
 </head>
 
 <body>
-    <main>
+    <main> 
         <section class="header-container">
             <span id="div-img">
                 <ul>
@@ -48,7 +47,6 @@
                     </div>
                 </div>
             </span>
-
         </section>
 
         <section class="main-container">
@@ -99,111 +97,91 @@
                 <hr>
                 <div id="nav">
                     <div><img src="/img/arrow-16.png" alt=""></div>
-                    <div id="nav-title">Administrador/ Produtos / Editar</div>
+                    <div id="nav-title">Administrador/ Produtos / Visualizar</div>
                 </div>
-                <h2>Editar Produto</h2>
+                <h2>Detalhamento Produto</h2>
 
                 <div id="frm">
-                    <form action="/administrator/product/edit/<%= product.id %>?_method=put" method="post" enctype="multipart/form-data">
+                    <div id="frm2">
                         <div class="div-input">
                             <div class="Product-input">
                                 <label for="id">Id:</label>
                                 <input value="<%= product.id %>" type="text" name="id" id="id" disabled />
                             </div>
-
+        
                             <div class="Product-input">
                                 <label for="genre-id">Gênero:</label>
-                                <select name="genre" id="genre-id">
-                                    <option value="" selected></option>
-                                    <option value="Masculino" <%=product.genre=="Masculino" ? "selected" :""%>>Marculino</option>
-                                    <option value="Feminino" <%=product.genre=="Feminino" ? "selected" :""%>>Feminino</option>
-                                </select>
+                                 <input value="<%= product.genre %>" type="text" name="genre" id="genre-id" />
+                                
                             </div>
                             <div class="Product-input">
                                 <label for="mark-id">Marca:</label>
-                                <select name="mark" id="mark-id">
-                                    <option value="Adidas" <%=product.mark=="Adidas" ? "selected" :"" %>>Adidas</option>
-                                    <option value="Mizuno" <%=product.mark=="Mizuno" ? "selected" :"" %>>Mizuno</option>
-                                    <option value="Nike" <%=product.mark=="Nike" ? "selected" :"" %>>Nike</option>
-                                </select>
+                                <input value="<%= product.mark %>" type="text" name="mark" id="mark-id" />
+                                
                             </div>
-
+    
+                            <div class="Product-input">
+                                <label for="model-id">Modelo:</label>
+                                <input value="<%= product.productModel %>" type="text" name="mark" id="model-id" />
+                                
+                            </div>
                             <div class="Product-input">
                                 <label for="style-id">Estilo:</label>
-                                <select name="style" id="style-id">
-                                    <option value="Esportivo" <%=product.style=="Esportivo" ? "selected" :"" %>>Esportivo
-                                    </option>
-                                    <option value="Casual" <%=product.style=="Casual" ? "selected" :"" %>>Casual</option>
-                                    <option value="Social" <%=product.style=="Social" ? "selected" :"" %>>Social</option>
-                                </select>
+                                <input value="<%= product.style %>" type="text" name="style" id="style-id" />
+                                
                             </div>
-                            <div class="Product-input">
-                                <label for="title-id">Modelo:</label>
-                                <input value="<%= product.productModel %>" type="text" name="productModel" id="title-id" />
-                            </div>
-
                             <div class="Product-input">
                                 <label for="number-id">Numero:</label>
                                 <input value="<%= product.number %>" type="text" name="number" id="number-id" />
                             </div>
+                            
+                           
                             <div class="Product-input">
                                 <label for="cost-id">Custo:</label>
-                                <input value="<%= product.costValue %>" type="text" name="costValue" id="cost-id" />
+                                <input value="R$ <%= product.costValue %>" type="text" name="cost" id="cost-id" />
                             </div>
                             <div class="Product-input">
                                 <label for="sale-id">Venda:</label>
-                                <input value=" <%= product.saleValue %>" type="text" name="saleValue" id="sale-id" />
-                            </div>
-
-                            <div class="Product-input">
-                                <label for="special-id">Especial:</label>
-                                <input value=" <%= product.specialValue %>" type="text" name="specialValue" id="special-id" />
+                                <input value="R$ <%= product.saleValue %>" type="text" name="sale" id="sale-id" />
                             </div>
     
+                            <div class="Product-input">
+                                <label for="special-id">Promoção:</label>
+                                <input value="R$ <%= product.specialValue %>" type="text" name="special" id="special-id" />
+                            </div>
+                           
                             <div class="Product-input">
                                 <label for="quantity-id">Quantidade:</label>
                                 <input value="<%= product.quantity %>" type="text" name="quantity" id="quantity-id" />
                             </div>
-                        
-<<<<<<< HEAD
 
-                    </div>
-
-                    <div class="container-input">
-                        <div class="Product-input">
-                            <label for="model-id">Modelo:</label>
-                            <input value="<%= product.productModel %>" type="text" name="productModel" id="model-id" />
-=======
->>>>>>> de9676352b4eab4785753c34b98fd83e892eaf78
                         </div>
                         <div class="container-input">
                             <div class="Product-input">
                                 <label for="description-id">Descrição:</label>
-                                <textarea name="description" id="description-id"><%= product.description %> </textarea>
+                                <textarea  name="description" id="description-id"><%= product.description %> </textarea>
                             </div>
     
                         </div>
                         <div class="Product-input">
                             <label class="picture" for="picture-input" tabIndex="0">
-                                <input type="file" accept="image/png" name="picture-input" id="picture-input" />
-                                <span class="picture-image"> <img src="<%= product.img %>" alt=""></span>
+                                <input type="file" accept="image/png" name="picture-input" id="picture-input"/>
+                                <span class="" ><img src="<%= product.img %>" alt=""></span>
                             </label>
                         </div>
-
-                        <div id="btn-options">
-                            <input  type="submit" value="Alterar" class="btn">
-    
-                        </div>
-
-                    </form>
+                        
+                    </div>
                     <% if(locals.error){%>
                         <h3 class="error-alert2"><%= error.message %></h3>
                    <%}%>
                 </div>
             </span>
+
         </section>
+
+
     </main>
- 
+        
 </body>
 
 </html>

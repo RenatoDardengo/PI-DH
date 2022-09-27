@@ -5,191 +5,187 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Administrador</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="/css/adminProduct.css">
+    <script async type="text/javascript" src="/js/adminProduct.js"></script>
 </head>
 
 <body>
-    <span id="conteudo">
-        <div id="menu">
-            <div id="top">
+    <main> 
+        <section class="header-container">
+            <span id="div-img">
                 <ul>
                     <li><img src="/img/logo.png"></li>
                 </ul>
-            </div>
+            </span>
+            <span id="div-title">
+                <div id="panel">
+                    <div id="header-options">
+                        <div id="img-Avatar">
+                            <div>
+                                <ul>
+                                    <li id="avatar"> <img src="/img/businessman.png"> </li>
+                                </ul>
 
-            <div id="menu-options">
-                <ul id="options">
+                            </div>
+                            <div id="avatar-name">
+                                <ul>
+                                    <li><%= user %></li>
+                                </ul>
+                            </div>
+                        </div>
 
-                    <% if(userPermission===2) {%>
+
+                        <div id="panel-header">
+                            <div id="return">
+                                <img src="/img/arrow.png" alt="">
+                            </div>
+
+                            <div id="panel-header-option">
+                                <a id="return-a" href="/administrator/product"> Retornar </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </section>
+
+        <section class="main-container">
+            <span id="div-menu">
+                <div id="menu-options">
+                    <ul id="options">
+                        <hr>
+                        <% if(userPermission===2) {%>
                         <li id="seller"> <img src="/img/add-user.png">
-                            <a> Usuários</a>
+                            <a class="display-none"> Usuários</a>
                         </li>
                         <hr>
 
-                   <% }%>
-                    <li id="cleint"> <img src="/img/cleint.png">
-                        <a href=""> Fornecedores</a>
-                    </li>
-                    <hr>
-                    <li id="represented"> <img src="/img/home.png">
-                        <a href=""> Representada</a>
-                    </li>
-                    <hr>
-                    <li id="payment"> <img src="/img/payment-plans.png">
-                        <a href=""> Planos de Pagamento</a>
-                    </li>
-                    <hr>
-                    <li id="price"> <img src="/img/price.png">
-                        <a href=""> Tabela de Preços</a>
-                    </li>
-                    <hr>
-                    <li id="product"> <img src="/img/product.png">
-                        <a href="""> Produtos</a>
-                    </li>
-                    <hr>
-                    <li id=" requests"> <img src="/img/cart.png">
-                          <a href="">Pedidos</a>
-                    </li>
-                    <hr>
-                    <li id="report"> <img src="/img/report.png">
-                        <a href="">Relatórios</a>
-                    </li>
-                    <hr>
-
-                </ul>
-            </div>
-
-
-
-
-        </div>
-
-        <div id="panel">
-            <div id="header-options">
-                <div id="img-Avatar">
-                    <div>
-                        <ul>
-                            <li id="avatar" > <img src="/img/businessman.png" > </li>
-                       </ul>
-                    </div>
-                    <div id="avatar-name">
-                        <ul>
-                            <li> <%= user %></li>  
-                        </ul>
-                    </div>
-                  
+                        <% }%>
+                        <li id="cleint"> <img src="/img/cleint.png" ">
+                             <a href="" class="display-none"> Fornecedores</a>
+                        </li>
+                        <hr>
+                        <li id="represented"> <img src="/img/home.png">
+                             <a href="" class="display-none"> Representada</a>
+                        </li>
+                       <hr>
+                         <li id="payment"> <img src="/img/payment-plans.png">
+                          <a href="" class="display-none"> Planos</a>
+                        </li>
+                        <hr>
+                        <li id="price"> <img src="/img/price.png">
+                           <a href="" class="display-none"> Preços</a>
+                        </li>
+                        <hr>
+                        <li id="product"> <img src="/img/product.png">
+                        <a href="" class="display-none"> Produtos</a>
+                        </li>
+                         <hr>
+                         <li id=" requests"> <img src="/img/cart.png">
+                         <a href="" class="display-none">Pedidos</a>
+                         </li>
+                        <hr>
+                         <li id="report"> <img src="/img/report.png">
+                         <a href="" class="display-none">Relatórios</a>
+                        </li>
+                        <hr>
+                    </ul>
                 </div>
+            </span>
 
-                <div id="panel-header">
-                    <div id="return">
-                        <img src="/img/arrow.png" alt="">
-                    </div>
-
-                    <div id="panel-header-option">
-                       <a id="return-a" href="/administrator/product"> Retornar </a>
-                    </div>
-
+            <span id="div-body">
+                <hr>
+                <div id="nav">
+                    <div><img src="/img/arrow-16.png" alt=""></div>
+                    <div id="nav-title">Administrador/ Produtos / Deletar</div>
                 </div>
-            </div>
-            <hr>
-            <div id="nav">
-                > Administrador/ Produtos / Excluir
-            </div>
-            <h2>Excluir Produto</h2>
-            <section id="frm">
-                <form action="/administrator/product/delete/<%= product.id %>?_method=delete" method="post" id="frm2">
-                    <div class="container-input">
-                        <div class="Product-input">
-                            <label for="id">Id:</label>
-                            <input value="<%= product.id %>" type="text" name="id" id="id" disabled />
-                        </div>
+                <h2>Excluir Produto</h2>
+
+                <div id="frm">
+                    <form action="/administrator/product/delete/<%= product.id %>?_method=delete" method="post" id="frm2">
+                        <div class="div-input">
+                            <div class="Product-input">
+                                <label for="id">Id:</label>
+                                <input value="<%= product.id %>" type="text" name="id" id="id" disabled />
+                            </div>
+        
+                            <div class="Product-input">
+                                <label for="genre-id">Gênero:</label>
+                                 <input value="<%= product.genre %>" type="text" name="genre" id="genre-id" />
+                                
+                            </div>
+                            <div class="Product-input">
+                                <label for="mark-id">Marca:</label>
+                                <input value="<%= product.mark %>" type="text" name="mark" id="mark-id" />
+                                
+                            </div>
     
-                        <div class="Product-input">
-                            <label for="genre-id">Gênero:</label>
-                             <input value="<%= product.genre %>" type="text" name="genre" id="genre-id" />
+                            <div class="Product-input">
+                                <label for="model-id">Modelo:</label>
+                                <input value="<%= product.productModel %>" type="text" name="mark" id="model-id" />
+                                
+                            </div>
+                            <div class="Product-input">
+                                <label for="style-id">Estilo:</label>
+                                <input value="<%= product.style %>" type="text" name="style" id="style-id" />
+                                
+                            </div>
+                            <div class="Product-input">
+                                <label for="number-id">Numero:</label>
+                                <input value="<%= product.number %>" type="text" name="number" id="number-id" />
+                            </div>
                             
+                           
+                            <div class="Product-input">
+                                <label for="cost-id">Custo:</label>
+                                <input value="R$ <%= product.costValue %>" type="text" name="cost" id="cost-id" />
+                            </div>
+                            <div class="Product-input">
+                                <label for="sale-id">Venda:</label>
+                                <input value="R$ <%= product.saleValue %>" type="text" name="sale" id="sale-id" />
+                            </div>
+    
+                            <div class="Product-input">
+                                <label for="special-id">Promoção:</label>
+                                <input value="R$ <%= product.specialValue %>" type="text" name="special" id="special-id" />
+                            </div>
+                           
+                            <div class="Product-input">
+                                <label for="quantity-id">Quantidade:</label>
+                                <input value="<%= product.quantity %>" type="text" name="quantity" id="quantity-id" />
+                            </div>
+
+                        </div>
+                        <div class="container-input">
+                            <div class="Product-input">
+                                <label for="description-id">Descrição:</label>
+                                <textarea  name="description" id="description-id"><%= product.description %> </textarea>
+                            </div>
+    
                         </div>
                         <div class="Product-input">
-                            <label for="mark-id">Marca:</label>
-                            <input value="<%= product.mark %>" type="text" name="mark" id="mark-id" />
-                            
+                            <label class="picture" for="picture-input" tabIndex="0">
+                                <input type="file" accept="image/png" name="picture-input" id="picture-input" />
+                                <span class=""> <img src="<%= product.img %>" alt=""></span>
+                            </label>
                         </div>
-
-                        <div class="Product-input">
-                            <label for="model-id">Modelo:</label>
-                            <input value="<%= product.productModel %>" type="text" name="mark" id="model-id" />
-                            
+                        <div id="btn-options">
+                            <input type="submit" value="Excluir" class="btn">
+                           
                         </div>
+                    </form>
+                    <% if(locals.error){%>
+                        <h3 class="error-alert2"><%= error.message %></h3>
+                   <%}%>
+                </div>
+            </span>
 
-                        <div class="Product-input">
-                            <label for="style-id">Estilo:</label>
-                            <input value="<%= product.style %>" type="text" name="style" id="style-id" />
-                            
-                        </div>
-                        
-
-                    </div>
-
-                    <div class="container-input">
-                        <div class="Product-input">
-                            <label for="number-id">Numero:</label>
-                            <input value="<%= product.number %>" type="text" name="number" id="number-id" />
-                        </div>
-                        
-                       
-                        <div class="Product-input">
-                            <label for="cost-id">Custo:</label>
-                            <input value="R$ <%= product.costValue %>" type="text" name="cost" id="cost-id" />
-                        </div>
-                        <div class="Product-input">
-                            <label for="sale-id">Venda:</label>
-                            <input value="R$ <%= product.saleValue %>" type="text" name="sale" id="sale-id" />
-                        </div>
-
-                        <div class="Product-input">
-                            <label for="special-id">Especial:</label>
-                            <input value="R$ <%= product.specialValue %>" type="text" name="special" id="special-id" />
-                        </div>
-                       
-                        <div class="Product-input">
-                            <label for="quantity-id">Quantidade:</label>
-                            <input value="<%= product.quantity %>" type="text" name="quantity" id="quantity-id" />
-                        </div>
+        </section>
 
 
-                    </div>
-                    <div class="container-input">
-                        <div class="Product-input">
-                            <label for="description-id">Descrição:</label>
-                            <textarea  name="description" id="description-id"><%= product.description %> </textarea>
-                        </div>
-
-                    </div>
-                    <div class="Product-input">
-                        <label class="picture" for="picture-input" tabIndex="0">
-                            <input type="file" accept="image/png" name="picture-input" id="picture-input"/>
-                            <span class="picture-image" ><img src="/uploads/<%= product.img %>" alt=""></span>
-                          </label>
-                        
-                         
-                    </div>
-
-                    
-                    <div id="btn-options">
-                        <input type="submit" value="Excluir" / class="btn">
-                       
-                    </div>
-                    
-                </form>
-            </section>
-
-
-        </div>
-
-
-        </div>
-    </span>
+    </main>
+        
 </body>
 
 </html>

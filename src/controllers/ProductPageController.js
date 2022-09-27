@@ -24,6 +24,8 @@ const productPageController={
         }
 
         productSelected.img=imgProduct.img
+        productSelected.saleValue = parseFloat(productSelected.saleValue).toFixed(2);
+        productSelected.specialValue = parseFloat(productSelected.specialValue).toFixed(2);
        
         const user= req.session.name
 

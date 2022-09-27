@@ -124,6 +124,34 @@ const adminController = {
 
 
   },
+  view:async (req, res) => {
+    const { id } = req.params;
+
+    var productResult = await Product.findOne({
+      where: {
+        id: id
+      }
+    });
+
+    if (!productResult) {
+      return res.render("error", {
+        title: "Erro de Servidor",
+        message: "Nenhum produto encontrado"
+      })
+
+    }
+
+    const pp = {
+      ...productResult,
+      img: files.base64Encode(
+        upload.path + productResult.img
+      )
+    }
+
+    productResult.img = pp.img;
+
+    return res.render("adminProductView", { title: "Visualizar Produto", user: req.session.name, product: productResult, userPermission: req.session.permission })
+  },
 
   edit: async (req, res) => {
     const { id } = req.params;
@@ -137,7 +165,7 @@ const adminController = {
     if (!productResult) {
       return res.render("error", {
         title: "Erro de Servidor",
-        message: "Nenhum usuário encontrado"
+        message: "Nenhum produto encontrado"
       })
 
     }
@@ -229,10 +257,18 @@ const adminController = {
     if (!productResult) {
       return res.render("error", {
         title: "Erro de Servidor",
-        message: "Nenhum usuário encontrado"
+        message: "Nenhum produto encontrado"
       })
 
     }
+    const pp = {
+      ...productResult,
+      img: files.base64Encode(
+        upload.path + productResult.img
+      )
+    }
+
+    productResult.img = pp.img;
 
     return res.render("adminProductDelete", { title: "Deletar Produto", user: req.session.name, product: productResult, userPermission: req.session.permission })
 
@@ -240,6 +276,7 @@ const adminController = {
 
   destroy: async (req, res) => {
     const { id } = req.params;
+    
 
 
     try {

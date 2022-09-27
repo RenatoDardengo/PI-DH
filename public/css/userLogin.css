@@ -12,7 +12,17 @@ input:focus {
   outline: none;
   
 }
-
+ .class-nav{
+  width: 100%;
+  height: 85px;
+  background: #212529;
+ 
+  
+ }
+ .class-img{
+  margin-top: 20px;
+  margin-left: 25px;
+ }
 
 a {
   font-size: .8rem;
@@ -28,14 +38,14 @@ a:hover {
   margin-right: auto;
   width: 400px;
   padding: 25px;
-  margin-top: 10vh;
+  margin-top: 30px;
   border-radius: 5px;
   text-align: center;
   border: solid rgb(15, 15, 15);
 }
 #passwor-img img{
   position: relative;
-  bottom: 50px;
+  bottom: 38px;
   left: 150px;
 }
 #passwor-img img:hover{
@@ -43,10 +53,7 @@ a:hover {
   cursor: pointer;
 }
 
-form {
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
+
 
 label,
 input {
@@ -79,10 +86,20 @@ input:focus {
   display: block;
   text-align: right;
 }
+#text-center{
+  display: block;
+  text-align: center;
+}
 .error-alert {
   font-size: 1.2rem;
   color: red;
 }
+.container-fluids {
+  display: table-row;
+  text-align: left;
+  /* flex-wrap: inherit;
+  align-items: center; */
+  }
 
 #btn {
   width: 100%;
@@ -114,5 +131,10 @@ input[type="submit"]:hover {
   #passwor-img img{
     
     left: 100px;
+  }
+
+  .class-nav {
+    
+    text-align: center;
   }
 }

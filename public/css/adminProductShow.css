@@ -1,31 +1,81 @@
 * {
-
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
-    
-
+  
 }
+
+html, body, main{
+    height: 96.7%;
+}
+
 #btn-search{
     background-color: transparent;
     border: transparent;
     width: 5px;
     position: relative;
-   left: 150px;
+   left: 130px;
     bottom: 20px;
 }
 #btn-search :hover{
-cursor: pointer;
+    cursor: pointer;
 }
-#btn-create{
+
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+   
+}
+
+.table-img{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   margin-top: 5px;
     
 }
 
-body,
-html {
-    height: 100vh;
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100%;
+
 }
+
+#div-img{
+    width: auto;
+    padding-top: 15px;
+    background-color: #2d3643;
+    height: 60px;
+}
+#div-body{
+    /* border: 2px yellow solid; */
+    height: auto;
+  }
+#div-body h2{
+    padding-left: 20px;
+}
+
+#div-title{
+    height: 60px;
+    color: black;
+    background-color: whitesmoke;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+#div-menu{
+    background-color: #2d3643;
+    padding-left: 5px;
+    height: auto;
+    padding-top: 20px;
+}
+
+.div-input{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 
 #conteudo {
     display: flex;
@@ -56,15 +106,10 @@ html {
     margin-top: 10px;
 }
 
-#menu {
-    height: 100vh;
-    width: 260px;
-    background-color: #2d3643;
-    padding-left: 5px;
-}
+
 
 #menu-options {
-    padding: 5px;
+    padding: 20px 5px 0px 5px;
 
 }
 
@@ -90,15 +135,11 @@ html {
 
 #panel {
     color: black;
-    height: 100vh;
     width: 100%;
     background-color: whitesmoke;
-    padding-left: 10px;
-    padding-right: 5px;
 }
 
 #panel>ul {
-
     padding: 10px;
 }
 
@@ -107,8 +148,6 @@ html {
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 0px;
-
-
 }
 
 #panel-header {
@@ -120,6 +159,7 @@ html {
 .Product-input {
     padding-top: 15px;
     padding-left: 15px;
+    width: auto;
 }
 
 #avatar img {
@@ -135,19 +175,15 @@ html {
 #panel-header>li {
     margin-left: 15px;
     margin-right: 15px;
-
 }
 
 #panel-header>li:hover {
     background-color: darkgrey;
-
 }
 
 #header-left {
-    display: flex;
-    justify-items: end;
-
-
+   display: flex;
+   justify-items: end;
 }
 
 #nav {
@@ -155,6 +191,18 @@ html {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 25px;
+    display: flex;
+}
+
+#nav img{
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+#nav-title{
+    margin-top: 3px;
 }
 
 #header1 {
@@ -163,7 +211,7 @@ html {
 }
 
 th {
-    /* border: 1px solid black; */
+
     background-color: rgb(231, 228, 232);
     height: 30px;
     text-align: left;
@@ -184,17 +232,24 @@ th {
     color: black;
 }
 input{
-    height: 20px;
+    width: 150px;
+    height: 30px;
     border-radius: 5px;
-    
-}
-select{
-    height: 25px;
-    border-radius: 5px;
+    border: 1px solid black;
     
 }
 
+#criterion-id{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
 
+}
+
+.display-visible{
+    display: none;
+}
 
 
 table {
@@ -203,6 +258,7 @@ table {
     border-spacing: 2px;
     border-color: gray;
     width: 100%;
+    
 
 }
 
@@ -220,14 +276,19 @@ td {
 }
 
 td:first-child {
-    width: 10%
+    width: 10%;
+    
 }
+
 
 
 
 #div-table {
 
     border: 1px solid darkgray;
+    margin-left: 5px;
+    margin-right: 5px;
+    
 }
 
 #product {
@@ -239,6 +300,29 @@ td:first-child {
     color: red;
     font-size: 19px;
 }
+#container-btn{
+    display: flex;
+    flex-direction: row;
+    
+}
+.div-btn{
+    margin-right: 15px;
+}
+.btn2:hover{
+    background-color: darkgray;
+}
+.btn2{
+   
+    text-decoration: none;
+    color: azure;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:  #2d3643;
+    width: 120px;
+    height: 35px;
+    margin-top: 15px;
+
+}
 
 #btn {
 
@@ -249,6 +333,7 @@ td:first-child {
     background-color:  #2d3643;
     width: 120px;
     height: 35px;
+    margin-top: 15px;
     
 }
 #btn:hover{
@@ -260,10 +345,9 @@ td:first-child {
     text-decoration: none;
     color: azure;
 }
-.error-alert2 {
-    flex-direction: column;
-    align-items: flex-end;
-   
+.error-alert {
+    flex-direction:row;
+    text-align: center;
     font-size: 1.2rem;
     color: red;
   }
@@ -289,22 +373,18 @@ td:first-child {
     border: 1px solid darkgray;
     justify-content: space-evenly;
     box-sizing: border-box;
-    height: 400px;
-    padding-left: 10px;
     padding-bottom: 30px;
     margin-bottom: 20px;
  
 }
-#criterion-id{
+/* #criterion-id{
     width: 90px;
 
-}
+} */
 
  .container-input{
     display: flex;
-   
-
-
+ 
 }
 
 .Product-input {
@@ -328,8 +408,8 @@ td:first-child {
     cursor: pointer;
     border-radius: 5px;
     background-color:  #2d3643;
-    width: 120px;
-    height: 35px;
+    width: 130px;
+    height: 30px;
     margin-left: 5px;
 
 
@@ -446,16 +526,29 @@ td:first-child {
     .modal {
         padding-top: 30px
     }
+    .div-input{
+        
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
 }
 
 @media (max-width:768px) {
     .modal-content {
-        width: 400px
+        width: 250px
     }
 
     .modal {
         padding-top: 50px
     }
+    .div-input{
+        
+        grid-template-columns: 1fr;
+        
+        
+        align-items: center;
+    }
+   
 }
 
 @media (min-width:993px) {
@@ -495,3 +588,54 @@ td:first-child {
     right: 0;
     top: 0;
 }
+
+@media (max-width: 900px) {
+    .main-container{
+        grid-template-columns: 1fr;
+        height: auto;
+     
+    }
+    .header-container{
+        grid-template-columns: 1fr;
+            
+    }
+    .display-visible{
+        display: inline;
+    }
+
+   #div-menu{
+       height: 60px;
+        
+    }
+
+    #div-img{
+        display: none;
+   }
+
+    main{
+        height: 100%;
+    }
+    .display-none{
+        display: none;
+    }
+
+    #options{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+    .th-hide{
+        display: none;
+        
+    }
+    
+
+  }
+  @media (max-width: 500px) {
+    .th-hide2{
+        display: none;
+        
+    }
+  }
