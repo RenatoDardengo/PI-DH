@@ -317,6 +317,46 @@ main {
         color: white;
     }
 }
+@media only screen and (max-width: 768px){
+main {
+        padding: 10px;
+        width: 674px;
+        background-color: black;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    #container-ppInfProduct {
+        padding: 5px;
+        margin-left: 51vw;
+        width: 248px;
+    }
+    #container-ppZoom {
+        height: 400px;
+    }
+    #container-ppDescription {
+    margin-top: 410px;
+    }
+    .ppZoom1 {
+        padding: 40px 140px 70px 140px;
+        width: 650px;
+        height: 300px;
+    }
+    .ppSize {
+        margin-left: -36px;
+        margin-right: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+    .ppBuy {
+        display: flex;
+        flex-direction: column;
+    }
+    .ppShare {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 @media only screen and (max-width: 720px){
     main {
@@ -381,6 +421,112 @@ main {
     .ppSize {
         margin-left: -36px;
         margin-right: -5px;
+        display: flex;
+        flex-direction: row;
+    }
+    .ppSizes {
+        width: 14.5%;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+        color: white;
+        border: gray 4px;
+        border-style: solid double;
+        background-color: black;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    main {
+		padding:0px 0px 0px 0px;
+		width:100%;
+		position: absolute;
+		background-color: black;
+	}
+	#container-ppDescription {
+		margin-top: 250px;
+		padding-bottom: 10px;
+		border-radius: 15px;
+		width: 360px;
+		position: absolute;
+	}
+    .ppDescription {
+        padding-left: 0px;
+    }
+	#container-ppInfProduct {
+		margin-top: 575px;
+        padding-left: 5px;
+		margin-left: 1px;
+		width: 360px;
+	}
+	#container-ppVerticalCatalog {
+		padding: 5px;
+		width: 100vw;
+		height: 1580px;
+	}
+	.ppZoom1 {
+		padding: 5px 100px 195px 100px;
+		width: 480px;
+        height: 350px;
+	}
+	#container-ppZoom {
+		padding: 10px;
+		margin-left: -0.1vw;
+		display: flex;
+		width: 361px;
+		height: 15rem;
+		position: absolute;
+		background-color: white;
+		border-radius: 15px;
+		border: rgb(0, 0, 0) solid 2px;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+    #container-ppPurchases {
+        margin-top: 5px;
+        width: 345px;
+        height: 100px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px gray;
+    }
+    #container-ppDelivery {
+        padding: 15px;
+        width: 345px;
+        background-color: black;
+        color: white;
+
+    }
+    #container-ppBuyWhats {
+        margin-top: 10%;
+        width: 346px;
+        display: flex;
+        flex-direction: row;
+        font-size: 15px;
+    }
+    .ppBuy {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 70%;
+        padding: 0px;
+        border: black 4px;
+        border-style: solid double;
+    }
+    #container-ppSubPage {
+        background-color: black;
+    }
+    .ppTmm {
+        color: white;
+    }
+    .ppSize {
+        margin-left: -42px;
+        margin-right: 5px;
         display: flex;
         flex-direction: row;
     }
