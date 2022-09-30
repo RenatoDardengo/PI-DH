@@ -3,6 +3,8 @@ const pictureImage = document.querySelector(".picture-image");
 const pictureImageTxt = "Selecione uma imagem";
 pictureImage.innerHTML = pictureImageTxt;
 
+
+
 inputFile.addEventListener("change", function (e) {
   const inputTarget = e.target;
   console.log(e.target);
@@ -30,7 +32,7 @@ inputFile.addEventListener("change", function (e) {
   }
 });
 
-function showModal(id, genre, mark, number, description,  costValue, saleValue, quantity){
+function showModal(id, genre, mark, number, description,  costValue, saleValue, quantity, img){
   const frm = document.getElementById ("frmDelete")
   document.getElementById('idModal').value= id;
   document.getElementById('genreModal').value= genre;
@@ -40,6 +42,7 @@ function showModal(id, genre, mark, number, description,  costValue, saleValue, 
   document.getElementById('costModal').value= costValue;
   document.getElementById('saleModal').value= saleValue;
   document.getElementById('quantityModal').value= quantity;
+ 
 
 
 frm.action = "/administrator/product/delete/"+id+"?_method=delete";

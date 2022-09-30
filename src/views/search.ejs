@@ -77,7 +77,7 @@
                 <h3 class="text-light "> Produtos</h3>
             </div>
        </div>
-       <% if(products.length<=0) { %> 
+       <% if(products.length==0) { %> 
             <h3  class="color-text"><%= error.message %></h3>
         <% } else { %> 
             <% for(let prod of products) { %> 

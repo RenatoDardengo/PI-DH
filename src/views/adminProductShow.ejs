@@ -225,7 +225,7 @@
                                                                                 src="/img/edit.png"></a>
                                                                         <a onclick="javaScript:showModal('<%= product.id %>','<%= product.genre %>',
                                                                              '<%= product.mark %>', '<%= product.number %>','<%= product.productModel %>','<%= product.costValue %>',
-                                                                                '<%= product.saleValue %>','<%= product.quantity %>')"><img src="/img/cancel.png"></a>
+                                                                                '<%= product.saleValue %>','<%= product.quantity %>','<%= product.img %>')"><img src="/img/cancel.png"></a>
                                                                         <!-- <a
                                                                             href="/administrator/product/delete/<%= product.id%>"><img
                                                                                 src="/img/cancel.png"></a> -->
@@ -303,11 +303,12 @@
                                     </div>
         
                                 </div>
+                               
                                 <div id="container-btn">
                                     
                                     <button type="submit" class="btn2 div-btn"> Confirmar</button>
                                     
-                                   <a onclick="document.getElementById('id01').style.display='none'"  > <button class="btn2"> Cancelar</button></a>
+                                   
 
                                 </div>
                                 

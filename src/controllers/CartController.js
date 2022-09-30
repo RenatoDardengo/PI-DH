@@ -14,7 +14,7 @@ const confirmation = {
         var newProduct= await Product.findOne({
             where: { id: id }
         });
-
+        const user = req.session.name
         
         try {
             
@@ -77,7 +77,7 @@ const confirmation = {
 
             
         } catch (error) {
-            res.render("error", {title:"Erro - 404 HTML!", message:"Ocorreu um erro ao adicionar o produto no seu carrinho :("})
+            res.render("error", {title:"Erro - 404 HTML!",user, message:"Ocorreu um erro ao adicionar o produto no seu carrinho :("})
             
         }
         

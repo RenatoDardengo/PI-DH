@@ -306,7 +306,8 @@ td:first-child {
     
 }
 .div-btn{
-    margin-right: 15px;
+    margin-top: 30px;
+    margin-left: 15px;
 }
 .btn2:hover{
     background-color: darkgray;

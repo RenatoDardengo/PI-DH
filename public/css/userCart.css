@@ -111,8 +111,8 @@ header {
 }
 
 img {
-  max-width: 80px;
-  max-height: 80px;
+  /* max-width: 80px;
+  max-height: 80px; */
 }
 
 .product-list {
@@ -120,6 +120,11 @@ img {
   grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
   grid-column-gap: 5px;
   border-bottom: 1px solid gray;
+
+}
+.product-list img{
+  max-width: 80px;
+  max-height: 80px;
 
 }
 

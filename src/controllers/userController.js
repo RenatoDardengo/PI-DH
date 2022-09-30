@@ -79,13 +79,19 @@ const userController = {
             
              products = await Products.findAll({
                 where: { mark:{[Op.like]:`%${buscar}%` } }
-            })
 
-            if(products.length<=0){
-                throw error
-            }
-            console.log(products)
+            })
+            products=Array.isArray(products)?products:[products]
+
+            if(products.length>0){
+                console.log(products)
             return res.render("search", {title: "Bem Vindo", message: "Bem vindo ao Home", products});
+                
+            }else{
+                throw error
+
+            }
+            
            
           
             
